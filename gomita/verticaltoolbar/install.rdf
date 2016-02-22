@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+	<Description about="urn:mozilla:install-manifest">
+		<em:id>verticaltoolbar@xuldev.org</em:id>
+		<em:type>2</em:type>
+		<em:name>Vertical Toolbar</em:name>
+		<em:version>1.0.2</em:version>
+		<em:description>Adds a vertical toolbar at the edge of the window.</em:description>
+		<em:creator>Gomita</em:creator>
+		<em:localized>
+			<Description>
+				<em:locale>ja</em:locale>
+				<em:name>Vertical Toolbar</em:name>
+				<em:description>ウィンドウの端に縦置きツールバーを追加します。</em:description>
+				<em:creator>ごみた</em:creator>
+				<em:homepageURL>http://www.xuldev.org/verticaltoolbar/</em:homepageURL>
+			</Description>
+		</em:localized>
+		<em:localized>
+			<Description>
+				<em:locale>ar</em:locale>
+				<em:name>Vertical Toolbar</em:name>
+				<em:description>Adds a vertical toolbar at the edge of the window.</em:description>
+				<em:creator>Gomita</em:creator>
+				<em:translator>ibraheem_alex</em:translator>
+				<em:homepageURL>http://www.xuldev.org/verticaltoolbar/</em:homepageURL>
+			</Description>
+		</em:localized>
+		<em:localized>
+			<Description>
+				<em:locale>cs</em:locale>
+				<em:name>Vertical Toolbar</em:name>
+				<em:description>Adds a vertical toolbar at the edge of the window.</em:description>
+				<em:creator>Gomita</em:creator>
+				<em:translator>mikk_s</em:translator>
+				<em:homepageURL>http://www.xuldev.org/verticaltoolbar/</em:homepageURL>
+			</Description>
+		</em:localized>
+		<em:localized>
+			<Description>
+				<em:locale>de</em:locale>
+				<em:name>Vertical Toolbar</em:name>
+				<em:description>Adds a vertical toolbar at the edge of the window.</em:description>
+				<em:creator>Gomita</em:creator>
+				<em:translator>ReinekeFux</em:translator>
+				<em:homepageURL>http://www.xuldev.org/verticaltoolbar/</em:homepageURL>
+			</Description>
+		</em:localized>
+		<em:localized>
+			<Description>
+				<em:locale>el</em:locale>
+				<em:name>Vertical Toolbar</em:name>
+				<em:description>Προσθέτει μια κάθετη εργαλειοθήκη στην άκρη του παραθύρου.</em:description>
+				<em:creator>Gomita</em:creator>
+				<em:translator>Γιώργος Μαλαμάς</em:translator>
+				<em:homepageURL>http://www.xuldev.org/verticaltoolbar/</em:homepageURL>
+			</Description>
+		</em:localized>
+		<em:localized>
+			<Description>
+				<em:locale>es-MX</em:locale>
+				<em:name>Vertical Toolbar</em:name>
+				<em:description>Adds a vertical toolbar at the edge of the window.</em:description>
+				<em:creator>Gomita</em:creator>
+				<em:translator>ZuGro</em:translator>
+				<em:homepageURL>http://www.xuldev.org/verticaltoolbar/</em:homepageURL>
+			</Description>
+		</em:localized>
+		<em:localized>
+			<Description>
+				<em:locale>et</em:locale>
+				<em:name>Vertical Toolbar</em:name>
+				<em:description>Adds a vertical toolbar at the edge of the window.</em:description>
+				<em:creator>Gomita</em:creator>
+				<em:translator>mdr.ksk</em:translator>
+				<em:homepageURL>http://www.xuldev.org/verticaltoolbar/</em:homepageURL>
+			</Description>
+		</em:localized>
+		<em:localized>
+			<Description>
+				<em:locale>fr</em:locale>
+				<em:name>Vertical Toolbar</em:name>
+				<em:description>Adds a vertical toolbar at the edge of the window.</em:description>
+				<em:creator>Gomita</em:creator>
+				<em:translator>Berettonawak</em:translator>
+				<em:homepageURL>http://www.xuldev.org/verticaltoolbar/</em:homepageURL>
+			</Description>
+		</em:localized>
+		<em:localized>
+			<Description>
+				<em:locale>he</em:locale>
+				<em:name>Vertical Toolbar</em:name>
+				<em:description>Adds a vertical toolbar at the edge of the window.</em:description>
+				<em:creator>Gomita</em:creator>
+				<em:translator>barryoni</em:translator>
+				<em:homepageURL>http://www.xuldev.org/verticaltoolbar/</em:homepageURL>
+			</Description>
+		</em:localized>
+		<em:localized>
+			<Description>
+				<em:locale>nl</em:locale>
+				<em:name>Vertical Toolbar</em:name>
+				<em:description>Adds a vertical toolbar at the edge of the window.</em:description>
+				<em:creator>Gomita</em:creator>
+				<em:translator>markh</em:translator>
+				<em:homepageURL>http://www.xuldev.org/verticaltoolbar/</em:homepageURL>
+			</Description>
+		</em:localized>
+		<em:localized>
+			<Description>
+				<em:locale>pl</em:locale>
+				<em:name>Vertical Toolbar</em:name>
+				<em:description>Adds a vertical toolbar at the edge of the window.</em:description>
+				<em:creator>Gomita</em:creator>
+				<em:translator>teo</em:translator>
+				<em:homepageURL>http://www.xuldev.org/verticaltoolbar/</em:homepageURL>
+			</Description>
+		</em:localized>
+		<em:localized>
+			<Description>
+				<em:locale>pt-BR</em:locale>
+				<em:name>Vertical Toolbar</em:name>
+				<em:description>Adds a vertical toolbar at the edge of the window.</em:description>
+				<em:creator>Gomita</em:creator>
+				<em:translator>maurojs10</em:translator>
+				<em:homepageURL>http://www.xuldev.org/verticaltoolbar/</em:homepageURL>
+			</Description>
+		</em:localized>
+		<em:localized>
+			<Description>
+				<em:locale>ru</em:locale>
+				<em:name>Vertical Toolbar</em:name>
+				<em:description>Adds a vertical toolbar at the edge of the window.</em:description>
+				<em:creator>Gomita</em:creator>
+				<em:translator>PiVV</em:translator>
+				<em:homepageURL>http://www.xuldev.org/verticaltoolbar/</em:homepageURL>
+			</Description>
+		</em:localized>
+		<em:localized>
+			<Description>
+				<em:locale>sr</em:locale>
+				<em:name>Vertical Toolbar</em:name>
+				<em:description>Adds a vertical toolbar at the edge of the window.</em:description>
+				<em:creator>Gomita</em:creator>
+				<em:translator>DakSrbija</em:translator>
+				<em:homepageURL>http://www.xuldev.org/verticaltoolbar/</em:homepageURL>
+			</Description>
+		</em:localized>
+		<em:localized>
+			<Description>
+				<em:locale>sv-SE</em:locale>
+				<em:name>Vertical Toolbar</em:name>
+				<em:description>Adds a vertical toolbar at the edge of the window.</em:description>
+				<em:creator>Gomita</em:creator>
+				<em:translator>Lakrits</em:translator>
+				<em:homepageURL>http://www.xuldev.org/verticaltoolbar/</em:homepageURL>
+			</Description>
+		</em:localized>
+		<em:localized>
+			<Description>
+				<em:locale>tr</em:locale>
+				<em:name>Vertical Toolbar</em:name>
+				<em:description>Adds a vertical toolbar at the edge of the window.</em:description>
+				<em:creator>Gomita</em:creator>
+				<em:translator>omrakin</em:translator>
+				<em:homepageURL>http://www.xuldev.org/verticaltoolbar/</em:homepageURL>
+			</Description>
+		</em:localized>
+		<em:localized>
+			<Description>
+				<em:locale>zh-CN</em:locale>
+				<em:name>Vertical Toolbar</em:name>
+				<em:description>Adds a vertical toolbar at the edge of the window.</em:description>
+				<em:creator>Gomita</em:creator>
+				<em:translator>ctrans</em:translator>
+				<em:homepageURL>http://www.xuldev.org/verticaltoolbar/</em:homepageURL>
+			</Description>
+		</em:localized>
+		<em:localized>
+			<Description>
+				<em:locale>zh-TW</em:locale>
+				<em:name>Vertical Toolbar</em:name>
+				<em:description>Adds a vertical toolbar at the edge of the window.</em:description>
+				<em:creator>Gomita</em:creator>
+				<em:translator>TKY</em:translator>
+				<em:homepageURL>http://www.xuldev.org/verticaltoolbar/</em:homepageURL>
+			</Description>
+		</em:localized>
+		<em:optionsURL>chrome://verticaltoolbar/content/options.xul</em:optionsURL>
+		<em:homepageURL>http://www.xuldev.org/verticaltoolbar/</em:homepageURL>
+		<em:targetApplication>
+			<Description>
+				<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+				<em:minVersion>24.0</em:minVersion>
+				<em:maxVersion>29.0a1</em:maxVersion>
+			</Description>
+		</em:targetApplication>
+	</Description>
+
+</RDF>

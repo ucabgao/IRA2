@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="https://earth.google.com/kml/2.0">
+  <Document>
+    <name>NWS Radar Images</name>
+    <open>1</open>
+    <Folder>
+      <name>National Weather Service</name>
+      <ScreenOverlay>
+        <name>National Weather Service</name>
+        <description>National Weather Service Doppler Radar RIDGE Imagery https://radar.weather.gov</description>
+        <visibility>1</visibility>
+        <Icon>
+          
+        </Icon>
+        <overlayXY x="0" y="1" xunits="fraction" yunits="fraction"/>
+        <screenXY x="0" y="1" xunits="fraction" yunits="fraction"/>
+        <rotationXY x="0" y="0" xunits="fraction" yunits="fraction"/>
+        <size x="0" y="0" xunits="fraction" yunits="fraction"/>
+      </ScreenOverlay>
+      <ScreenOverlay>
+        <name>NOAA</name>
+        <description>National Oceanic and Atomospheric Administration  https://www.noaa.gov</description>
+        <visibility>1</visibility>
+        <Icon>
+          
+        </Icon>
+        <overlayXY x=".2" y="1" xunits="fraction" yunits="fraction"/>
+        <screenXY x=".2" y="1" xunits="fraction" yunits="fraction"/>
+        <rotationXY x="0" y="0" xunits="fraction" yunits="fraction"/>
+        <size x="0" y="0" xunits="fraction" yunits="fraction"/>
+      </ScreenOverlay>
+    </Folder>
+    <Folder>
+      <name>BBX</name>
+      <Folder>
+        <name>Short-Range Reflectivity</name>
+        <ScreenOverlay>
+          <visibility>1</visibility>
+          <Icon>
+            <refreshMode>onInterval</refreshMode>
+            <refreshInterval>120</refreshInterval>
+          </Icon>
+          <overlayXY x="1.0" y="0.5" xunits="fraction" yunits="fraction"/>
+          <screenXY x="1.0" y="0.5" xunits="fraction" yunits="fraction"/>
+          <rotationXY x="0" y="0" xunits="fraction" yunits="fraction"/>
+        </ScreenOverlay>
+        <GroundOverlay>
+          <name>Short-Range Reflectivity</name>
+          <Icon>
+            <href>https://airmanopus.net/weathercheck/images/processed/BBX_NCR_0.gif</href>
+            <refreshMode>onInterval</refreshMode>
+            <refreshInterval>120</refreshInterval>
+          </Icon>
+          <visibility>1</visibility>
+          <LatLonBox>
+            <north>42.0516481850364</north>
+            <south>36.925030753396</south>
+            <east>-118.80700436679</east>
+            <west>-124.399677928578</west>
+          </LatLonBox>
+        </GroundOverlay>
+      </Folder>
+    </Folder>
+    <Folder>
+      <name>EYX</name>
+      <Folder>
+        <name>Short-Range Reflectivity</name>
+        <ScreenOverlay>
+          <visibility>1</visibility>
+          <Icon>
+            <refreshMode>onInterval</refreshMode>
+            <refreshInterval>120</refreshInterval>
+          </Icon>
+          <overlayXY x="1.0" y="0.5" xunits="fraction" yunits="fraction"/>
+          <screenXY x="1.0" y="0.5" xunits="fraction" yunits="fraction"/>
+          <rotationXY x="0" y="0" xunits="fraction" yunits="fraction"/>
+        </ScreenOverlay>
+        <GroundOverlay>
+          <name>Short-Range Reflectivity</name>
+          <Icon>
+            <href>https://airmanopus.net/weathercheck/images/processed/EYX_NCR_0.gif</href>
+            <refreshMode>onInterval</refreshMode>
+            <refreshInterval>120</refreshInterval>
+          </Icon>
+          <visibility>1</visibility>
+          <LatLonBox>
+            <north>37.5114958607067</north>
+            <south>32.675710948597</south>
+            <east>-114.91790052934</east>
+            <west>-120.193302251642</west>
+          </LatLonBox>
+        </GroundOverlay>
+      </Folder>
+    </Folder>
+    <Folder>
+      <name>BHX</name>
+      <Folder>
+        <name>Short-Range Reflectivity</name>
+        <ScreenOverlay>
+          <visibility>1</visibility>
+          <Icon>
+            <refreshMode>onInterval</refreshMode>
+            <refreshInterval>120</refreshInterval>
+          </Icon>
+          <overlayXY x="1.0" y="0.5" xunits="fraction" yunits="fraction"/>
+          <screenXY x="1.0" y="0.5" xunits="fraction" yunits="fraction"/>
+          <rotationXY x="0" y="0" xunits="fraction" yunits="fraction"/>
+        </ScreenOverlay>
+        <GroundOverlay>
+          <name>Short-Range Reflectivity</name>
+          <Icon>
+            <href>https://airmanopus.net/weathercheck/images/processed/BHX_NCR_0.gif</href>
+            <refreshMode>onInterval</refreshMode>
+            <refreshInterval>120</refreshInterval>
+          </Icon>
+          <visibility>1</visibility>
+          <LatLonBox>
+            <north>43.0955740079013</north>
+            <south>37.892967806729</south>
+            <east>-121.44848552357</east>
+            <west>-127.124055924849</west>
+          </LatLonBox>
+        </GroundOverlay>
+      </Folder>
+    </Folder>
+    <Folder>
+      <name>HNX</name>
+      <Folder>
+        <name>Short-Range Reflectivity</name>
+        <ScreenOverlay>
+          <visibility>1</visibility>
+          <Icon>
+            <refreshMode>onInterval</refreshMode>
+            <refreshInterval>120</refreshInterval>
+          </Icon>
+          <overlayXY x="1.0" y="0.5" xunits="fraction" yunits="fraction"/>
+          <screenXY x="1.0" y="0.5" xunits="fraction" yunits="fraction"/>
+          <rotationXY x="0" y="0" xunits="fraction" yunits="fraction"/>
+        </ScreenOverlay>
+        <GroundOverlay>
+          <name>Short-Range Reflectivity</name>
+          <Icon>
+            <href>https://airmanopus.net/weathercheck/images/processed/HNX_NCR_0.gif</href>
+            <refreshMode>onInterval</refreshMode>
+            <refreshInterval>120</refreshInterval>
+          </Icon>
+          <visibility>1</visibility>
+          <LatLonBox>
+            <north>38.7645525984331</north>
+            <south>33.854518418746</south>
+            <east>-116.94833257502</east>
+            <west>-122.304733498313</west>
+          </LatLonBox>
+        </GroundOverlay>
+      </Folder>
+    </Folder>
+    <Folder>
+      <name>VTX</name>
+      <Folder>
+        <name>Short-Range Reflectivity</name>
+        <ScreenOverlay>
+          <visibility>1</visibility>
+          <Icon>
+            <refreshMode>onInterval</refreshMode>
+            <refreshInterval>120</refreshInterval>
+          </Icon>
+          <overlayXY x="1.0" y="0.5" xunits="fraction" yunits="fraction"/>
+          <screenXY x="1.0" y="0.5" xunits="fraction" yunits="fraction"/>
+          <rotationXY x="0" y="0" xunits="fraction" yunits="fraction"/>
+        </ScreenOverlay>
+        <GroundOverlay>
+          <name>Short-Range Reflectivity</name>
+          <Icon>
+            <href>https://airmanopus.net/weathercheck/images/processed/VTX_NCR_0.gif</href>
+            <refreshMode>onInterval</refreshMode>
+            <refreshInterval>120</refreshInterval>
+          </Icon>
+          <visibility>1</visibility>
+          <LatLonBox>
+            <north>36.8055499822443</north>
+            <south>32.00972783869</south>
+            <east>-116.55873802879</east>
+            <west>-121.790544003573</west>
+          </LatLonBox>
+        </GroundOverlay>
+      </Folder>
+    </Folder>
+    <Folder>
+      <name>DAX</name>
+      <Folder>
+        <name>Short-Range Reflectivity</name>
+        <ScreenOverlay>
+          <visibility>1</visibility>
+          <Icon>
+            <refreshMode>onInterval</refreshMode>
+            <refreshInterval>120</refreshInterval>
+          </Icon>
+          <overlayXY x="1.0" y="0.5" xunits="fraction" yunits="fraction"/>
+          <screenXY x="1.0" y="0.5" xunits="fraction" yunits="fraction"/>
+          <rotationXY x="0" y="0" xunits="fraction" yunits="fraction"/>
+        </ScreenOverlay>
+        <GroundOverlay>
+          <name>Short-Range Reflectivity</name>
+          <Icon>
+            <href>https://airmanopus.net/weathercheck/images/processed/DAX_NCR_0.gif</href>
+            <refreshMode>onInterval</refreshMode>
+            <refreshInterval>120</refreshInterval>
+          </Icon>
+          <visibility>1</visibility>
+          <LatLonBox>
+            <north>41.024067882191</north>
+            <south>35.96873951305</south>
+            <east>-118.91495436235</east>
+            <west>-124.429858037775</west>
+          </LatLonBox>
+        </GroundOverlay>
+      </Folder>
+    </Folder>
+    <Folder>
+      <name>NKX</name>
+      <Folder>
+        <name>Short-Range Reflectivity</name>
+        <ScreenOverlay>
+          <visibility>1</visibility>
+          <Icon>
+            <refreshMode>onInterval</refreshMode>
+            <refreshInterval>120</refreshInterval>
+          </Icon>
+          <overlayXY x="1.0" y="0.5" xunits="fraction" yunits="fraction"/>
+          <screenXY x="1.0" y="0.5" xunits="fraction" yunits="fraction"/>
+          <rotationXY x="0" y="0" xunits="fraction" yunits="fraction"/>
+        </ScreenOverlay>
+        <GroundOverlay>
+          <name>Short-Range Reflectivity</name>
+          <Icon>
+            <href>https://airmanopus.net/weathercheck/images/processed/NKX_NCR_0.gif</href>
+            <refreshMode>onInterval</refreshMode>
+            <refreshInterval>120</refreshInterval>
+          </Icon>
+          <visibility>1</visibility>
+          <LatLonBox>
+            <north>35.2714032814719</north>
+            <south>30.558024375222</south>
+            <east>-114.46578152743</east>
+            <west>-119.60764942516</west>
+          </LatLonBox>
+        </GroundOverlay>
+      </Folder>
+    </Folder>
+    <Folder>
+      <name>MUX</name>
+      <Folder>
+        <name>Short-Range Reflectivity</name>
+        <ScreenOverlay>
+          <visibility>1</visibility>
+          <Icon>
+            <refreshMode>onInterval</refreshMode>
+            <refreshInterval>120</refreshInterval>
+          </Icon>
+          <overlayXY x="1.0" y="0.5" xunits="fraction" yunits="fraction"/>
+          <screenXY x="1.0" y="0.5" xunits="fraction" yunits="fraction"/>
+          <rotationXY x="0" y="0" xunits="fraction" yunits="fraction"/>
+        </ScreenOverlay>
+        <GroundOverlay>
+          <name>Short-Range Reflectivity</name>
+          <Icon>
+            <href>https://airmanopus.net/weathercheck/images/processed/MUX_NCR_0.gif</href>
+            <refreshMode>onInterval</refreshMode>
+            <refreshInterval>120</refreshInterval>
+          </Icon>
+          <visibility>1</visibility>
+          <LatLonBox>
+            <north>39.6325111527876</north>
+            <south>34.668460859819</south>
+            <east>-119.18482660467</east>
+            <west>-124.600154196999</west>
+          </LatLonBox>
+        </GroundOverlay>
+      </Folder>
+    </Folder>
+    <Folder>
+      <name>SOX</name>
+      <Folder>
+        <name>Short-Range Reflectivity</name>
+        <ScreenOverlay>
+          <visibility>1</visibility>
+          <Icon>
+            <refreshMode>onInterval</refreshMode>
+            <refreshInterval>120</refreshInterval>
+          </Icon>
+          <overlayXY x="1.0" y="0.5" xunits="fraction" yunits="fraction"/>
+          <screenXY x="1.0" y="0.5" xunits="fraction" yunits="fraction"/>
+          <rotationXY x="0" y="0" xunits="fraction" yunits="fraction"/>
+        </ScreenOverlay>
+        <GroundOverlay>
+          <name>Short-Range Reflectivity</name>
+          <Icon>
+            <href>https://airmanopus.net/weathercheck/images/processed/SOX_NCR_0.gif</href>
+            <refreshMode>onInterval</refreshMode>
+            <refreshInterval>120</refreshInterval>
+          </Icon>
+          <visibility>1</visibility>
+          <LatLonBox>
+            <north>36.1948131075772</north>
+            <south>31.432529782382</south>
+            <east>-115.03406315197</east>
+            <west>-120.229281324907</west>
+          </LatLonBox>
+        </GroundOverlay>
+      </Folder>
+    </Folder>
+    <Folder>
+      <name>VBX</name>
+      <Folder>
+        <name>Short-Range Reflectivity</name>
+        <ScreenOverlay>
+          <visibility>1</visibility>
+          <Icon>
+            <refreshMode>onInterval</refreshMode>
+            <refreshInterval>120</refreshInterval>
+          </Icon>
+          <overlayXY x="1.0" y="0.5" xunits="fraction" yunits="fraction"/>
+          <screenXY x="1.0" y="0.5" xunits="fraction" yunits="fraction"/>
+          <rotationXY x="0" y="0" xunits="fraction" yunits="fraction"/>
+        </ScreenOverlay>
+        <GroundOverlay>
+          <name>Short-Range Reflectivity</name>
+          <Icon>
+            <href>https://airmanopus.net/weathercheck/images/processed/VBX_NCR_0.gif</href>
+            <refreshMode>onInterval</refreshMode>
+            <refreshInterval>120</refreshInterval>
+          </Icon>
+          <visibility>1</visibility>
+          <LatLonBox>
+            <north>37.2438591696999</north>
+            <south>32.42337882302</south>
+            <east>-117.76226855191</east>
+            <west>-123.020974384655</west>
+          </LatLonBox>
+        </GroundOverlay>
+      </Folder>
+    </Folder>
+  </Document>
+</kml>

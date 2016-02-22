@@ -1,0 +1,132 @@
+@import "../mixins";
+@import "../variables";
+
+.pick-list {
+  margin-bottom: @line-height-base;
+  display: block;
+  padding-left : 0;
+  padding-right : 0;
+  outline : none;
+
+  .header {
+    font-family: @headings-font-family;
+    font-weight: @headings-font-weight;
+    line-height: @headings-line-height;
+    font-size: ceil(@font-size-base * 1.10);
+    margin-top: @line-height-computed;
+    margin-bottom: (@line-height-computed / 2);
+  }
+
+  .ordering-list .header {
+    @media (min-width: @screen-sm) {
+      display: none;
+    }
+  }
+
+  .target-wrapper .header {
+    @media (max-width: @screen-xs-max) {
+      padding-top: 35px;
+    }
+  }
+
+  .sub-header-row {
+    @media (max-width: @screen-xs-max) {
+      display: none;
+    }
+  }
+
+  .button-column {
+    text-align: center;
+    z-index: 1;
+
+    @media (min-width: @screen-sm) {
+      height: @list-min-height;
+      line-height: @list-min-height;
+    }
+  }
+
+  .btn-group-picklist {  // a responsize btn-group
+    > .btn {
+      .border-radius(0);
+      padding: 0;
+      text-align: center;
+    }
+
+    .labeled {
+      text-align: left;
+      padding-left: 0.5em;
+      span {
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+      }
+    }
+
+    @media (min-width: @screen-sm) {
+      min-width: @size-clickable;
+      display: inline-block;
+      vertical-align: middle;
+
+      > .btn {
+        height: @size-clickable;
+      }
+
+      > .btn:first-child {
+        .border-top-radius(@border-radius-base);
+      }
+
+      > .btn:last-child {
+        .border-bottom-radius(@border-radius-base);
+      }
+
+      .icon-left-all:before {
+        content: @double-angle-left;
+      }
+
+      .icon-left:before {
+        content: @angle-left;
+      }
+
+      .icon-right:before {
+        content: @angle-right;
+      }
+
+      .icon-right-all:before {
+        content: @double-angle-right;
+      }
+    }
+
+    @media (max-width: @screen-xs-max) {
+      max-width: none;
+
+      > .btn {
+        height: @size-touchable;
+        max-width: none;
+
+      }
+
+      > .btn:first-child {
+        .border-left-radius(@border-radius-base);
+      }
+
+      > .btn:last-child {
+        .border-right-radius(@border-radius-base);
+      }
+
+      .icon-left-all:before {
+        content: @double-angle-up;
+      }
+
+      .icon-left:before {
+        content: @angle-up;
+      }
+
+      .icon-right:before {
+        content: @angle-down;
+      }
+
+      .icon-right-all:before {
+        content: @double-angle-down;
+      }
+    }
+  }
+}

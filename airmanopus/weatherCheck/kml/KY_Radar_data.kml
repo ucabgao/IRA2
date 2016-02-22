@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="https://earth.google.com/kml/2.0">
+  <Document>
+    <name>NWS Radar Images</name>
+    <open>1</open>
+    <Folder>
+      <name>National Weather Service</name>
+      <ScreenOverlay>
+        <name>National Weather Service</name>
+        <description>National Weather Service Doppler Radar RIDGE Imagery https://radar.weather.gov</description>
+        <visibility>1</visibility>
+        <Icon>
+          
+        </Icon>
+        <overlayXY x="0" y="1" xunits="fraction" yunits="fraction"/>
+        <screenXY x="0" y="1" xunits="fraction" yunits="fraction"/>
+        <rotationXY x="0" y="0" xunits="fraction" yunits="fraction"/>
+        <size x="0" y="0" xunits="fraction" yunits="fraction"/>
+      </ScreenOverlay>
+      <ScreenOverlay>
+        <name>NOAA</name>
+        <description>National Oceanic and Atomospheric Administration  https://www.noaa.gov</description>
+        <visibility>1</visibility>
+        <Icon>
+          
+        </Icon>
+        <overlayXY x=".2" y="1" xunits="fraction" yunits="fraction"/>
+        <screenXY x=".2" y="1" xunits="fraction" yunits="fraction"/>
+        <rotationXY x="0" y="0" xunits="fraction" yunits="fraction"/>
+        <size x="0" y="0" xunits="fraction" yunits="fraction"/>
+      </ScreenOverlay>
+    </Folder>
+    <Folder>
+      <name>HPX</name>
+      <Folder>
+        <name>Short-Range Reflectivity</name>
+        <ScreenOverlay>
+          <visibility>1</visibility>
+          <Icon>
+            <refreshMode>onInterval</refreshMode>
+            <refreshInterval>120</refreshInterval>
+          </Icon>
+          <overlayXY x="1.0" y="0.5" xunits="fraction" yunits="fraction"/>
+          <screenXY x="1.0" y="0.5" xunits="fraction" yunits="fraction"/>
+          <rotationXY x="0" y="0" xunits="fraction" yunits="fraction"/>
+        </ScreenOverlay>
+        <GroundOverlay>
+          <name>Short-Range Reflectivity</name>
+          <Icon>
+            <href>https://airmanopus.net/weathercheck/images/processed/HPX_NCR_0.gif</href>
+            <refreshMode>onInterval</refreshMode>
+            <refreshInterval>120</refreshInterval>
+          </Icon>
+          <visibility>1</visibility>
+          <LatLonBox>
+            <north>39.2009714854847</north>
+            <south>34.264051319469</south>
+            <east>-84.587650007768</east>
+            <west>-89.973381097967</west>
+          </LatLonBox>
+        </GroundOverlay>
+      </Folder>
+    </Folder>
+    <Folder>
+      <name>JKL</name>
+      <Folder>
+        <name>Short-Range Reflectivity</name>
+        <ScreenOverlay>
+          <visibility>1</visibility>
+          <Icon>
+            <refreshMode>onInterval</refreshMode>
+            <refreshInterval>120</refreshInterval>
+          </Icon>
+          <overlayXY x="1.0" y="0.5" xunits="fraction" yunits="fraction"/>
+          <screenXY x="1.0" y="0.5" xunits="fraction" yunits="fraction"/>
+          <rotationXY x="0" y="0" xunits="fraction" yunits="fraction"/>
+        </ScreenOverlay>
+        <GroundOverlay>
+          <name>Short-Range Reflectivity</name>
+          <Icon>
+            <href>https://airmanopus.net/weathercheck/images/processed/JKL_NCR_0.gif</href>
+            <refreshMode>onInterval</refreshMode>
+            <refreshInterval>120</refreshInterval>
+          </Icon>
+          <visibility>1</visibility>
+          <LatLonBox>
+            <north>40.082935777144</north>
+            <south>35.089985337691</south>
+            <east>-80.585036981756</east>
+            <west>-86.031892006614</west>
+          </LatLonBox>
+        </GroundOverlay>
+      </Folder>
+    </Folder>
+    <Folder>
+      <name>LVX</name>
+      <Folder>
+        <name>Short-Range Reflectivity</name>
+        <ScreenOverlay>
+          <visibility>1</visibility>
+          <Icon>
+            <refreshMode>onInterval</refreshMode>
+            <refreshInterval>120</refreshInterval>
+          </Icon>
+          <overlayXY x="1.0" y="0.5" xunits="fraction" yunits="fraction"/>
+          <screenXY x="1.0" y="0.5" xunits="fraction" yunits="fraction"/>
+          <rotationXY x="0" y="0" xunits="fraction" yunits="fraction"/>
+        </ScreenOverlay>
+        <GroundOverlay>
+          <name>Short-Range Reflectivity</name>
+          <Icon>
+            <href>https://airmanopus.net/weathercheck/images/processed/LVX_NCR_0.gif</href>
+            <refreshMode>onInterval</refreshMode>
+            <refreshInterval>120</refreshInterval>
+          </Icon>
+          <visibility>1</visibility>
+          <LatLonBox>
+            <north>40.4799038835005</north>
+            <south>35.460967726274</south>
+            <east>-83.201836034601</east>
+            <west>-88.6770391152122</west>
+          </LatLonBox>
+        </GroundOverlay>
+      </Folder>
+    </Folder>
+    <Folder>
+      <name>PAH</name>
+      <Folder>
+        <name>Short-Range Reflectivity</name>
+        <ScreenOverlay>
+          <visibility>1</visibility>
+          <Icon>
+            <refreshMode>onInterval</refreshMode>
+            <refreshInterval>120</refreshInterval>
+          </Icon>
+          <overlayXY x="1.0" y="0.5" xunits="fraction" yunits="fraction"/>
+          <screenXY x="1.0" y="0.5" xunits="fraction" yunits="fraction"/>
+          <rotationXY x="0" y="0" xunits="fraction" yunits="fraction"/>
+        </ScreenOverlay>
+        <GroundOverlay>
+          <name>Short-Range Reflectivity</name>
+          <Icon>
+            <href>https://airmanopus.net/weathercheck/images/processed/PAH_NCR_0.gif</href>
+            <refreshMode>onInterval</refreshMode>
+            <refreshInterval>120</refreshInterval>
+          </Icon>
+          <visibility>1</visibility>
+          <LatLonBox>
+            <north>39.5426725769043</north>
+            <south>34.584313812256</south>
+            <east>-86.062936248779</east>
+            <west>-91.472054901123</west>
+          </LatLonBox>
+        </GroundOverlay>
+      </Folder>
+    </Folder>
+  </Document>
+</kml>

@@ -1,0 +1,20 @@
+{
+  "telegram": {
+    "botToken": ""
+  },
+  "bot": {
+    "password": "",
+    "owner": 0,
+    "notifyId": 0,
+    "maxResults": 15
+  },
+  "sonarr": {
+    "hostname": "",
+    "apiKey": "",
+    "port": 8989,
+    "urlBase": "",
+    "ssl": false,
+    "username": "",
+    "password": ""
+  }
+}

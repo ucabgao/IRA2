@@ -1,0 +1,13 @@
+<!ENTITY verticaltoolbar.toolbarname "Vertical Toolbar">
+<!ENTITY verticaltoolbar.options.label "Možnosti &verticaltoolbar.toolbarname;…">
+<!ENTITY verticaltoolbar.options.accesskey "V">
+<!ENTITY verticaltoolbar.savepage "Uložit stránku">
+<!ENTITY verticaltoolbar.sendlink "Odeslat stránku">
+<!ENTITY verticaltoolbar.privatebrowsing "Anonymní prohlížení">
+<!ENTITY verticaltoolbar.button.label "Vždy zobrazit">
+<!ENTITY verticaltoolbar.button.tooltiptext "Vždy zobrazit Vertical Toolbar">
+<!-- For the backward compatibility, leave them empty. -->
+<!ENTITY sendPageCmd.label "">
+<!-- For the compatibility with Firefox 20 or later. -->
+<!ENTITY webConsoleCmd.label "Webová konzola">
+<!ENTITY inspectMenu.label "Prozkoumat stránku">

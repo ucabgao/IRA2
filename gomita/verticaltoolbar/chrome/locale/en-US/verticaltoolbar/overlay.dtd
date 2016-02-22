@@ -1,0 +1,11 @@
+<!ENTITY verticaltoolbar.toolbarname "Vertical Toolbar">
+<!ENTITY verticaltoolbar.options.label "&verticaltoolbar.toolbarname; Options…">
+<!ENTITY verticaltoolbar.options.accesskey "V">
+<!ENTITY verticaltoolbar.savepage "Save Page">
+<!ENTITY verticaltoolbar.sendlink "Send Link">
+<!ENTITY verticaltoolbar.privatebrowsing "Private Browsing">
+<!ENTITY verticaltoolbar.button.label "Always Show">
+<!ENTITY verticaltoolbar.button.tooltiptext "Always show Vertical Toolbar">
+<!-- For the compatibility with Firefox 20 or later. -->
+<!ENTITY webConsoleCmd.label "Web Console">
+<!ENTITY inspectMenu.label "Inspector">

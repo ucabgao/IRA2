@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+		<Document>
+				<name>NWS Radar Images</name>
+				<open>1</open>
+				<Folder>
+						<name>POE</name>
+				<Folder>
+						<name>Short-Range Reflectivity</name>
+						<GroundOverlay>
+								<name>Short-Range Reflectivity</name>
+								<Icon>
+										<href>https://www.airmanopus.net/weathercheck/images/processed/POE_NCR_0.gif</href>
+										<refreshMode>onInterval</refreshMode>
+										<refreshInterval>120</refreshInterval>
+								</Icon>
+								<visibility>1</visibility>
+								<LatLonBox>
+										<north>33.4625574354692</north>
+										<south>28.839037538008</south>
+										<east>-90.449874780828</east>
+										<west>-95.4937146689675</west>
+								</LatLonBox>
+						</GroundOverlay>
+				</Folder>
+			</Folder>
+			<Folder>
+					<name>LCH</name>
+			<Folder>
+					<name>Short-Range Reflectivity</name>
+					<GroundOverlay>
+						<name>Short-Range Reflectivity</name>
+						<Icon>
+								<href>https://www.airmanopus.net/weathercheck/images/processed/LCH_NCR_0.gif</href>
+								<refreshMode>onInterval</refreshMode>
+								<refreshInterval>120</refreshInterval>
+						</Icon>
+						<visibility>1</visibility>
+						<LatLonBox>
+								<north>32.4081413823908</north>
+								<south>27.833541162664</south>
+								<east>-90.716608207009</east>
+								<west>-95.7070811739835</west>
+						</LatLonBox>
+					</GroundOverlay>
+			</Folder>
+		</Folder>
+		<Folder>
+				<name>LIX</name>
+				<Folder>
+						<name>Short-Range Reflectivity</name>
+						<GroundOverlay>
+								<name>Short-Range Reflectivity</name>
+								<Icon>
+										<href>https://www.airmanopus.net/weathercheck/images/processed/LIX_NCR_0.gif</href>
+										<refreshMode>onInterval</refreshMode>
+										<refreshInterval>120</refreshInterval>
+								</Icon>
+								<visibility>1</visibility>
+								<LatLonBox>
+										<north>32.6250609033758</north>
+										<south>28.040603505915</south>
+										<east>-87.320216133811</east>
+										<west>-92.3214423855868</west>
+								</LatLonBox>
+						</GroundOverlay>
+				</Folder>
+		</Folder>
+		<Folder>
+				<name>SHV</name>
+				<Folder>
+						<name>Short-Range Reflectivity</name>
+						<GroundOverlay>
+								<name>Short-Range Reflectivity</name>
+								<Icon>
+										<href>https://www.airmanopus.net/weathercheck/images/processed/SHV_NCR_0.gif</href>
+										<refreshMode>onInterval</refreshMode>
+										<refreshInterval>120</refreshInterval>
+								</Icon>
+								<visibility>1</visibility>
+								<LatLonBox>
+										<north>34.7911209383878</north>
+										<south>30.102354458896</south>
+										<east>-91.279231914173</east>
+										<west>-96.3942498918013</west>
+								</LatLonBox>
+						</GroundOverlay>
+				</Folder>
+		</Folder>
+</Document>
+</kml>

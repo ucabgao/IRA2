@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Basic Page Needs 
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <title>Beermap</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/easy-button.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Script
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="js/easy-button.js"></script>
+    <script src='js/biere.json'></script>
+    <script src='js/canvasjs.min.js'></script>
+    <script src='js/apikey.js'></script>
+    <script src='js/countries.geo.json'></script>
+
+    <!-- Favicon
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+</head>
+<body>
+
+    <!-- Primary Page Layout
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+    <div id="map"></div>
+
+    <section class="modal--show" id="modal-text" tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true">
+        <div class="modal-inner">
+            <header id="modal-label"><!-- Header --><i class="fa fa-bar-chart">&nbsp;</i>More stats</header>
+            <div class="modal-content"><!-- The modals content -->
+                <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+                <div id="sum"></div>
+            </div>
+        </div>
+        <a href="#!" class="modal-close" title="Close this modal" data-close="Close" data-dismiss="modal">?</a>
+    </section>
+    <a id="modal-link" href="#modal-text"></a>
+    
+    <script src='js/main.js'></script>
+    
+    <!-- End Document
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

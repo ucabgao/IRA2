@@ -1,0 +1,119 @@
+extend layout
+
+block content
+  .row
+    .col-md-12
+      h3 Solo MMR Distribution 
+        small (#{mmr ? mmr.sum.count : 0} players)
+        br
+        small Includes players displaying MMR on profile and sharing public match data (Sign-in not required)
+      #mmr
+  .row
+    .col-md-6
+      h3 Game Mode 
+      #game_mode
+    .col-md-6
+      h3 Lobby Type 
+      #lobby_type
+  .row
+    .col-md-12
+      h3 Average MMR by Country
+      table.table.table-striped.table-condensed
+        tr
+          th #
+          th Country
+          th Players
+          th MMR
+        if country_mmr
+          each row, i in country_mmr.rows
+            tr
+              td=i+1
+              td
+                span.flag-icon(class="flag-icon-"+row.loccountrycode.toLowerCase())            
+                =row.common
+              td=row.count
+              td=row.avg
+
+append footer_assets
+  script.
+    var mmr = !{JSON.stringify(mmr ? mmr.rows : [])};
+    var count = !{mmr ? mmr.sum.count : 0};
+    var counts = mmr.map(function(d){return d.count;});
+    var names = mmr.map(function(d){return d.bin_name});
+    var pcts = mmr.map(function(d){return d.cumulative_sum/count*100;});
+    var max = Math.max.apply(null, counts);
+    var counts2 = [];
+    var options = {
+        bindto: "#mmr",
+        size: {height: 500},
+        data: {
+            x: 'MMR',
+            columns: [
+            ['MMR'].concat(names),
+            ['Players'].concat(counts),
+            ['Percentile'].concat(pcts)
+            ],
+            type: "bar",
+            types: {
+            "Percentile": "spline"
+            },
+            axes: {
+            "Players":"y",
+            "Percentile":"y2"
+            },
+            groups: [
+            ['Players','Percentile']
+            ]
+        },
+        bar: {
+            width: {
+                ratio: 0.8
+            }
+        },
+        axis: {
+            x: {
+                label: "MMR"
+            },
+            y: {
+                label: "# Players"
+            },
+            y2: {
+                show:true,
+                label: "Percentile"
+            }
+        },
+        tooltip: {
+            format: {
+                value: function(value, ratio, id, ind) {
+                    if (id==="Percentile"){
+                        return value.toFixed(2);
+                    }
+                    return value;
+                }
+            }
+        }
+    };
+    c3.generate(options);
+    var game_mode = !{JSON.stringify(game_mode ? game_mode.rows : [])};
+    var lobby_type = !{JSON.stringify(lobby_type ? lobby_type.rows : [])};
+    c3.generate({
+        bindto: "#game_mode",
+        data: {
+            columns: game_mode.map(function(r){
+                return [r.display_name, r.count];
+            }),
+            type: 'pie'
+        },
+        color: {
+            pattern: ['#1f77b4', '#aec7e8', '#ff7f0e', '#ffbb78', '#2ca02c', '#98df8a', '#d62728', '#ff9896', '#9467bd', '#c5b0d5', '#8c564b', '#c49c94', '#e377c2', '#f7b6d2', '#7f7f7f', '#c7c7c7', '#bcbd22', '#dbdb8d', '#17becf', '#9edae5']
+        }
+    });
+    c3.generate({
+        bindto: "#lobby_type",
+        data: {
+            columns: lobby_type.map(function(r){
+                return [r.display_name, r.count];
+            }),
+            type: 'pie'
+        }
+    });

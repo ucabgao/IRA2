@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<title>Compiler</title>
+<link rel="stylesheet" type="text/css" href="styles/main.css">
+<script>
+function swapVisibility(visItem) {
+    for(var i=0; i<document.getElementsByClassName('outDisp').length;i++)
+        document.getElementsByClassName('outDisp')[i].style.display = 'none';
+    document.getElementById(visItem).style.display = 'block';
+}
+</script>
+</head>
+<body>
+<div class="container">
+    <div class="left-panel">
+        <h3>Code</h3>
+        <textarea id="codebox" onfocus="if(this.value=='Your code here...') this.value=''">Your code here...</textarea>
+        <button onclick="console.log(CorduleJS.pushRequest('compile',document.getElementById('codebox').value));">Compile</button> 
+        <a href="testprograms.txt" target="_blank">Test Programs</a>
+        <a href="Compilers-Testing-Writeup.txt" target="_blank">More Test Programs (with results)</a>
+    </div>
+    <div class="right-panel">
+        <h3 class="view">View</h3> 
+        <select onchange="swapVisibility(this.value);">
+            <option value="output">Output</option>
+            <option>CST</option>
+            <option>AST</option>
+        </select>
+        <input type="checkbox" onchange="CorduleJS.pushRequest('verbose',this);" checked> Verbose?
+        <div id="output" class="outDisp" style="display: block;"></div>
+        <div id="CST" class="outDisp"></div>
+        <div id="AST" class="outDisp"></div>
+    </div>
+</div>
+<script src="js/CorduleJS.js"></script>
+<script src="js/OutputBuffer.js"></script>
+<script src="js/Compiler.js"></script>
+<script src="js/TreeNode.js"></script>
+<!-- <script src="js/SymbolTable.js"></script> -->
+<script src="js/Tokens.js"></script>
+<script src="js/Lexer.js"></script>
+<script src="js/Parser.js"></script>
+<script src="js/SymanticAnalysis.js"></script>
+</body>
+</html>

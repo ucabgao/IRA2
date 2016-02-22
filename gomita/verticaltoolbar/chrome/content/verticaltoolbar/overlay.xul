@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://verticaltoolbar/skin/overlay.css" type="text/css"?>
+
+<!DOCTYPE overlay [
+	<!ENTITY % overlayDTD SYSTEM "chrome://verticaltoolbar/locale/overlay.dtd">
+	%overlayDTD;
+	<!ENTITY % browserDTD SYSTEM "chrome://browser/locale/browser.dtd" >
+	%browserDTD;
+]>
+
+<overlay id="verticaltoolbarOverlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<script type="application/x-javascript" src="chrome://verticaltoolbar/content/overlay.js" />
+
+	<hbox id="browser">
+		<toolbox id="vertical-toolbox" insertbefore="sidebar-box" orient="horizontal"
+		         onmouseover="VerticalToolbar.handleEvent(event);"
+		         onmouseout="VerticalToolbar.handleEvent(event);"
+		         ondragenter="VerticalToolbar.handleEvent(event);"
+		         ondragleave="VerticalToolbar.handleEvent(event);">
+			<toolbar id="vertical-toolbar" class="chromeclass-toolbar"
+			         toolbarname="&verticaltoolbar.toolbarname;"
+			         context="toolbar-context-menu"
+			         fullscreentoolbar="true"
+			         toolboxid="navigator-toolbox" customizable="true"
+			         mode="icons" persist="mode flatbutton"
+			         iconsize="small" defaulticonsize="small" lockiconsize="true"
+			         defaultset="tabview-button,history-button,bookmarks-button,verticaltoolbar-addons-button,spring,verticaltoolbar-offline-button,fullscreen-button,print-button,sync-button"
+			         orient="vertical" flex="1" />
+		</toolbox>
+		<splitter id="sidebar-splitter" onmouseup="VerticalToolbar.handleEvent(event);" />
+	</hbox>
+
+	<menupopup id="toolbar-context-menu">
+		<menuitem id="verticaltoolbar-context-menu"
+		          label="&verticaltoolbar.options.label;"
+		          accesskey="&verticaltoolbar.options.accesskey;"
+		          oncommand="VerticalToolbar.config();" />
+	</menupopup>
+
+	<toolbarpalette id="BrowserToolbarPalette">
+		<toolbarbutton id="verticaltoolbar-addons-button"
+		               class="toolbarbutton-1 chromeclass-toolbar-additional"
+		               label="&addons.label;" tooltiptext="&addons.label;"
+		               command="Tools:Addons" />
+		<toolbarbutton id="verticaltoolbar-error-console-button"
+		               class="toolbarbutton-1 chromeclass-toolbar-additional"
+		               label="&errorConsoleCmd.label;" tooltiptext="&errorConsoleCmd.label;"
+		               oncommand="toJavaScriptConsole();" />
+		<toolbarbutton id="verticaltoolbar-web-console-button"
+		               class="toolbarbutton-1 chromeclass-toolbar-additional"
+		               label="&webConsoleCmd.label;" tooltiptext="&webConsoleCmd.label;"
+		               command="Tools:webconsole" />
+		<toolbarbutton id="verticaltoolbar-page-info-button"
+		               class="toolbarbutton-1 chromeclass-toolbar-additional"
+		               label="&pageInfoCmd.label;" tooltiptext="&pageInfoCmd.label;"
+		               command="View:PageInfo" />
+		<toolbarbutton id="verticaltoolbar-inspect-button"
+		               class="toolbarbutton-1 chromeclass-toolbar-additional"
+		               label="&inspectMenu.label;" tooltiptext="&inspectMenu.label;"
+		               command="Tools:inspector" />
+		<toolbarbutton id="verticaltoolbar-view-source-button"
+		               class="toolbarbutton-1 chromeclass-toolbar-additional"
+		               label="&pageSourceCmd.label;" tooltiptext="&viewPageSourceCmd.label;"
+		               command="View:PageSource" />
+		<toolbarbutton id="verticaltoolbar-save-page-button"
+		               class="toolbarbutton-1 chromeclass-toolbar-additional"
+		               label="&verticaltoolbar.savepage;" tooltiptext="&savePageCmd.label;"
+		               command="Browser:SavePage" />
+		<toolbarbutton id="verticaltoolbar-send-link-button"
+		               class="toolbarbutton-1 chromeclass-toolbar-additional"
+		               label="&verticaltoolbar.sendlink;" tooltiptext="&emailPageCmd.label;"
+		               command="Browser:SendLink" />
+		<toolbarbutton id="verticaltoolbar-print-preview-button"
+		               class="toolbarbutton-1 chromeclass-toolbar-additional"
+		               label="&printPreviewCmd.label;" tooltiptext="&printPreviewCmd.label;"
+		               command="cmd_printPreview" />
+		<toolbarbutton id="verticaltoolbar-offline-button" type="checkbox"
+		               class="toolbarbutton-1 chromeclass-toolbar-additional"
+		               label="&goOfflineCmd.label;" tooltiptext="&goOfflineCmd.label;"
+		               observes="workOfflineMenuitemState"
+		               oncommand="BrowserOffline.toggleOfflineStatus();" />
+		<toolbarbutton id="verticaltoolbar-private-browsing-button"
+		               class="toolbarbutton-1 chromeclass-toolbar-additional"
+		               label="&verticaltoolbar.privatebrowsing;"
+		               tooltiptext="&verticaltoolbar.privatebrowsing;"
+		               command="Tools:PrivateBrowsing" />
+		<toolbarbutton id="verticaltoolbar-button"
+		               class="toolbarbutton-1 chromeclass-toolbar-additional"
+		               type="checkbox" persist="checked"
+		               label="&verticaltoolbar.button.label;"
+		               tooltiptext="&verticaltoolbar.button.tooltiptext;"
+		               oncommand="VerticalToolbar.loadPrefs(window.fullScreen);" />
+		<toolbarspring id="verticaltoolbar-spring" flex="1000" />
+		<toolbarbutton id="verticaltoolbar-bookmarks-button"
+		               class="toolbarbutton-1 chromeclass-toolbar-additional"
+		               label="&bookmarksButton.label;"
+		               title="&bookmarksButton.label; &viewSidebarMenu.label;"
+		               tooltiptext="&bookmarksButton.label; &viewSidebarMenu.label;"
+		               command="viewBookmarksSidebar" />
+		<toolbarbutton id="verticaltoolbar-history-button"
+		               class="toolbarbutton-1 chromeclass-toolbar-additional"
+		               label="&historyButton.label;"
+		               title="&historyButton.label; &viewSidebarMenu.label;"
+		               tooltiptext="&historyButton.label; &viewSidebarMenu.label;"
+		               command="viewHistorySidebar" />
+	</toolbarpalette>
+
+</overlay>

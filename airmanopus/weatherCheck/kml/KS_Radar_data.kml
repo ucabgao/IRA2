@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<kml xmlns="http://earth.google.com/kml/2.0">
+			<Document>
+					<name>NWS Radar Images</name>
+					<open>1</open>
+				<Folder>
+						<name>DDC</name>
+							<Folder>
+									<name>Short-Range Reflectivity</name>
+									<GroundOverlay>
+											<name>Short-Range Reflectivity</name>
+											<Icon>
+													<href>https://www.airmanopus.net/weathercheck/images/processed/DDC_NCR_0.gif</href>
+													<refreshMode>onInterval</refreshMode>
+													<refreshInterval>120</refreshInterval>
+											</Icon>
+											<visibility>1</visibility>
+											<LatLonBox>
+													<north>40.2586494029652</north>
+													<south>35.254254871715</south>
+													<east>-97.233783125444</east>
+													<west>-102.69312261408</west>
+											</LatLonBox>
+									</GroundOverlay>
+							</Folder>
+					</Folder>
+					<Folder>
+							<name>GLD</name>
+					<Folder>
+							<name>Short-Range Reflectivity</name>
+							<GroundOverlay>
+									<name>Short-Range Reflectivity</name>
+									<Icon>
+											<href>https://www.airmanopus.net/weathercheck/images/processed/GLD_NCR_0.gif</href>
+											<refreshMode>onInterval</refreshMode>
+											<refreshInterval>120</refreshInterval>
+									</Icon>
+									<visibility>1</visibility>
+									<LatLonBox>
+											<north>41.9199961991744</north>
+											<south>36.802701887651</south>
+											<east>-98.904093419856</east>
+											<west>-104.486596305154</west>
+									</LatLonBox>
+							</GroundOverlay>
+				</Folder>
+		</Folder>
+		<Folder>
+				<name>TWX</name>
+				<Folder>
+						<name>Short-Range Reflectivity</name>
+						<GroundOverlay>
+								<name>Short-Range Reflectivity</name>
+								<Icon>
+										<href>https://www.airmanopus.net/weathercheck/images/processed/TWX_NCR_0.gif</href>
+										<refreshMode>onInterval</refreshMode>
+										<refreshInterval>120</refreshInterval>
+								</Icon>
+								<visibility>1</visibility>
+								<LatLonBox>
+										<north>41.5376390907981</north>
+										<south>36.44710869529</south>
+										<east>-93.450721560391</east>
+										<west>-99.0040274464</west>
+								</LatLonBox>
+						</GroundOverlay>
+				</Folder>
+		</Folder>
+		<Folder>
+				<name>ICT</name>
+				<Folder>
+						<name>Short-Range Reflectivity</name>
+						<GroundOverlay>
+								<name>Short-Range Reflectivity</name>
+								<Icon>
+										<href>https://www.airmanopus.net/weathercheck/images/processed/ICT_NCR_0.gif</href>
+										<refreshMode>onInterval</refreshMode>
+										<refreshInterval>120</refreshInterval>
+								</Icon>
+								<visibility>1</visibility>
+								<LatLonBox>
+										<north>40.1480526178533</north>
+										<south>35.150860235041</south>
+										<east>-94.712716591575</east>
+										<west>-100.164199191007</west>
+								</LatLonBox>
+						</GroundOverlay>
+				</Folder>
+		</Folder>
+</Document>
+</kml>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Auditorias</title>
+    <link rel="icon" type="image/png" href="images/audit-icon.png">
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile.css">
+    <link rel="stylesheet" type="text/css" href="css/fixes.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile.js"></script>
+    <script type="text/javascript" src="js/moment.js"></script>
+    <script type="text/javascript" src="js/audits.js"></script>
+    <script type="text/javascript" src="js/darktheme.js"></script>
+</head>
+<body>
+
+	<!-- Login Section -->
+	<div data-role="page" id="login">
+		<div data-role="content">
+			<div id="logo-wrapper">
+				<img src="images/audit-logo.png" id="l-logo">
+			</div>
+			<div class="content-box">
+				<div id="logo-theme-a">
+					<center>
+						<img src="images/audit-logo.png" id="l-logo">
+					</center>
+				</div>
+				<p>Enter a valid username and password to log in.</p>
+				<input type="text" placeholder="Username">
+				<input type="password" placeholder="Password">
+				<a href="#main" data-role="button" data-transition="pop">Login</a>
+			</div>
+			<div id="theme-picker">
+				<div  class="theme" > <h4 >Dark Theme</h4></div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Main view -->
+	<div data-role="page" id="main">
+		<div data-role="header" data-theme="b">
+			<h3>Audits</h3>
+		</div>
+		<div data-role="content">
+			<div class="content-box">
+				<div id="history-panel" class="panel">
+					<p>You can see the list of current and past audits from the History view.</p>
+					<a href="#history" data-role="button" data-transition="fade" data-icon="grid">View history</a>
+				</div>
+				<div id="create-panel" class="panel">
+					<p>To create a new audit, click on the next button to fill up the new audit's info.</p>
+					<a href="#create"  data-role="button" data-rel="dialog" data-transition="pop" data-icon="edit">New audit</a>
+				</div>
+				<div data-role="collapsible" id="n-panel">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Page for new audit (shown as dialog) -->
+	<div data-role="page" id="create">
+		<div data-role="header" data-theme="b">
+			<h3>New audit</h3>
+		</div>
+		<div data-role="content">
+			<p>Enter the headquarter, building name, the floor and the room name to create a new audit.</p>
+			<fieldset data-role="controlgroup" data-type="vertical">
+				<select id="n-headquarter" name="n-headquarter">
+					<option>Select headquarter</option>
+				</select>
+				<select id="n-building" name="n-building" disabled="disabled">
+					<option>Building</option>
+				</select>
+				<select id="n-room" name="n-room" disabled="disabled">
+					<option>Room</option>
+				</select>
+			</fieldset>
+			<button href="#audit" data-role="button" id="n-create" data-role="button" disabled="disabled" data-icon="check">Create audit</button>
+		</div>
+	</div>
+
+	<!-- Audit view -->
+	<div data-role="page" id="audit">
+		<div data-role="header" data-theme="b">
+			<h3>Audit</h3>
+		</div>
+		<div data-role="content">
+			<div class="content-box">
+				<h3 id="audit-info"></h3>
+				<h4>Asset list</h4>
+				<p>This is the list of assets contained within this audit.</p>
+				<div data-role="collapsible-set" id="asset-list">
+				</div>
+				<script id="asset-item-template" type="text/html">
+					<div data-role="collapsible" data-id="{{id}}" class="asset-container" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+						<h3>Asset #{{id}}</h3>
+						<fieldset data-role="controlgroup">
+					    	<label for="asset-inroom-{{id}}">Asset in room</label>
+					    	<input type="checkbox" checked="true" id="asset-inroom-{{id}}" name="asset-inroom-{{id}}" class="inroom">
+				    	</fieldset>
+				    	<div data-role="fieldcontain">
+					    	<label for="asset-score-{{id}}">Rating</label>
+							<input type="range" value="{{score}}" min="1" max="10" id="asset-score-{{id}}" name="asset-score-{{id}}" class="score">
+						</div>
+						<div data-role="fieldcontain">
+							<label for="asset-state-{{id}}">Asset state</label>
+							<select name="flip-1" data-role="slider" id="asset-state-{{id}}" name="asset-state-{{id}}" class="state">
+						        <option value="0">Bad</option>
+						        <option value="1">Good</option>
+							</select>
+						</div>
+						<div data-role="fieldcontain">
+							<label for="asset-comment-{{id}}">Leave a comment about this asset</label>
+							<input type="text" name="asset-comment-{{id}}" id="asset-comment-{{id}}" placeholder="Comment" class="comment"/>
+						</div>
+					</div>
+				</script>
+				<label for="audit-comment">Leave a comment for this audit</label>
+				<textarea name="audit-comment" id="audit-comment"></textarea>
+				<div id="audit-complete-action" data-role="controlgroup" data-type="horizontal" data-mini="true">
+					<a href="#history" data-role="button" id="n-complete" data-icon="check">Complete</a>
+					<a href="#history" data-role="button" id="n-save"     data-icon="back">Save and return</a>
+					<a href="#history" data-role="button" id="n-delete"   data-icon="alert">Delete</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- History view -->
+	<div data-role="page" id="history">
+		<div data-role="header" data-theme="b">
+			<h3>History</h3>
+		</div>
+		<div data-role="content">
+			<div class="content-box">
+				<p>This is the list of current and past </p>
+				<p id="mobile-gesture-guide"/>
+				<ul data-role="listview" data-inset="true" id="h-list" data-count-theme="d" data-divider-theme="e" data-filter="true" data-filter-placeholder="Search audits..." class="touch" data-split-icon="delete" data-split-theme="d">
+				</ul>
+				<script id="history-list-divider" type="text/template">
+					<li data-role="list-divider" id="{{id}}">{{text}}</li>
+				</script>
+				<a href="#main" data-role="button" data-transition="fade" data-mini="true" data-icon="home">Back to main</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

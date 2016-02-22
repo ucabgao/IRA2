@@ -1,0 +1,12 @@
+lib
+node_modules
+test-results.xml
+coverage
+.grunt
+dist
+
+# IDEs
+.idea
+
+# test output
+libpeerconnection.log

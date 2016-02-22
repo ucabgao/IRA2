@@ -1,0 +1,118 @@
+{
+  "name": "slot",
+  "version": "0.11.2",
+  "homepage": "https://github.com/2gis/slot",
+  "repository": "git@github.com:2gis/slot.git",
+  "bugs": "https://github.com/2gis/slot/issues",
+  "description": "Flexible framework for complex JS applications",
+  "contributors": [
+    {
+      "name": "Alexander Biryukov",
+      "email": "a.biryukov@2gis.ru",
+      "url": "https://github.com/fobos"
+    },
+    {
+      "name": "Andrey Rublev",
+      "email": "a.rublev@2gis.ru",
+      "url": "https://github.com/anru"
+    },
+    {
+      "name": "Dmitry Kuznetsov",
+      "email": "dm.kuznecov@2gis.ru",
+      "url": "https://github.com/diokuz"
+    },
+    {
+      "name": "Alexey Fedosov",
+      "email": "a.fedosov@2gis.ru"
+    },
+    {
+      "name": "Oleg Vorobyov",
+      "email": "o.vorobyov@2Gis.ru"
+    },
+    {
+      "name": "Olga Vostretsova",
+      "email": "o.vostretsova@2gis.ru"
+    }
+  ],
+  "keywords": [
+    "isomorphic",
+    "framework",
+    "bem",
+    "express"
+  ],
+  "main": "index.js",
+  "bin": {
+    "slot": "./cli/slot.js"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "async": "^0.9.0",
+    "async.emitter": "^1.1.0",
+    "chokidar": "^1.0.0-rc5",
+    "colors": "^1.0.3",
+    "commander": "^2.7.1",
+    "deep-equal": "^0.2.1",
+    "del": "^1.1.1",
+    "event-stream": "~3.0.16",
+    "extfs": "0.0.7",
+    "flat-glob": "0.0.1",
+    "glob": "^4.3.4",
+    "globule": "^0.2.0",
+    "gulp-concat": "~2.2.0",
+    "gulp-declare": "~0.2.0",
+    "gulp-handlebars": "^4.0.0",
+    "gulp-modified": "~0.9.0",
+    "gulp-remember": "~0.2.0",
+    "gulp-util": "~2.2.16",
+    "handlebars": "~1.3.0",
+    "inherits": "^2.0.1",
+    "jquery-deferred": "~0.3.0",
+    "lodash": "2.4.1",
+    "mkdirp": "~0.5.0",
+    "ncp": "^2.0.0",
+    "po2json": "0.2.3",
+    "request": "~2.27.0",
+    "reqwest": "git://github.com/2gis/reqwest",
+    "setimmediate": "^1.0.2",
+    "ua-parser-js": "~0.6.2",
+    "wrench": "~1.5.8",
+    "yargs": "^3.6.0"
+  },
+  "optionalDependencies": {
+    "posix": "^4.0.0"
+  },
+  "scripts": {
+    "test": "gulp test",
+    "lint": "npm run -s lint:hook; exit 0",
+    "lint:hook": "eslint --color --cache .",
+    "postinstall": "node ./scripts/postinstall.js"
+  },
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "chai": "~1.9.2",
+    "eslint": "^1.6.0",
+    "gulp": "^3.8.11",
+    "gulp-coveralls": "^0.1.3",
+    "gulp-istanbul": "^0.3.1",
+    "gulp-jscs": "git://github.com/anru/gulp-jscs.git",
+    "gulp-jsdoc": "^0.1.4",
+    "gulp-jshint": "~1.6.3",
+    "gulp-mocha": "^2.0.1",
+    "jshint-stylish": "~0.2.0",
+    "require-dir": "~0.1.0",
+    "rimraf": "~2.2.8",
+    "run-sequence": "1.0.1",
+    "sinon": "~1.10.3",
+    "through2": "~0.6.3"
+  },
+  "engines": {
+    "node": ">=0.10"
+  },
+  "browser": {
+    "jquery-deferred": false,
+    "request": false,
+    "fs": false
+  }
+}

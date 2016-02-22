@@ -1,0 +1,137 @@
+		
+/*In all media queries*/
+.content-box {
+	margin: 0 auto;
+}
+.panel {
+	border: 1px dashed rgba(13, 16, 17, 0.19);
+	padding: 15px;
+}
+#audit .content-box{
+	padding: 15px;
+	border-radius: 10px;
+}
+#theme-picker{
+	width: 50px;
+	height: 100px;
+	background-color: gray;
+	position: absolute;
+	z-index: 10000;
+	left: 0px;
+	top: 150px;
+	margin-left: -45px;
+}
+#theme-picker:hover{
+	cursor: pointer;
+	-webkit-box-shadow: 0 0 8px #FFD700;
+    -moz-box-shadow: 0 0 8px #FFD70;
+    box-shadow: 0 0 8px #FFD700;
+}
+.theme{
+	width: auto;
+	color: white;
+	text-align: center;
+	font-family: Helvetica;
+	font-weight: bold;
+	text-shadow: 0 1px 0 #3e6790;
+	-webkit-transform: rotate(-90deg);
+	/* Firefox */
+	-moz-transform: rotate(-90deg);
+	/* Opera */
+	-o-transform: rotate(-90deg);
+}
+#logo-theme-a{
+	display: none;
+}
+
+/*For tablet (portrait & landscape)*/
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+	#login .content-box {
+		border-radius: 1%;
+		border: 1px dashed rgba(13, 16, 17, 0.19);
+	}
+
+}
+/*tablet in landscape*/
+@media screen and (min-width: 600px) and (max-width: 1024px) and (orientation: landscape) {
+	#login .content-box {
+		margin-top: -50px;
+		padding: 15px;
+		width: 600px;
+	}
+	#main .content-box {
+		width: 800px;
+		margin-top: 10%;
+	}
+	.panel{
+		width: 300px;
+	}
+	#history-panel {
+		float: left;
+		margin-right: 5%;
+	}
+	#create-panel {
+		float: right;
+	}
+}
+/*tablet in portrait*/
+@media screen and (min-width: 600px) and (max-width: 1024px) and (orientation: portrait) {
+	#login .content-box {
+		width: 400px;
+		padding: 5%;
+	}
+	#main .content-box {
+		width: auto;
+		margin-top: 10%;
+
+	}
+	.panel{
+		width: auto;
+	}
+}
+
+/*For smartphone (portrait & landscape)*/
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+}
+/*smartphone in landscape*/
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation: landscape) {
+	#login .content-box {
+		margin-top: -50px;
+	}
+	#logo-wrapper {
+		margin-top: -50px;
+	}
+}
+/*smartphone in portrait*/
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation: portrait) {
+	#logo-wrapper {
+		margin-top: -50px;
+	}
+}		
+@media screen and (min-width: 1025px){
+	#login .content-box {
+		margin-top: -50px;
+		padding: 15px;
+		width: 500px;
+		border: 1px dashed rgba(13, 16, 17, 0.19);
+	}
+	#logo-wrapper {
+		margin-top: -50px;
+	}
+	#main .content-box {
+		width: 600px;
+		margin-top: 5%;
+		padding: 15px;
+		background-color: rgba(243, 243, 243, 0.13);
+		border-radius: 15px;
+	}
+	#history .content-box {
+		margin: 0 auto;
+		width: 1000px;
+	}
+	#audit .content-box {
+		margin: 0 auto;
+		width: 1000px;
+	}
+}

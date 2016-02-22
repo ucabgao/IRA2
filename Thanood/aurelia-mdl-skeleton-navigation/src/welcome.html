@@ -1,0 +1,42 @@
+<template>
+    <section class="au-animate">
+        <h2>${heading}</h2>
+        <form role="form" submit.delegate="submit()">
+
+            <mdl-input value.bind="firstName" label="${firstNameLabel}"></mdl-input>
+            <mdl-input value.bind="lastName" label="${lastNameLabel}"></mdl-input>
+            <mdl-input value.bind="phoneNumber" label="Phone Number"></mdl-input>
+            <mdl-input value.bind="email" label="Email"></mdl-input>
+
+            <!--<div class="form-group">
+                <label>Full Name</label>
+                <p class="help-block">${fullName | upper}</p>
+            </div>-->
+
+            <div ref="card" class="mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__supporting-text">Full Name</div>
+                <div mdl-tooltip="text: computed full name;" class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">${fullName | upper}</h2>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <mdl-button raised.bind="showRaised" ripple.bind="true" click.trigger="submit()">Submit</mdl-button>
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" click.trigger="submit()">
+                        Second Submit
+                    </a>
+                    <div style="margin-top: 15px;">
+                        <!--<label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="raised-switch">
+                            <input type="checkbox" id="raised-switch" class="mdl-switch__input" checked.bind="showRaised" />
+                            <span class="mdl-switch__label"></span>
+                        </label>-->
+                        <mdl-switch mdl-tooltip="large: true; text: show submit button as raised; container.bind: card;" checked.bind="showRaised">raised button</mdl-switch>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <!-- not sure why this needs to be span - div doesn't work -->
+            <span mdl-badge="num.bind: sliderValue;">badge test</span>
+            <mdl-slider style="width: 300px;" value.bind="sliderValue"></mdl-slider><mdl-input label="slider value" value.bind="sliderValue"></mdl-input>
+            <mdl-table columns.bind="table.columns" data.bind="table.data" style="height: 200px; overflow: auto; display: block;"></mdl-table>
+        </form>
+    </section>
+</template>

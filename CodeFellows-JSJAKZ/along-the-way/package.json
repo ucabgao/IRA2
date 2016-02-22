@@ -1,0 +1,36 @@
+{
+  "name": "package",
+  "version": "0.0.0",
+  "engines": {
+    "node": "0.10.28",
+    "npm": "1.4.9"
+  },
+  "dependencies": {
+    "backbone": "1.1.2",
+    "express": "4.1.1",
+    "jquery": "^2.1.1",
+    "mongoose": "^3.8.9"
+  },
+  "devDependencies": {
+    "browserify": "^4.0.0",
+    "browserify-shim": "^3.5.0",
+    "chai": "^1.9.1",
+    "gulp": "^3.6.2",
+    "gulp-clean": "^0.2.4",
+    "gulp-concat": "^2.2.0",
+    "gulp-jshint": "^1.6.1",
+    "gulp-less": "^1.2.3",
+    "gulp-mocha": "^0.4.1",
+    "gulp-nodemon": "^1.0.2",
+    "gulp-sass": "^0.7.1",
+    "gulp-uglify": "^0.3.0",
+    "gulp-watchify": "^0.2.0",
+    "handlebars": "^1.3.0",
+    "hbsfy": "^1.3.2",
+    "less": "^1.7.0",
+    "load-grunt-tasks": "~0.2.1",
+    "underscore": "^1.6.0",
+    "vinyl-buffer": "0.0.0",
+    "vinyl-source-stream": "^0.1.1"
+  }
+}

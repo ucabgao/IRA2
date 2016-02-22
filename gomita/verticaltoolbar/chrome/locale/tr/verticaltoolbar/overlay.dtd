@@ -1,0 +1,11 @@
+<!ENTITY verticaltoolbar.toolbarname "Vertical Toolbar">
+<!ENTITY verticaltoolbar.options.label "&verticaltoolbar.toolbarname; Options…">
+<!ENTITY verticaltoolbar.options.accesskey "V">
+<!ENTITY verticaltoolbar.savepage "Sayfayı Kaydet">
+<!ENTITY verticaltoolbar.sendlink "Bağlantıyı Gönder">
+<!ENTITY verticaltoolbar.privatebrowsing "Özel Gezinme">
+<!ENTITY verticaltoolbar.button.label "Daima Göster">
+<!ENTITY verticaltoolbar.button.tooltiptext "Vertical Toolbar'ı daima göster">
+<!-- For the compatibility with Firefox 20 or later. -->
+<!ENTITY webConsoleCmd.label "Web konsolu">
+<!ENTITY inspectMenu.label "İncele">

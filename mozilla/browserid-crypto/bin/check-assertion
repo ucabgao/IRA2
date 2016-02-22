@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+
+var jwcrypto = require("../index");
+
+var full_raw_assertion = process.argv[2];
+var full_assertion = jwcrypto.cert.unbundle(full_raw_assertion);
+
+var components = jwcrypto.extractComponents(full_assertion.assertion);
+
+console.log("audience: " + components.payload.aud);
+console.log("expires: " + components.payload.exp);
+
+console.log("verifying with an expiration date that should be valid for this cert.");
+
+// FIXME: reimplement this, the previous test was not that useful.

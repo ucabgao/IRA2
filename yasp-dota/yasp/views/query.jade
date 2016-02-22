@@ -1,0 +1,91 @@
+h2.inline-header
+  button.btn.btn-sm.btn-dark.toggle-button(style="float: right;" data-toggle="collapse" data-target="#filter_collapse", aria-expanded="false") Apply A Filter
+#filter_collapse.collapse(class=querystring ? "in" : "")
+  form#query(action="" method="GET")
+    if config.NODE_ENV==="development"
+      pre=JSON.stringify(q)
+    //pre=JSON.stringify(all_teammate_list)
+    .row
+      .col-md-4
+        h4 Synergies
+        .form-group
+          label The Team Included
+          select.form-control(name="with_hero_id" multiple, data-placeholder="Team: Any Hero")#with_hero_id
+            each entry in constants.heroes
+              option(value=entry.id, selected=q.with_hero_id && q.with_hero_id.indexOf(entry.id)!==-1)=entry.localized_name
+        .form-group
+          label The Enemies Included
+          select.form-control(name="against_hero_id" multiple, data-placeholder="Enemy: Any Hero")#enemy_hero_id
+            each entry in constants.heroes
+              option(value=entry.id, selected=q.against_hero_id && q.against_hero_id.indexOf(entry.id)!==-1)=entry.localized_name
+        .form-group
+          label The Players Included
+          select.form-control(name="included_account_id", multiple, data-placeholder="Included: Any Player")#included_account_id
+            each entry in q.included_account_id || []
+              option(value=entry, selected=q.included_account_id && q.included_account_id.indexOf(entry)!==-1)=entry
+              
+      .col-md-4
+        h4 Personal Parameters
+        .form-group
+          label Hero
+          select.form-control(multiple name="hero_id" placeholder="Any Hero")#hero_id
+            each entry in constants.heroes
+              option(value=entry.id, selected=(q["hero_id"] && q["hero_id"][0]===entry.id))=entry.localized_name
+        .form-group  
+          label Faction
+          select.form-control(multiple name="isRadiant" placeholder="Any Faction")#isRadiant
+            option(value="1", selected=(q["isRadiant"] && q["isRadiant"][0]===1)) Radiant
+            option(value="0", selected=(q["isRadiant"] && q["isRadiant"][0]===0)) Dire
+        .form-group
+          label Result
+          select.form-control(multiple name="win" placeholder="Any Result")#win
+            option(value="1", selected=(q["win"] && q["win"][0]===1)) Wins
+            option(value="0", selected=(q["win"] && q["win"][0]===0)) Losses
+        .form-group  
+          label Lane/Role
+          select.form-control(multiple name="lane_role" placeholder="Any Lane")#lane_role
+            each val, key in constants.lane_role
+              option(value=key, selected=(q["lane_role"] && q["lane_role"][0]===Number(key)))=val
+        .form-group  
+          label Purchased Item(s)
+          select.form-control(multiple name="purchased_item" placeholder="Any Item")#purchased_item
+            each val, key in constants.items
+              - var key = Number(val.id)
+              option(value=key, selected=(q["purchased_item"] && q["purchased_item"].indexOf(key)!==-1))=val.dname
+              
+      .col-md-4
+        h4 Match Parameters
+        .form-group
+          label Patch
+          select.form-control(multiple name="patch" placeholder="Any Patch")#patch
+            each entry, i in JSON.parse(JSON.stringify(constants.patch)).reverse()
+              - var revValue = (constants.patch.length - (i+1));
+              option(value=revValue, selected=(q["patch"] && q["patch"][0]===revValue))=entry.name
+        .form-group
+          label Game Mode
+          select.form-control(multiple name="game_mode" placeholder="Any Mode")#game_mode
+            each entry in constants.game_mode
+              option(value=entry.id, selected=(q.game_mode && q.game_mode[0]===entry.id))=entry.name
+        .form-group
+          label Lobby Type
+          select.form-control(multiple name="lobby_type" placeholder="Any Lobby")#lobby_type
+            each entry in constants.lobby_type
+              option(value=entry.id, selected=(q.lobby_type && q.lobby_type[0]===entry.id))=entry.name
+        .form-group
+          label Date
+          select.form-control(multiple name="date" placeholder="Any Date")#date
+            - var date_list = {7:"Last 1 Week",30:"Last 1 Month",90:"Last 3 Months",180:"Last 6 Months"}
+            each name, id in date_list
+              option(value=id, selected=(q.date && q.date[0]===Number(id)))=name
+        .form-group
+          label Region
+          select.form-control(multiple name="region" placeholder="Any Region")#region
+            each name, id in constants.region
+              option(value=id, selected=(q.region && q.region[0]===Number(id)))=name
+
+    .row
+      .col-md-4.col-md-offset-4.text-center
+        span: button.btn.btn-query(type="submit") Do the Thing
+        span: a.btn.btn-danger(href="./"+route) Reset the Thing
+
+  hr

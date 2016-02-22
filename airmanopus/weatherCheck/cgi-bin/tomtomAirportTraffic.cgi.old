@@ -1,0 +1,14 @@
+#!/bin/bash
+echo "Content-type: text/html"
+echo ""
+incoming=`echo ${QUERY_STRING}`
+
+lat=`echo ${incoming} | grep --only-matching 'lat\=[+|-|0-9][0-9][0-9|.][+|-|0-9][0-9|$]*[^\&]' | sed 's/lat=//g'`
+lon=`echo ${incoming} | grep --only-matching 'lon\=[+|-|0-9][0-9][0-9|.][+|-|0-9][0-9|$]*[^\&]' | sed 's/lon=//g' | sed 's/\-//g'`
+airportLat=`echo ${incoming} | grep --only-matching 'airportLat\=[+|-|0-9][0-9][0-9|.][+|-|0-9][0-9|$]*[^\&]' | sed 's/airportLat=//g'`
+airportLon=`echo ${incoming} | grep --only-matching 'airportLon\=[+|-|0-9][0-9][0-9|.][+|-|0-9][0-9|$]*[^\&]' | sed 's/airportLon=//g' | sed 's/\-//g'` 
+
+trafficURL="https://api.tomtom.com/lbs/services/route/3/$lat,$lon:$airportLat,$airportLon/Quicker?avoidTraffic=true&includeTraffic=true&time=now&day=today&iqRoutes=2&includeInstructions=false&key=knpmsu5p59rxdud2rmghsxd7"
+
+trafficIn=`/usr/bin/curl --user-agent "Mozilla/5.0" --url "$trafficURL"` 
+echo $trafficIn

@@ -1,0 +1,58 @@
+extend /layout
+include /mixins/hero_td
+include /mixins/data_table
+include /mixins/data_table_header
+
+append head
+    meta(property="og:title", content="Match #{match.match_id}")
+    | <!-- This page generated at #{moment(Date.now()).format('MMMM Do YYYY, h:mm:ss a')} -->
+    
+block content
+  .row
+    .col-md-5
+      h2 Match #{match.match_id}
+        small
+          //-
+            a(href="?json=1" title="View as JSON")
+              i.fa.fa-download
+        br
+        small(class=match.radiant_win ? "text-success" : "text-danger")= match.radiant_win ? "Radiant Victory" : "Dire Victory"
+        a(style="margin-left:1em;" href="/request#"+match.match_id, class="btn btn-sm" class=match.version ? "btn-success" : "btn-primary") #{match.version ? "Re-Parse Match" : "Request Parse"}
+ 
+    .col-md-7.table-responsive
+      h2
+      table.table.table-condensed
+        thead
+          tr
+            //th: abbr(title=constants.tooltips.status) Status
+            th Mode
+            th Region
+            th Duration
+            th Ended
+            //th Skill
+        tbody
+          tr
+            //td= constants.parse_status[match.parse_status]
+            td= constants.game_mode[match.game_mode] ? constants.game_mode[match.game_mode].name : match.game_mode
+            td= constants.region[match.region] ? constants.region[match.region] : match.region
+            td= moment().startOf('day').seconds(match.duration).format("H:mm:ss")
+            td: abbr(title=moment.unix(match.start_time+match.duration).format("ddd D MMMM YYYY, HH:mm:ss Z"))= moment.unix(match.start_time + match.duration).fromNow()
+            //td= constants.skill[match.skill] ? constants.skill[match.skill] : match.skill
+    
+  .row(style="margin-top:1em;")
+    .col-md-12.table-responsive
+      ul.nav.nav-tabs
+        each val, key in tabs
+          - var disableTab = !match.version && key!=="index"
+          li(class=(route === key ? 'active' : ''), class=(disableTab ? 'disabled' : ''), title=(disableTab ? tooltips.unparsed_tab : ''))
+              a(href="/matches/#{match.match_id}/" + (key == 'index' ? "" : key), class=(val.new ? "new-feature" : ""))= val.name
+
+  .match
+    block match_content
+  
+  .row
+    .col-md-12.col-offset-10
+      .addthis_sharing_toolbox.pull-right
+
+append footer_assets
+  script(type="text/javascript", src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5452f1e51eac0fc5", async="async")

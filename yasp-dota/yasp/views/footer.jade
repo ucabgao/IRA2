@@ -1,0 +1,65 @@
+footer.footer
+  .container
+    .row
+      .col-md-4.text-center
+        p Buy some cheese. Help pay for servers.
+        p Reaching the goal every month keeps us running.
+      .col-md-4.text-center
+        .meter_wrapper
+          h3(style="font-weight:700; margin-top: 0;") Monthly Cheese Goal
+          .meter
+            span(style="width: #{cheese_goal}%;min-width:7.1%;") #{cheese_goal.toFixed(0)}%
+          small
+            - var today = moment()
+            - var difference = (today.date() / today.endOf("month").date()) * 100 - cheese_goal
+            if difference > 0
+              | Behind #{difference.toFixed(2)}%. 
+            if cheese_goal >= 50 && cheese_goal < 100
+              | Getting there... 
+            else if cheese_goal === 100
+              | Woo!!! We did it! Thanks guys! 
+            | Resets #{moment().endOf("month").fromNow()}.
+      .col-md-4.text-center
+        span.flaticon-1.medium-cheese(style="padding: 5px 11px;")
+        a(href="/carry", target="_blank")
+          button.btn.btn-warning(style="margin-bottom:2em; margin-left: 2em;") Help Us Out
+    .row(style="font-size: .8em;")
+      .col-md-4
+        ul
+          li &copy; #{moment().get('year')} YASP. <a href='http://goo.gl/forms/NgwhEqx4lt'>Comments, suggestions</a>?
+          li This is a volunteer-developed <a href='https://github.com/yasp-dota/yasp'>open source</a> student project.
+          li Follow us on <a href='https://twitter.com/yasp_dota'>Twitter</a>.
+          li We use cookies for sessions and analytics.
+      .col-md-4
+        ul
+          li Dota 2 API <a href='http://store.steampowered.com/'> powered by Steam</a>. 
+          li Match parsing powered by <a href='https://github.com/skadistats/clarity'> clarity</a>. 
+          li Thanks to <a href='https://twitter.com/medowar0'>Medowar</a> for additional server power!
+      .col-md-4
+        ul
+          li Wallpapers by the talented <a href="http://dcneil.deviantart.com/">dcneil</a> and <a href="http://css101.deviantart.com/">css101</a>.
+          li Dota 2 and all Dota 2 related images belong to Valve. 
+          li Cheese icon made by <a href="http://www.belcu.com">Belc</a> from <a href="http://www.flaticon.com">www.flaticon.com</a> is licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>
+    //- light theme selector
+      .row.text-center
+        if (user)
+          .checkbox
+            label
+              input.pref#theme(type="checkbox", checked=user.light_theme)
+              | Use Light Theme
+          script.
+            $(".pref").change(function() {
+                $.post(
+                    "/preferences", {
+                        light_theme: $("#theme").is(":checked"),
+                    },
+                    function(data) {
+                        if (data.sync) {
+                            location.reload(true);
+                        }
+                        else {
+                            $(".page-header").after("<div role='alert' class='sync alert alert-warning'>Failed to update preferences. Try again later.</div>");
+                        }
+                        $(".sync").fadeOut(3000);
+                    });
+            });

@@ -1,0 +1,43 @@
+---
+title: Charts
+section: demo
+js_assets: [jquery-ui/jquery.ui.position.js, jquery-ui/jquery.ui.core.js, jquery-ui/jquery.ui.widget.js, jquery-ui/jquery.ui.menu.js, 
+            flot/jquery.flot.js, flot/jquery.flot.selection.js, flot/jquery.flot.pie.js, flot/jquery.flot.categories.js, flot/jquery.flot.symbol.js,
+            flot/jquery.flot.tooltip.js, flot/jquery.flot.orderBars.js, flot/jquery.flot.resize.js, flot/jquery.flot.axislabels.js, richwidgets/output/chart.js ]
+css_assets: [ richwidgets/output/chart.css ]
+css_includes: [ output/charts/charts.css ]
+
+demos: [
+            { id: 'line-chart', title: 'Line chart with event handlers' },
+            { id: 'pie-chart',  title: 'Pie chart' },
+            { id: 'numberbar-chart', title: 'Number bar chart'},
+            { id: 'category-bar-chart', title: 'Category bar chart'},
+            { id: 'multiple-category-bar-chart', title: 'Multiple category bar chart'},
+            { id: 'line-chart-zoom', title: 'Line chart with zoom'},
+        ]
+---
+   <h2>Chart demos</h2>
+
+    {{#each demos}}
+        <fieldset>
+            <legend>{{this.title}}</legend>
+            <div class="row">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            {{include "charts/{{this.id}}.html" ../page}}
+                            <script src="{{assets-demo ../page/dirname}}/output/charts/{{this.id}}.js"></script>
+                        </div>
+                        <div class="panel-footer">
+                            {{include "charts/{{this.id}}-description.html" ../page}}
+                        </div>
+                    </div>
+            </div>
+            <div class="row">
+                {{set 'html_source' "src/demos/pages/output/charts/{{this.id}}.html" }}
+                {{set 'js_source' "src/demos/pages/output/charts/{{this.id}}.js" }}
+                {{#markdown}}{{embed html_source}}{{/markdown}}
+                {{#markdown}}{{embed js_source}}{{/markdown}}
+            </div>
+        </fieldset>
+    {{/each}}
+

@@ -1,0 +1,86 @@
+//simple scoping
+{
+    int x
+    {
+        boolean b
+        {b = false}
+    }
+    x = 8
+}$
+
+//warning about missing terminating token
+{
+}
+
+//warning about excess code
+{
+}$ excess code after end char
+
+//print, scope, if, while
+{
+int i
+i=5
+
+while(i==5) {
+    int x
+    {x=7
+     string y
+    }
+    if(x!=7) {
+        print("Scope error")
+    }
+}
+} $
+
+//Error!
+{
+5=x
+} $
+
+//boolean with boolval as expr
+{
+while true {
+   print(1)
+}
+}$
+
+//missing closing brace
+{
+    { print ("Didnt need it anyway")
+
+}$
+
+//some wacky scope
+{
+int i
+    {
+    int j
+        {
+        boolean z
+            {
+            string s
+                {
+                 if true {
+                            int z
+                            i = 1
+                            s = 2
+                            z = 3
+                            j = 9 
+                          }
+                }
+             }
+        }
+    }
+} $
+
+//same level scopes
+{
+    int i
+    {
+        int i
+    }
+
+    {
+        i=5
+    }
+}$

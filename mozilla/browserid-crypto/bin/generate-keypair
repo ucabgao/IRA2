@@ -1,0 +1,44 @@
+#!/usr/bin/env node
+
+//
+// generate a keypair quick
+//
+
+var
+jwcrypto = require("../index"),
+fs = require("fs");
+
+require("../lib/algs/ds");
+require("../lib/algs/rs");
+
+var args = require('optimist')
+.usage('Generate an RSA keypair.\nUsage: $0', [ "foo" ])
+.alias('a', 'algorithm')
+.describe('a', 'algorithm to use, one of "dsa" or "rsa".')
+.default('a', 'dsa')
+.alias('h', 'help')
+.describe('h', 'display this usage message')
+.alias('k', 'keylength')
+.describe('k', 'keylength, one of 64, 128, or 256.')
+.default('k', 256);
+var argv = args.argv;
+
+if (argv.h) {
+  args.showHelp();
+  process.exit(1);
+} else if (-1 === [ 64, 128, 256 ].indexOf(argv.k)) {
+  console.log("invalid keylength:", argv.k);
+  process.exit(1);
+} else if (-1 === [ "dsa", "rsa" ].indexOf(argv.a)) {
+  console.log("invalid algorithm:", argv.a);
+  process.exit(1);
+}
+
+var keypair = jwcrypto.generateKeypair({algorithm: argv.a.substr(0, 2).toUpperCase(), keysize: argv.k}, function(err, keypair) {
+  if (err)
+    return console.log(err);
+  
+  fs.writeFileSync("key.publickey", keypair.publicKey.serialize());
+  fs.writeFileSync("key.secretkey", keypair.secretKey.serialize());
+});
+

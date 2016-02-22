@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><kml xmlns="https//earth.google.com/kml/2.0">
+<Document>
+<name>NWS Radar Images</name>
+<open>1</open>
+<Folder>
+	<name>GRB</name>
+	<GroundOverlay>
+		<name>Composite Reflectivity</name>
+		<Icon>
+			<href>https://www.airmanopus.net/weathercheck/images/processed/GRB_NCR_0.gif</href>
+			<refreshMode>onInterval</refreshMode>
+			<refreshInterval>120</refreshInterval>
+		</Icon>
+		<visibility>1</visibility>
+		<LatLonBox>
+			<north>47.2663655229048</north>
+			<south>41.719551558061</south>
+			<east>-85.080422612971</east>
+			<west>-91.1314923928001</west>
+		</LatLonBox>
+	</GroundOverlay>
+</Folder>
+
+<Folder>
+	<name>ARX</name>
+	<GroundOverlay>
+		<name>Composite Reflectivity</name>
+		<Icon>
+			<href>https://www.airmanopus.net/weathercheck/images/processed/ARX_NCR_0.gif</href>
+			<refreshMode>onInterval</refreshMode>
+			<refreshInterval>120</refreshInterval>
+		</Icon>
+		<visibility>1</visibility>
+		<LatLonBox>
+			<north>46.5599141762473</north>
+			<south>41.076119010232</south>
+			<east>-88.194855624112</east>
+			<west>-94.177177623402</west>
+		</LatLonBox>
+	</GroundOverlay>
+</Folder>
+
+<Folder>
+	<name>MKX</name>
+		<GroundOverlay>
+			<name>Composite Reflectivity</name>
+			<Icon>
+				<href>https://www.airmanopus.net/weathercheck/images/processed/MKX_NCR_0.gif</href>
+				<refreshMode>onInterval</refreshMode>
+				<refreshInterval>120</refreshInterval>
+			</Icon>
+			<visibility>1</visibility>
+			<LatLonBox>
+				<north>45.6666199701483</north>
+				<south>40.259545995539</south>
+				<east>-85.596773903587</east>
+				<west>-91.495400057706</west>
+			</LatLonBox>
+		</GroundOverlay>
+</Folder>
+
+</Document>
+</kml>

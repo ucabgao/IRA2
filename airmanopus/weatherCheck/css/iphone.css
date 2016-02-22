@@ -1,0 +1,39 @@
+			.toptitle-text {
+				background-color: blue;
+				color: white;
+				font-family:'Droid Sans Mono','sans-serif';
+				font-size: small;
+			}
+	
+			.map-initial {
+				height: 215px;
+
+			}                       	
+
+			.weatherIcon {
+				width: 64px;
+				top: 225px;
+			}
+
+			.weatherDisplay {
+				width: 310px;
+				top: 225px;
+				left: 66px;
+				font-family: 'Droid Sans Mono','sans-serif';
+				font-size: small;
+			}
+
+			.alerts-text {
+				font-family:'Droid Sans Mono','sans-serif';
+				font-size: small;
+			}
+			
+
+			.footertext {
+				font-family:'Droid Sans Mono','sans-serif';
+				font-size: small;
+			}
+
+
+
+

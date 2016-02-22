@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="https://earth.google.com/kml/2.0">
+	<Document>
+	<name>NWS Radar Images</name>
+	<open>1</open>
+	<Folder> 
+	  <name>National Weather Service</name>
+		<ScreenOverlay> 
+		  <name>National Weather Service</name>
+		  <description>National Weather Service Doppler Radar RIDGE Imagery http://radar.weather.gov</description>
+		  <visibility>1</visibility>
+		  <Icon>
+		  </Icon>
+		  <overlayXY x="0" y="1" xunits="fraction" yunits="fraction" />
+		  <screenXY x="0" y="1" xunits="fraction" yunits="fraction" />
+		  <rotationXY x="0" y="0" xunits="fraction" yunits="fraction" /> 
+		  <size x="0" y="0" xunits="fraction" yunits="fraction" />
+ 		 </ScreenOverlay>
+		 <ScreenOverlay> 
+  <name>NOAA</name>
+  <description>National Oceanic and Atomospheric Administration  http://www.noaa.gov</description>
+		  <visibility>1</visibility>
+		  <Icon>
+		  </Icon>
+		  <overlayXY x=".2" y="1" xunits="fraction" yunits="fraction" />  
+		  <screenXY x=".2" y="1" xunits="fraction" yunits="fraction" /> 
+		  <rotationXY x="0" y="0" xunits="fraction" yunits="fraction" /> 
+		  <size x="0" y="0" xunits="fraction" yunits="fraction" /> 
+		 </ScreenOverlay>
+</Folder>
+<Folder>
+		<name>CLX</name>
+		<Folder>
+				<name>Short-Range Reflectivity</name>
+		<GroundOverlay>
+		<name>Short-Range Reflectivity</name>
+		<Icon>
+			<href>https://www.airmanopus.net/weathercheck/images/processed/CLX_NCR_0.gif</href>
+				<refreshMode>onInterval</refreshMode>
+				<refreshInterval>120</refreshInterval>
+		</Icon>
+		<visibility>1</visibility>
+		<LatLonBox>
+				<north>35.0004427545721</north>
+				<south>30.301010381525</south>
+				<east>-78.474400856712</east>
+				<west>-83.601054354581</west>
+		</LatLonBox>
+		</GroundOverlay>
+		</Folder>
+		</Folder>
+<Folder>
+		<name>CAE</name>
+		<Folder>
+<GroundOverlay>
+		<name>Short-Range Reflectivity</name>
+		<Icon>
+			<href>https://www.airmanopus.net/weathercheck/images/processed/CAE_NCR_0.gif</href>
+				<refreshMode>onInterval</refreshMode>
+				<refreshInterval>120</refreshInterval>
+</Icon>
+<visibility>1</visibility>
+<LatLonBox>
+		<north>36.3294614618475</north>
+		<south>31.559869176691</south>
+		<east>-78.513071511008</east>
+		<west>-83.7162630948153</west>
+</LatLonBox>
+</GroundOverlay>
+</Folder>
+</Folder>
+<Folder>
+		<name>GSP</name>
+		<Folder>
+				<name>Short-Range Reflectivity</name>
+		<GroundOverlay>
+		<name>Short-Range Reflectivity</name>
+		<Icon>
+			<href>https://www.airmanopus.net/weathercheck/images/processed/GSP_NCR_0.gif</href>
+				<refreshMode>onInterval</refreshMode>
+				<refreshInterval>120</refreshInterval>
+</Icon>
+<visibility>1</visibility>
+<LatLonBox>
+		<north>37.2901672085849</north>
+		<south>32.467062350186</south>
+		<east>-79.584832111705</east>
+		<west>-84.8464010481401</west>
+</LatLonBox>
+</GroundOverlay>
+</Folder>
+</Folder>
+</Document>
+</kml>

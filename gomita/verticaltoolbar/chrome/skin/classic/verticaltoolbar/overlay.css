@@ -1,0 +1,510 @@
+/* ::::: autohide ::::: */
+
+#vertical-toolbox[autohide] {
+	min-width: 1px;
+}
+
+#vertical-toolbox[autohide] > toolbar {
+	visibility: collapse;
+}
+
+#vertical-toolbox[autohide]:hover > toolbar,
+#vertical-toolbox[autohide][dragover] > toolbar,
+#vertical-toolbox[autohide][sidesync] > toolbar {
+	visibility: visible;
+}
+
+#vertical-toolbox[autohide]:not([sidesync]) {
+	position: fixed;
+}
+
+#vertical-toolbox[placement="left"][autohide]:not([sidesync]) {
+	left: 0px;
+}
+
+#vertical-toolbox[placement="right"][autohide]:not([sidesync]) {
+	right: 0px;
+}
+
+/* ::::: animate ::::: */
+
+#vertical-toolbox[animate]:not([sidesync]) > toolbar {
+	visibility: visible;
+	-moz-transition-property: margin-left, margin-right;
+	-moz-transition-duration: 0.3s;
+	-moz-transition-timing-function: ease-in;
+}
+
+#vertical-toolbox[animate]:hover > toolbar,
+#vertical-toolbox[animate][dragover] > toolbar,
+#vertical-toolbox[animate][sidesync] > toolbar {
+	margin-left : 0px !important;
+	margin-right: 0px !important;
+	-moz-transition-timing-function: ease-out;
+}
+
+/* ::::: toolbar items ::::: */
+
+/* ensure the toolbar is visible even if it has no buttons while customizing */
+#vertical-toolbar[customizing="true"] {
+	min-width: 19px;
+}
+
+/* the label should always be at the head of the toolbar */
+#vertical-toolbar[customizing="true"] > label {
+	-moz-box-ordinal-group: 0 !important;
+}
+
+#vertical-toolbar .toolbarbutton-1 {
+	margin: 2px;
+}
+
+#vertical-toolbar toolbarspacer {
+	height: 15px;
+}
+
+#vertical-toolbar[skin="osx"] toolbarspacer {
+	min-height: 32px;
+}
+
+#vertical-toolbar[skin="windows"] toolbarseparator {
+	-moz-appearance: none !important;
+	margin: 0.2em 2px;
+	border-bottom: 1px solid ThreeDHighlight;
+	border-top: 1px solid ThreeDShadow;
+	height: 2px;
+	border-left: none;
+	border-right: none;
+}
+
+#vertical-toolbar[skin="linux"] toolbarseparator {
+	-moz-appearance: menuseparator !important;
+	margin: 0 2px;
+	border-top: 1px solid ThreeDShadow;
+	border-bottom: 1px solid ThreeDHighlight;
+}
+
+#vertical-toolbar[skin="osx"] toolbarseparator {
+	-moz-appearance: none;
+	margin: 4px 3px;
+	background: url("chrome://verticaltoolbar/skin/toolbar-separator-vertical.png") transparent repeat-x;
+	padding: 0;
+	height: 1px !important;
+	min-height: 1px !important;
+}
+
+#vertical-toolbar :-moz-any(toolbaritem, toolbarpaletteitem) > * {
+	-moz-box-flex: 1;
+}
+
+#vertical-toolbar[mode="full"] toolbarbutton {
+	-moz-box-orient: horizontal;
+}
+
+#vertical-toolbar[mode="full"] toolbarbutton .toolbarbutton-text {
+	text-align: start;
+	-moz-margin-start: 2px !important;
+}
+
+#vertical-toolbar[skin="osx"] .toolbarpaletteitem-box[type="spacer"],
+#vertical-toolbar[skin="osx"] .toolbarpaletteitem-box[type="spring"] {
+	width: auto;
+	margin-top: 0;
+}
+
+#vertical-toolbar[skin="osx"] .toolbarpaletteitem-box[type="spacer"]:not(:-moz-window-inactive),
+#vertical-toolbar[skin="osx"] .toolbarpaletteitem-box[type="spring"]:not(:-moz-window-inactive) {
+	border: 1px solid rgba(59, 59, 59, 0.9);
+}
+
+#vertical-toolbar toolbarbutton[type="menu"] .toolbarbutton-menu-dropmarker,
+#vertical-toolbar[orient="vertical"] > toolbarbutton[type="menu"] .toolbarbutton-menu-dropmarker,
+#vertical-toolbar[orient="vertical"] > toolbarpaletteitem > toolbarbutton[type="menu"] .toolbarbutton-menu-dropmarker {
+	display: none !important;
+}
+
+#vertical-toolbar[orient="vertical"] > toolbarbutton[type="menu-button"],
+#vertical-toolbar[orient="vertical"] > toolbarpaletteitem > toolbarbutton[type="menu-button"] {
+	-moz-box-orient: vertical !important;
+}
+
+/* ::::: Bookmarks Toolbar Items ::::: */
+
+#vertical-toolbar #PlacesToolbarItems {
+	-moz-box-orient: vertical;
+}
+
+#vertical-toolbar #PlacesToolbarItems .toolbarbutton-text {
+	text-align: start;
+}
+
+#vertical-toolbar #PlacesToolbar > hbox, 
+#vertical-toolbar #PlacesToolbar > hbox > hbox {
+	-moz-box-orient: vertical;
+	-moz-box-align: start;
+}
+
+#vertical-toolbar[mode="icons"] #PlacesToolbar > hbox {
+	-moz-box-align: center;
+}
+
+#vertical-toolbar #PlacesToolbar > hbox > hbox {
+	/* hbox should have the same height as the inside drop indicator */
+	height: 2px;
+}
+
+#vertical-toolbar #PlacesToolbarDropIndicator {
+	list-style-image: none;
+	background-color: Highlight;
+	width: 50px;
+	height: 2px;
+	-moz-margin-start: 5px !important;
+}
+
+#vertical-toolbar[mode="icons"] #PlacesToolbarDropIndicator {
+	width: 20px;
+	-moz-margin-start: -10px !important;
+}
+
+#vertical-toolbar #PlacesToolbar toolbarbutton {
+	/* remove the margin area to disable dropping on it */
+	margin: 0 !important;
+}
+
+#vertical-toolbar #PlacesChevron, 
+#vertical-toolbar #bookmarks-menu-button {
+	display: none;
+}
+
+#vertical-toolbar[mode="icons"] #PlacesToolbar toolbarbutton {
+	padding: 4px !important;
+}
+
+#vertical-toolbar[mode="icons"] #PlacesToolbar .toolbarbutton-icon {
+	margin: 2px;
+}
+
+#vertical-toolbar[mode="icons"] #PlacesToolbar .toolbarbutton-text, 
+#vertical-toolbar[mode="icons"] #PlacesToolbar .toolbarbutton-menu-dropmarker {
+	display: none !important;
+}
+
+#vertical-toolbar[skin="osx"][mode="icons"] #PlacesToolbar toolbarbutton {
+	border-radius: 4px;
+}
+
+/* ::::: drag and drop feedback ::::: */
+
+#vertical-toolbar toolbarpaletteitem {
+	margin-top: -2px;
+	margin-bottom: -2px;
+	border-top: 2px solid transparent;
+	border-bottom: 2px solid transparent;
+	border-left-color: transparent;
+	border-right-color: transparent;
+}
+
+#vertical-toolbar toolbarpaletteitem[dragover="left"] {
+	border-top-color: black;
+}
+
+#vertical-toolbar toolbarpaletteitem[dragover="right"] {
+	border-bottom-color: black;
+}
+
+/* ::::: flat button ::::: */
+
+#vertical-toolbar[skin="windows"][flatbutton="true"] .toolbarbutton-1:not([checked="true"]),
+#vertical-toolbar[skin="windows"][flatbutton="true"] .toolbarbutton-1 > .toolbarbutton-menubutton-button,
+#vertical-toolbar[skin="windows"][flatbutton="true"] .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
+	background: none !important;
+	border-color: transparent !important;
+	box-shadow: 0 0 0 1px transparent inset,
+	            0 0 0 2px transparent inset,
+	            0 1px 0 transparent !important;
+}
+
+#vertical-toolbar[skin="osx"] toolbarbutton,
+#vertical-toolbar[skin="osx"] .toolbarbutton-menubutton-dropmarker {
+	-moz-appearance: none !important;
+}
+
+#vertical-toolbar[skin="osx"]:not([flatbutton="true"]) .toolbarbutton-1 {
+	border: 1px solid rgb(75,75,75) !important;
+	border-radius: 4px/4px;
+	background: -moz-linear-gradient(top, rgb(255,255,255), rgb(180,180,180));
+}
+
+#vertical-toolbar[skin="osx"]:not([flatbutton="true"]) .toolbarbutton-1:not([disabled="true"]):active {
+	box-shadow: inset 0px 1px 4px 0px rgb(30,30,30);
+	background: -moz-linear-gradient(top, rgb(120,120,120), rgb(150,150,150));
+}
+
+#vertical-toolbar[skin="osx"]:not([flatbutton="true"]) .toolbarbutton-1[checked="true"] {
+	box-shadow: inset 0px 1px 4px 0px rgb(30,30,30);
+	background: -moz-linear-gradient(top, rgb(90,90,90), rgb(120,120,120));
+}
+
+#vertical-toolbar[skin="osx"] .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
+	height: 12px;
+}
+
+#vertical-toolbar[skin="linux"]:not([flatbutton="true"]) .toolbarbutton-1 {
+	-moz-appearance: none !important;
+	border-color: ThreeDLightShadow !important;
+	border-radius: 4px/4px !important;
+}
+
+#vertical-toolbar[skin="linux"]:not([flatbutton="true"]) .toolbarbutton-1:not([disabled="true"]):hover,
+#vertical-toolbar[skin="linux"]:not([flatbutton="true"]) .toolbarbutton-1:not([disabled="true"]):active,
+#vertical-toolbar[skin="linux"]:not([flatbutton="true"]) .toolbarbutton-1[checked="true"] {
+	border-color: ThreeDShadow !important;
+	background-color: -moz-buttonhoverface !important;
+}
+
+/* ::::: unified buttons ::::: */
+
+#vertical-toolbar[orient="vertical"] toolbaritem separator {
+	display: none;
+}
+
+#vertical-toolbar[orient="vertical"] :-moz-any(#unified-back-forward-button, #zoom-controls, #edit-controls) {
+	-moz-box-orient: vertical;
+}
+
+#vertical-toolbar #zoom-controls {
+	-moz-box-direction: reverse;
+}
+
+#vertical-toolbar[orient="vertical"]:not([mode="icons"]) :-moz-any(#zoom-in-button, #zoom-out-button) > .toolbarbutton-text {
+	display: -moz-box;
+}
+
+#vertical-toolbar[orient="vertical"] #zoom-reset-button {
+	list-style-image: url("chrome://verticaltoolbar/skin/toolbar.png");
+	-moz-image-region: rect(0px, 252px, 18px, 234px);
+}
+
+#vertical-toolbar[orient="vertical"]:not([mode="text"]) #zoom-reset-button > .toolbarbutton-icon {
+	display: -moz-box;
+}
+
+#vertical-toolbar[orient="vertical"][mode="icons"] #zoom-reset-button > .toolbarbutton-text {
+	display: none;
+}
+
+#vertical-toolbar[skin="windows"][orient="vertical"] :-moz-any(#unified-back-forward-button, #zoom-controls, #edit-controls) .toolbarbutton-1 {
+	border-width: 1px;
+	-moz-border-start: 1px solid rgba(0, 0, 0, 0.19);
+}
+
+#vertical-toolbar[skin="windows"][orient="vertical"] :-moz-any(#back-button, #zoom-in-button, #cut-button) {
+	margin-bottom: 1px;
+	border-bottom: 0;
+	border-radius: 4.5px 4.5px 0 0;
+}
+
+#vertical-toolbar[skin="windows"][orient="vertical"] :-moz-any(#forward-button, #zoom-out-button, #paste-button) {
+	margin-top: 0;
+	border-top: 0;
+	border-radius: 0 0 4.5px 4.5px;
+}
+
+#vertical-toolbar[skin="windows"][orient="vertical"] :-moz-any(#zoom-reset-button, #copy-button) {
+	border-radius: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	border-top: 0;
+	border-bottom: 0;
+}
+
+/* [Firefox27-] */
+#vertical-toolbar[skin="osx"][mode="icons"] :-moz-any(#back-button, #forward-button, #zoom-in-button, #zoom-out-button) {
+	margin: 2px;
+}
+
+#vertical-toolbar[skin="osx"][orient="vertical"] :-moz-any(#back-button, #zoom-in-button, #cut-button) {
+	border-bottom: 0 !important;
+	margin-bottom: 0 !important;
+	border-radius: 4px 4px 0 0;
+}
+
+#vertical-toolbar[skin="osx"][orient="vertical"] :-moz-any(#forward-button, #zoom-out-button, #paste-button) {
+	border-top: 0 !important;
+	margin-top: 0 !important;
+	border-radius: 0 0 4px 4px;
+}
+
+#vertical-toolbar[skin="osx"][orient="vertical"] :-moz-any(#zoom-reset-button, #copy-button) {
+	border-top: 0 !important;
+	border-bottom: 0 !important;
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+	border-radius: 0;
+}
+
+#vertical-toolbar[skin="osx"][mode="full"] toolbaritem {
+	/* make back/forward and zoom in/out button horizontally stretched */
+	-moz-box-align: stretch;
+}
+
+#vertical-toolbar[skin="osx"][mode="icons"] #back-button:-moz-window-inactive,
+#vertical-toolbar[skin="osx"][mode="icons"] #zoom-in-button:-moz-window-inactive {
+	border-color: rgba(146, 146, 146, 0.84);
+}
+
+#vertical-toolbar[skin="osx"] #zoom-controls[cui-areatype="toolbar"]:not(.overflowedItem) > #zoom-reset-button {
+	margin: 2px;
+}
+
+/* ::::: [Firefox28+] Bookmarks Button ::::: */
+
+#vertical-toolbar #bookmarks-menu-button {
+	display: -moz-box;
+}
+
+#vertical-toolbar[orient="vertical"] #bookmarks-menu-button .dropmarker-icon {
+	min-height: 18px;
+}
+
+/* ::::: additional buttons ::::: */
+
+toolbarbutton[id^="verticaltoolbar-"] {
+	list-style-image: url("chrome://verticaltoolbar/skin/toolbar.png") !important;
+}
+
+#verticaltoolbar-addons-button {
+	-moz-image-region: rect(0px, 18px, 18px, 0px);
+}
+
+#verticaltoolbar-error-console-button {
+	-moz-image-region: rect(0px, 36px, 18px, 18px);
+}
+
+#verticaltoolbar-web-console-button {
+	-moz-image-region: rect(0px, 54px, 18px, 36px);
+}
+
+#verticaltoolbar-page-info-button {
+	-moz-image-region: rect(0px, 72px, 18px, 54px);
+}
+
+#verticaltoolbar-view-source-button {
+	-moz-image-region: rect(0px, 90px, 18px, 72px);
+}
+
+#verticaltoolbar-save-page-button {
+	-moz-image-region: rect(0px, 108px, 18px, 90px);
+}
+
+#verticaltoolbar-send-link-button {
+	-moz-image-region: rect(0px, 126px, 18px, 108px);
+}
+
+#verticaltoolbar-offline-button:not([checked="true"]) {
+	-moz-image-region: rect(0px, 144px, 18px, 126px);
+}
+
+#verticaltoolbar-offline-button {
+	-moz-image-region: rect(0px, 162px, 18px, 144px);
+}
+
+#verticaltoolbar-private-browsing-button {
+	-moz-image-region: rect(0px, 180px, 18px, 162px);
+}
+
+#verticaltoolbar-inspect-button {
+	-moz-image-region: rect(0px, 198px, 18px, 180px);
+}
+
+#verticaltoolbar-print-preview-button {
+	-moz-image-region: rect(0px, 216px, 18px, 198px);
+}
+
+#verticaltoolbar-button {
+	-moz-image-region: rect(0px, 234px, 18px, 216px);
+}
+
+#verticaltoolbar-bookmarks-button {
+	-moz-image-region: rect(0px, 270px, 18px, 252px);
+}
+
+#verticaltoolbar-history-button {
+	-moz-image-region: rect(0px, 288px, 18px, 270px);
+}
+
+/* ::::: [Firefox28+] additional buttons on panel UI ::::: */
+
+toolbarbutton[id^="verticaltoolbar-"][cui-areatype="menu-panel"],
+#customization-palette toolbarpaletteitem[place="palette"] > toolbarbutton[id^="verticaltoolbar-"] {
+	list-style-image: url("chrome://verticaltoolbar/skin/toolbar32.png") !important;
+}
+
+#verticaltoolbar-error-console-button[cui-areatype="menu-panel"],
+#customization-palette toolbarpaletteitem[place="palette"] > #verticaltoolbar-error-console-button {
+	-moz-image-region: rect(0px, 32px, 32px, 0px);
+}
+
+#verticaltoolbar-web-console-button[cui-areatype="menu-panel"],
+#customization-palette toolbarpaletteitem[place="palette"] > #verticaltoolbar-web-console-button {
+	-moz-image-region: rect(0px, 64px, 32px, 32px);
+}
+
+#verticaltoolbar-page-info-button[cui-areatype="menu-panel"],
+#customization-palette toolbarpaletteitem[place="palette"] > #verticaltoolbar-page-info-button {
+	-moz-image-region: rect(0px, 96px, 32px, 64px);
+}
+
+#verticaltoolbar-view-source-button[cui-areatype="menu-panel"],
+#customization-palette toolbarpaletteitem[place="palette"] > #verticaltoolbar-view-source-button {
+	-moz-image-region: rect(0px, 128px, 32px, 96px);
+}
+
+#verticaltoolbar-offline-button:not([checked="true"])[cui-areatype="menu-panel"],
+#customization-palette toolbarpaletteitem[place="palette"] > #verticaltoolbar-offline-button:not([checked="true"]) {
+	-moz-image-region: rect(0px, 160px, 32px, 128px);
+}
+
+#verticaltoolbar-offline-button[cui-areatype="menu-panel"],
+#customization-palette toolbarpaletteitem[place="palette"] > #verticaltoolbar-offline-button {
+	-moz-image-region: rect(0px, 192px, 32px, 160px);
+}
+
+#verticaltoolbar-inspect-button[cui-areatype="menu-panel"],
+#customization-palette toolbarpaletteitem[place="palette"] > #verticaltoolbar-inspect-button {
+	-moz-image-region: rect(0px, 224px, 32px, 192px);
+}
+
+#verticaltoolbar-button[cui-areatype="menu-panel"],
+#customization-palette toolbarpaletteitem[place="palette"] > #verticaltoolbar-button {
+	-moz-image-region: rect(0px, 256px, 32px, 224px);
+}
+
+#verticaltoolbar-bookmarks-button[cui-areatype="menu-panel"],
+#customization-palette toolbarpaletteitem[place="palette"] > #verticaltoolbar-bookmarks-button {
+	-moz-image-region: rect(0px, 288px, 32px, 256px);
+}
+
+#verticaltoolbar-history-button[cui-areatype="menu-panel"],
+#customization-palette toolbarpaletteitem[place="palette"] > #verticaltoolbar-history-button {
+	-moz-image-region: rect(0px, 320px, 32px, 288px);
+}
+
+/* ::::: [Firefox28+] spring ::::: */
+
+/* on customization palette */
+#wrapper-verticaltoolbar-spring .toolbarpaletteitem-box {
+	background: url("chrome://global/skin/toolbar/spring.png") no-repeat center;
+}
+
+/* on vertical toolbar in customizing */
+#vertical-toolbar[orient="horizontal"] #wrapper-verticaltoolbar-spring .toolbarpaletteitem-box {
+	height: 18px;
+}
+
+/* on panel UI */
+#PanelUI-contents #verticaltoolbar-spring {
+	width: 64px;
+	height: 64px;
+}
+

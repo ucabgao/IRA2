@@ -1,0 +1,25 @@
+{
+    "name": "jwcrypto"
+  , "version": "0.2.0"
+  , "dependencies": {
+    "browserify": "1.8.1",
+    "vows": "0.5.13",
+    "optimist": "0.2.6",
+    "uglify-js": "1.0.6",
+    "bigint": "https://github.com/benadida/node-bigint/tarball/2ac68"
+  }
+  , "scripts": {
+    "postinstall": "bash bundle.sh",
+    "test": "./node_modules/.bin/vows"
+  }
+  , "repository" :
+  { "type" : "git"
+  , "url" : "http://github.com/mozilla/jwcrypto.git"
+  }
+  , "main" : "index.js"
+  , "bin" : {
+    "generate-keypair": "./bin/generate-keypair",
+    "check-assertion": "./bin/check-assertion",
+    "certify": "./bin/certify"
+  }
+}

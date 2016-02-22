@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+  <Document>
+    <name>NWS Warnings</name>
+    <open>1</open>
+    <NetworkLink>
+      <name>NWS Warning Products</name>
+      <open>1</open>
+      <Link>
+        <href>http://radar.weather.gov/data/radar/poly.kml</href>
+        <refreshMode>onInterval</refreshMode>
+        <refreshInterval>60</refreshInterval>
+      </Link>
+    </NetworkLink>
+  </Document>
+</kml>

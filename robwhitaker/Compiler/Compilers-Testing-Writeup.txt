@@ -1,0 +1,128 @@
+﻿Robert Whitaker
+Compiler Test Results
+
+{
+    int x
+    {
+        boolean b
+        {b = false}
+    }
+    x = 8
+}$
+
+Lexes properly. Parses properly. Adds items to SymbolTable with correct scope.
+
+------------------------------
+
+{
+int i
+i=5
+
+while(i==5) {
+    int x
+    {x=7
+     string y
+    }
+    y = "assigned"
+    if(x!=7) {
+        print("Ello mate")
+    }
+}
+}
+
+Lexes properly. Produces warning about lack of terminating character. Parses properly. Adds items to SymbolTable with correct scope: i (initialized), x (initialized), y (not initialized).
+
+------------------------------
+
+{
+    5=x
+} 
+
+Lexes properly. Outputs Parse Error: 
+
+Parse Error: Expecting Statement; Found 5 Line 2
+
+------------------------------
+
+{
+int i
+i=5
+    while true {
+        if(i==5) {
+            print(1)
+        }
+    }
+}$ {
+   print(2)
+}
+
+Lexes properly. Outputs warning that there is additional code after program terminator token. Parses boolean expressions correctly. Adds token i to SymbolTable.
+
+Warning: Code found after terminating token ($). Ignoring. Line: 9
+
+------------------------------
+
+{
+    { print ("Didnt need it anyway")
+
+}$
+
+Missing a closing brace. Parser issues error.
+
+Parse Error: Expecting Statement; Found $ Line 4
+
+------------------------------
+
+{
+    { print ("Didnt need it anyway" }
+
+}$
+
+Missing a closing paren. Parser issues error.
+
+Parse Error: Expecting T_PAREN ); Found } Line 2 
+
+------------------------------
+
+{
+    int i
+    {
+        int i
+    }
+
+    {
+        i=5
+    }
+}$
+
+Same level scopes. The “int i” in the first scope should be assigned 5 as the second “int i” declaration is not in scope with the “i=5” assignment statement. Works correctly after adopting a tree structure for the SymbolTable.
+
+          Scope 0          
+Type    ID      Line    Initialized
+int     i       2       true
+
+          Scope 1        
+Type    ID      Line    Initialized
+int     i       4       false
+
+------------------------------
+
+{x=5}
+
+Throws warning that identifier x was never declared.
+
+Warning: Found AssignmentStatement for undeclared identifier x. Line: 1
+
+------------------------------
+
+{
+    string s
+    s = "string with invalid character!!!"
+} $
+
+Invalid characters in string throws lex errors:
+
+Lex Error: Invalid character in string. Line 3
+Lex Error: Invalid character in string. Line 3
+Lex Error: Invalid character in string. Line 3
+Lex Error: Invalid token. Line 3

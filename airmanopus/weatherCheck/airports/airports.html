@@ -1,0 +1,242 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
+<link rel="StyleSheet" href="iphone.css" type="text/css">
+<title>Weathercheck Instant Weather</title>
+
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+
+<script type="text/javascript">
+
+
+	var usStates = {
+		'AK': [' '],
+		'AL': ['FL', 'GA', 'MS', 'TN'],
+		'AR': ['LA', 'MO', 'MS', 'OK', 'TN', 'TX'],
+		'AZ': ['CA', 'CO', 'NM', 'NV', 'UT'],
+		'CA': ['NV', 'OR'], 
+		'CO': ['KS', 'NE', 'NM', 'OK', 'UT', 'WY'],
+		'CT': ['MA', 'NY', 'RI'],
+		'DC': ['MD', 'VA'],
+		'DE': ['MD', 'NJ', 'PA'],
+		'FL': ['AL', 'GA'],
+		'GA': ['NC', 'SC', 'TN', 'FL'],
+		'HI': [' '],
+		'IA': ['IL', 'MN', 'MO', 'NE', 'SD', 'WI'],
+		'ID': ['MT', 'NV', 'OR', 'UT', 'WA', 'WY'],
+		'IL': ['IN', 'KY', 'MO', 'WI'],
+		'IN': ['KY', 'MI', 'OH'],
+		'KS': ['CO', 'MO', 'NE', 'OK'],
+		'KY': ['MO', 'OH', 'TN', 'VA', 'WV'],
+		'LA': ['AR', 'MS', 'TX'],
+		'MA': ['CT', 'NH', 'NY', 'RI', 'VT'],
+		'MD': ['DC', 'PA', 'VA', 'WV'],
+		'ME': ['NH'],
+		'MI': ['IN', 'OH', 'WI'],
+		'MN': ['IA', 'ND', 'SD', 'WI'],
+		'MO': ['AR', 'IA', 'IL', 'KS', 'KY', 'NE', 'OK', 'TN'],
+		'MS': ['LA', 'AR', 'TN', 'AL'],
+		'MT': ['ID', 'ND', 'SD', 'NE', 'WY'],
+		'NC': ['SC', 'TN', 'VA'],
+		'ND': ['MN', 'SD', 'MT'],
+		'NE': ['CO', 'IA', 'KS', 'MO', 'SD', 'WY'],
+		'NH': ['VT', 'ME', 'MA'],
+		'NJ': ['DE', 'PA', 'NY'],
+		'NM': ['AZ', 'UT', 'CO', 'OK', 'TX'],
+		'NV': ['CA', 'AZ', 'UT', 'ID', 'OR'],
+		'NY': ['OH', 'MA', 'PA', 'CA'],
+		'OH': ['IN', 'MI', 'PA', 'KY', 'WV'],
+		'OK': ['AK', 'TX', 'NM', 'CO', 'KS', 'MO'],
+		'OR': ['WA', 'ID', 'NV', 'CA'],
+		'PA': ['OH', 'WV', 'MD', 'NJ', 'NY'],
+		'RI': ['CT', 'MA', 'NY'],
+		'SC': ['GA', 'NC'],
+		'SD': ['ND', 'IA', 'NE', 'MN', 'MT', 'WY'],
+		'TN': ['AK', 'MS', 'AL', 'GA', 'NC', 'VA', 'MO', 'AR'],
+		'TX': ['NM', 'OK', 'AR', 'LA'],
+		'UT': ['CO', 'NM', 'AZ', 'NV', 'ID', 'WY'],
+		'VA': ['NC', 'KY', 'WV', 'MD'],
+		'WA': ['ID', 'OR'],
+		'WV': ['OH', 'PA', 'MD', 'KY'],
+		'WI': ['IA', 'IL', 'MN', 'MI'],
+		'WY': ['MT', 'SD', 'NE', 'CO', 'UT', 'ID']
+	};
+	
+	var state;
+	var radarURL;
+	var lat;
+	var lon;
+	var stateRadarImageURL;
+
+	var north=[];
+	var south=[];
+	var west=[];
+	var east=[];
+	var radarLink=[];
+
+function initialize(){
+
+// find latitude and longitude of device's current position
+if (navigator.geolocation) {
+	navigator.geolocation.getCurrentPosition(function(position) {
+		
+	//console.log(position.coords.latitude,position.coords.longitude);
+	lat = position.coords.latitude;
+	lon = position.coords.longitude;
+
+	// leafletjs api © 2010–2013 Vladimir Agafonkin, 2010–2011 CloudMade
+	// map data © OpenStreetMap contributors under CC-BY-SA license, imagery © CloudMade.com
+	var map = L.map('map').setView([lat, lon], 11);
+
+	// this is the street map	
+	L.tileLayer('http://{s}.tile.cloudmade.com/95d4fce0e9b74a24a674b4e1c7bcca22/997/256/{z}/{x}/{y}.png', {
+	    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+	    maxZoom: 12
+	}).addTo(map);
+	//
+
+	// reverse geocoding data © 2013 MapQuest, Inc. 
+	var reverseGeocodeURL="http://www.mapquestapi.com/geocoding/v1/reverse?key=Fmjtd|luubnu0yng,7s=o5-9u1wh4&json={location:{latLng:{lat:"+lat+",lng:"+lon+"}}}";
+	var reverseGeocode = new XMLHttpRequest();
+        reverseGeocode.open('GET',reverseGeocodeURL,false);
+        reverseGeocode.send();
+	//
+	
+	// isolate the string containing the state
+	var regex_adminArea3 = new RegExp('"adminArea3":"[A-Z][A-Z]"'); 
+	var adminArea3 = regex_adminArea3.exec(reverseGeocode.responseText);
+
+	// now we can select the state abbrev itself
+	var regexState = new RegExp('[A-Z][A-Z]');
+	var state = regexState.exec(adminArea3);
+	
+	// find the states adjacent to ours
+	var adjacentStates=[];
+	adjacentStates = usStates[state];
+	// add the state we are in to the list of states we need to retreive radar for
+	adjacentStates.push(state[0]);
+
+	// display processed radar images from our server
+	for (var s = 0; s < adjacentStates.length; s++) {
+		var stateKMLURL = "http://www.airmanopus.net/weathercheck/kml/" + adjacentStates[s] + "_Radar_data.kml?preventcache="+(new Date()).getTime(); 
+		var stateKMLfile = new XMLHttpRequest();
+		stateKMLfile.open('GET',stateKMLURL,false);
+		stateKMLfile.send();
+		
+		var stateKMLStatus = (stateKMLfile.statusText);
+		var stateKMLDoc = stateKMLfile.responseXML;
+
+		// different states have a different number of radar sites, we always want to grab images for all of them
+		var radarSites = stateKMLDoc.getElementsByTagName('href'),
+			numRadarSites = radarSites.length;
+	       
+		var imageBounds=[];
+		var radarLayer=[];
+		// get the latlonboxes for each radar site
+		for (var i = 0; i < numRadarSites; i++) {	
+			// this is the radar image to display, one image per radar site
+			radarLink[i] = stateKMLDoc.getElementsByTagName('href')[i].textContent + "?preventcache="+(new Date()).getTime(); 
+
+			// viewport values from LatLonBox we go N, E, S, W
+			north[i] = stateKMLDoc.getElementsByTagName('north')[i].textContent;
+			
+			south[i] = stateKMLDoc.getElementsByTagName('south')[i].textContent;
+
+			east[i] = stateKMLDoc.getElementsByTagName('east')[i].textContent;
+
+			west[i] = stateKMLDoc.getElementsByTagName('west')[i].textContent;
+
+			imageBounds[i]= [[south[i],west[i]], [north[i],east[i]]];
+		
+			radarLayer[i] = L.imageOverlay(radarLink[i],imageBounds);
+
+			map.addLayer(radarLayer[i]);
+		// in state sites
+		}
+	// states	
+	}
+
+	// an experiment
+
+	// check to see if the airport closest to us is reporting delays
+	// we know where we are and we know where all of the airports in the US are
+	// we can also ask the FAA what the status of an airport is once we determine which is closest
+	
+	// we are going to ignore what state we are in and use any airport within fifty miles
+
+	// haversine formula js implementation from http://www.movable-type.co.uk/scripts/latlong.html
+	// © 2002-2012 Chris Veness http://creativecommons.org/licenses/by/3.0/
+	
+	// we know where we are-- our coords are in lat and lon
+	// we need to calculate the distance from where we are to the current airport in the list
+	// 
+	
+	if (Math.abs(lon2-lon1) > Math.PI) lon1 += 2*Math.PI; // crossing anti-meridian
+
+	var lat3 = (lat1+lat2)/2;
+	var f1 = Math.tan(Math.PI/4 + lat1/2);
+	var f2 = Math.tan(Math.PI/4 + lat2/2);
+	var f3 = Math.tan(Math.PI/4 + lat3/2);
+	var lon3 = ( (lon2-lon1)*Math.log(f3) + lon1*Math.log(f2) - lon2*Math.log(f1) ) / 
+	   Math.log(f2/f1);
+
+	if (!isFinite(lon3)) lon3 = (lon1+lon2)/2; // parallel of latitude
+
+	lon3 = (lon3+3*Math.PI) % (2*Math.PI) - Math.PI;  // normalise to -180..+180º
+     
+
+//-------------
+	
+	});	
+     }
+}	
+</script>
+</head>
+
+
+
+<body onload="initialize()">
+
+<div id="headertext" class="toptitle" style="width:310px">Weathercheck Instant Weather</div>
+
+<div id="note"></div>
+
+<div id="map" style="height:215px;width:310px"></div>
+
+<div id="alerts" style="width:310px;font-family:'Droid Sans Mono',sans-serif">
+	<script type="text/javascript">
+	function success(position) {
+		var alertText = document.getElementById("alerts");
+		hazardLinksURL="http://www.airmanopus.net/cgi-bin/hazardLinks.cgi?lat="+position.coords.latitude+"&lon="+position.coords.longitude;
+		alertText.innerHTML="<p class=producttext><iframe src=" + hazardLinksURL + " width=310px frameborder=0px scrolling=no><\/iframe>"
+	}
+
+
+	function error(msg) {
+		var h=document.getElementById("note");
+		h.innerHTML = typeof msg == 'string' ? msg : "Please turn on location services";
+	}
+
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(success, error);
+	} else {
+		error('Please enable location services.');
+	}
+	</script>
+</div>
+<div id="footer" class="footertext">
+<pre>
+Geocoding Courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png" alt="MapQuest Logo">
+See map for additional credits
+Remaining &copy;(left) airmanopus 2012,2013 see <a href="http://airmanopus.net/weathercheck/COPYING">COPYING</a>.
+Source available on <a href="https://www.github.com/airmanopus/weathercheck">github</a>.
+</pre>
+</div>
+</body>
+</html>

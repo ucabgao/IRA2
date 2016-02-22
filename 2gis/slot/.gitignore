@@ -1,0 +1,10 @@
+node_modules
+/.idea/*
+/nbproject/*
+/nbproject/private/
+/coverage/*
+/docs/api
+.DS_Store
+npm-debug.log
+*.swp
+.eslintcache

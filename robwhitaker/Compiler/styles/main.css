@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 10%;
+    right: 10%;
+}
+
+.symT {
+    display: inline-block;
+    width: 15%;
+    text-align: center;
+}
+
+.left-panel {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 50%;
+}
+
+.left-panel textarea {
+    width: 95%;
+    height: 80%;
+    border: 1px solid #ccc;
+}
+
+.right-panel {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    right: 0;
+}
+
+select {
+    border: 1px solid #ccc;
+    min-width: 150px;
+    height: 30px;
+    text-indent: 50px;
+    background-color: #fff;
+    border-radius: 0.5em;
+    outline: none;
+}
+
+#output, #CST, #AST {
+    white-space: nowrap;
+    overflow: auto;
+    height: 80%;
+    border: 1px solid #ccc;
+    display:none;
+}
+
+h3 {
+    margin-bottom: 10px;
+}
+
+h3.view {
+    font-weight: lighter;
+    display:inline-block;
+    margin-right: 10px;
+}
+
+a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: #0000ff;
+    display: inline-block;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    width: 8em;
+    height: 2em;
+    background-color: #00a600;
+    border: 1px solid #333;
+    border-radius: 1em;
+    cursor: pointer;
+    font-family: helvetica;
+    font-size: 25px;
+    padding: 0;
+    outline: none;
+    color: #ffffff;
+}
+
+button:active {
+    background-color: #007400;
+    color: #fff;
+} 

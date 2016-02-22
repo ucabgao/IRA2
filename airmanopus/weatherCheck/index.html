@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Weathercheck Instant Weather</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="apple-touch-icon-precomposed" href="/weathercheck/images/icon.png" />
+<link href='https://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
+<link rel="StyleSheet" href="https://www.airmanopus.net/weathercheck/css/iphone.css" type="text/css">
+<link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.css' rel='stylesheet' />
+<script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.js'></script>
+<script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-osm/v0.1.0/leaflet-osm.js'></script>
+<script src='https://www.airmanopus.net/weathercheck/js/weathercheck_new.js'></script>
+<script src='https://www.airmanopus.net/bower_components/min/moment.min.js'></script>
+</head>
+
+
+
+<body onload="initialize()">
+
+<div id="map" class="map-initial"></div>
+<div id="weather">
+	<div id="weatherIcon" class="weatherIcon"></div>
+	<div id="weatherText" class="weatherDisplay"></div>
+</div>
+<div id="alerts" class="alerts-text"></div>
+<div id="footer" class="footertext">
+<pre>
+-----
+Powered by: <a href="https://www.worldweatheronline.com">World Weather Online</a>
+Maps &copy;<a href="https://www.mapbox.com/">Mapbox</a> &copy;<a href="https://www.openstreetmap.org/">OpenStreetMap Contributors</a> 
+Remaining &copy; 2012-2015 airmanopus
+<a href="https://airmanopus.net/weathercheck/COPYING">COPYING</a> (GPLv3)
+<a href="https://www.airmanopus.net/weathercheck/privacy.html">Privacy</a>
+<a href="https://www.github.com/airmanopus/weathercheck">github</a>
+</pre>
+</div>
+</body>
+</html>

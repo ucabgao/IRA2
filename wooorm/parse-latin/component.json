@@ -1,0 +1,17 @@
+{
+  "name": "parse-latin",
+  "repository": "wooorm/parse-latin",
+  "description": "Latin-script (natural language) parser",
+  "version": "0.1.0-rc.6",
+  "keywords": [
+    "latin",
+    "script",
+    "natural",
+    "language",
+    "parser"
+  ],
+  "scripts" : [
+    "index.js"
+  ],
+  "license": "MIT"
+}

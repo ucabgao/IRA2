@@ -1,0 +1,75 @@
+Weathercheck Privacy Policy
+
+tl;dr By using Weathercheck, you are broadcasting your physical location to the 
+Internet. If you have a reason to keep your physical location secret or even obscure, 
+don't use Weathercheck. (I don't need or want to know who is using my app, but I do
+get a warm and fuzzy feeling knowing that someone is using an app that I created.)
+
+Weathercheck protects your location data in transit by using SSL. Click the lock 
+icon in your browser to verify the certificate.
+
+<p>Weathercheck uses HTML5 geolocation[1], which may in turn uses your device's 
+built in GPS as well as other sources such as cellular and WiFI networks to 
+determine the location of your device-- and by association, your location. Your 
+coordinates are used to display a map of your geographic area, the current weather 
+conditions and forecast at your location, and active severe weather notices that 
+apply to your location.</p>
+
+(If Weathercheck is not able to determine your location using the information provided
+by your device, your IP address may be used to try to match your general location.)
+
+<p>Server logs are kept that record the coordinates that are returned as a result 
+of geolocation, the time and date, your device's IP address, and information about 
+the type of device you are using and the web browser you are using. An example of 
+the information collected in the server access log appears below.
+
+<pre> server IP - - [31/Oct/2013:20:52:50 -0700] "OPTIONS * HTTP/1.0" 200 136 "-" 
+"apache" your device IP - - [31/Oct/2013:20:53:10 -0700] "GET 
+/cgi-bin/hazardLinks.cgi?lat=43.00000&lon=-89.00000 HTTP/1.1" 200 715 "-" 
+"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu 
+Chromium/28.0.1500.71 Chrome/28.0.1500.71 Safari/537.36" </pre>
+
+I do not collect, store (except as described above), use, sell, or share 
+information about you or your device. I do not track or have access to who you 
+are, the nature or direction of your travel, where you have been, or where you 
+will be. I only know that a person with a device capable of being located has 
+accessed my app from a particular latitude and longitude.  Your web browser will 
+alert you to the use of geolocation each time you access Weathercheck, and if you 
+do not authorize geolocation, Weathercheck does not know where you are.</p>
+
+Weathercheck itself does not store or access cookies. APIs that Weathercheck uses 
+do store cookies in your web browser. The companies that provide these APIs do 
+collect information about you, and the privacy policies for those services are 
+listed below. If you do not wish your location and device information to be 
+available to any/all of these third parties, please do not use Weathercheck. 
+
+<pre>
+https://www.dreamhost.com		web hosting services
+  privacy policy: https://www.dreamhost.com/privacy-policy
+
+https://www.cloudflare.com		web content services
+  privacy policy: https://www.cloudflare.com/security-policy
+
+https://www.mapquest.com		open street map tiles and reverse geocoding
+  privacy policy: http://about.aol.com/aolnetwork/aol_pp
+</pre>
+
+
+<p>Weathercheck is in no way affiliated with the National Weather Service. 
+However, Weathercheck does access data provided by NWS at forecast.weather.gov. 
+The privacy policy for pages provided by weather.gov is available here:
+
+http://www.weather.gov/privacy
+
+Source code for Weathercheck is available on Github, as is the latest version of 
+this privacy policy:
+
+https://github.com/airmanopus/weatherCheck
+
+
+-----
+[1] W3C Geolocation API Specification
+http://dev.w3.org/geo/api/spec-source.html 
+
+
+

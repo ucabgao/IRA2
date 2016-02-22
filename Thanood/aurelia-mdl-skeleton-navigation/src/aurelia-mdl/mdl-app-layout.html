@@ -1,0 +1,25 @@
+<template bindable="router">
+    <require from="./mdl-layout.html"></require>
+    <require from="./mdl-header.html"></require>
+    <require from="./mdl-drawer.html"></require>
+    <require from="./mdl-nav.html"></require>
+    <require from="./mdl-content.html"></require>
+
+    <mdl-layout drawer="fixed" header="fixed">
+        <mdl-header>
+            <mdl-nav router.bind="router"></mdl-nav>
+        </mdl-header>
+        <mdl-drawer title.bind="router.title">
+            <mdl-nav router.bind="router"></mdl-nav>
+            <div class="header-content">
+                <mdl-slider style="width: 150px;" min.one-time="0.1" max.one-time="3.0" step.one-time="0.1" value.bind="rippleDuration"></mdl-slider>
+                ripple: ${rippleDuration}s
+            </div>
+        </mdl-drawer>
+        <mdl-content>
+            <div class="page-content">
+                <router-view></router-view>
+            </div>
+        </mdl-content>
+    </mdl-layout>
+</template>

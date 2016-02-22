@@ -1,0 +1,338 @@
+@import "preboot.less";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: #CCC;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+}
+
+// Not necessary - only kept as a reminder for non-fullscreen layouts
+#wrap {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.inline-block {
+    display: inline-block;
+    zoom: 1;
+    *display: inline; // beat you IE
+}
+
+#toolbar {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: @toolbar-height - 1px; // compensate for bottom border
+    #gradient(@off-white, @silver);
+    border-bottom: 1px solid @medium-grey;
+    #titlebar {
+        text-align: center;
+        width: 100%;
+        height: 20px;
+        padding-top: 7px;
+        .pretty-text(15px);
+    }
+    .button-ul { // mixin, not used directly
+        .pretty-text(12px);
+        height: 52px;
+        list-style-type: none;
+        li {
+            .inline-block;
+            text-align: center;
+        }
+    }
+    #left-buttons {
+        .button-ul;
+        margin-left: 20px;
+        float: left;
+        .double-button {
+            width: 100px;
+            div {
+                .inline-block;
+                width: 42px;
+                height: 25px;
+                &:active {
+                    background-position: 0px 25px;
+                }
+                margin-bottom: 3px;
+            }
+            #document-icon {
+                background-image: url('../img/document.png');
+            }
+            #grid-icon {
+                background-image: url('../img/grid.png');
+            }
+            #previous-icon {
+                background-image: url('../img/previous.png');
+            }
+            #next-icon {
+                background-image: url('../img/next.png');
+            }
+        }
+        .large-button {
+            width: 150px;
+        }
+        .huge-button {
+            // For the feasts navigation thing
+            // Needs to be left-aligned or it looks weird
+            text-align: left;
+            div {
+                margin-bottom: 7px; // magic
+            }
+        }
+        .medium-button {
+            width: 100px;
+            #goto-page {
+                input {
+                    .border-radius(4px);
+                    border: 1px solid @medium-grey;
+                    width: 50px;
+                    height: 25px;
+                    font-size: 14px;
+                    padding-left: 3px;
+                    color: @dark-grey;
+                }
+                margin-bottom: 3px;
+            }
+        }
+    }
+    #right-buttons {
+        .button-ul;
+        float: right;
+        .small-button {
+            width: 50px;
+            div {
+                margin: 0 auto;
+                &:active {
+                    background-position: 0px 25px;
+                }
+                width: 33px;
+                height: 25px;
+                margin-bottom: 5px;
+            }
+            #link-icon {
+                background-image: url('../img/link.png');
+            }
+            #info-icon {
+                background-image: url('../img/info.png');
+            }
+        }
+    }
+}
+
+#search-pane {
+    position: absolute;
+    top: @toolbar-height;
+    left: 0px;
+    bottom: 0px;
+    width: @left-width - 1px; // compensate for right border
+    border-right: 1px solid @medium-grey;
+    background-color: @light-blue;
+}
+
+#document-pane {
+    position: absolute;
+    top: @toolbar-height;
+    left: @left-width;
+    bottom: 0px;
+    right: @right-width;
+    background-color: @off-white;
+}
+
+#context-pane {
+    position: absolute;
+    top: @toolbar-height;
+    right: 0px;
+    width: @right-width - 1px; // compensate for left border
+    border-left: 1px solid @medium-grey;
+    background-color: @light-blue;
+    bottom: 0px;
+}
+
+/* lolol */
+.larger-text {
+    font-size:14px;
+}
+
+input {
+    outline: none;
+}
+
+input:focus {
+    border: 1px solid @silver !important;
+}
+
+.large-button #slider div {
+    height: 5px !important;
+    outline: none !important;
+    width: 100px;
+    background: @medium-grey !important;
+    position: relative;
+    top: -12px;
+    a {
+        margin-top: -2px;
+    }
+}
+
+#back-forward-icons {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    div {
+        .inline-block;
+        height: 25px;
+        width: 25px;
+        &:active {
+            background-position: 0px 25px;
+        }
+    }
+    #back-icon {
+        background-image: url('../img/back.png');
+    }
+    #forward-icon {
+        background-image: url('../img/forward.png');
+    }
+}
+
+#clear-results {
+    position: absolute;
+    top: 11px;
+    left: 206px;
+    width: 14px;
+    height: 14px;
+    .border-radius(9px);
+    background-color: @medium-grey;
+    padding-top: 2px;
+    padding-left: 4px;
+    padding-bottom: 2px;
+    display: none;
+    &:active {
+        background-color: @dark-grey;
+    }
+}
+
+#search-box {
+    #gradient(@off-white, @light-grey);
+    border-bottom: 1px solid @medium-grey;
+    width: 100%;
+    height: 40px;
+    fieldset {
+        position: relative;
+        top: 5px;
+        border: 0px;
+        input {
+            background-image: url('../img/search.png');
+            background-repeat: no-repeat;
+            background-position: left center;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            height: 18px;
+            .border-radius(10px);
+            border: 1px solid @medium-grey;
+            width: @left-width - 75 - 43;
+            margin-left: 5px;
+            padding-right: 25px;
+            color: @dark-grey;
+            padding-left: 18px;
+            font-size: 14px;
+        }
+    }
+}
+
+
+.incipit {
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.incipit-info {
+    margin-left: 20px;
+    list-style-type: square;
+    display: none;
+    li {
+        padding: 5px 0px;
+    }
+    .concordances {
+        font-weight: bold;
+        cursor: pointer;
+    }
+    ul {
+        margin-left: 20px;
+        display: none;
+        li {
+            padding: 0px;
+        }
+    }
+}
+
+.incipit, .concordances {
+    padding-left: 17px;
+    background-position: 0px 2px;
+    background-repeat: no-repeat;
+    background-image: url('../img/arrow.png');
+}
+
+.arrow2 {
+    background-image: url('../img/arrow2.png');
+}
+
+// Needed for scroll it seems
+#search-outer {
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+#info-outer {
+    overflow-y: scroll;
+    padding: 10px;
+}
+
+#search-results {
+    .result {
+        width: @left-width - 81px;
+        background-repeat: no-repeat;
+        background-position: 4px 13px;
+        height: 75px;
+        padding: 10px 10px 10px 55px;
+        em {
+            font-weight: bold;
+        }
+        cursor: pointer;
+    }
+    .active {
+        background-color: @medium-grey;
+        color: #FFF;
+    }
+    .result + .result {
+        border-top: solid 1px @light-grey;
+    }
+    .result-info {
+        padding-top: 10px;
+        text-align: center;
+    }
+}
+
+#link-popup {
+    position: absolute;
+    right: 115px;
+    top: 25px;
+    z-index: 9001;
+    input {
+        width: 300px;
+        height: 30px;
+        padding: 5px;
+        border: 1px solid @silver;
+        background-color: rgba(250, 250, 250, 0.3);
+    }
+}

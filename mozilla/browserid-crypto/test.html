@@ -1,0 +1,30 @@
+<html>
+<head>
+<!-- stupid IE8 standards mode for JSON -->
+<meta http-equiv="x-ua-compatible" content="IE=8" />
+<title>test VEP from Browser</title>
+  <script type="text/javascript" src="bidbundle-min.js"></script>
+  <script type="text/javascript">
+    // a small subset of vows tests
+    function runkeygen() {
+      var jwcrypto = require("./lib/jwcrypto");
+      var start = new Date();
+      jwcrypto.generateKeypair({algorithm: "DS", keysize: 256}, function(err, kp) {
+        var end = new Date();
+        alert(end-start);
+      });
+    }
+
+  </script>
+</head>
+<body>
+<button onclick="runkeygen();">keygen-DS256</button>
+<!--
+<button onclick="runtests();">run tests</button>
+<button onclick="runperftests();">run perf tests</button>
+<button onclick="runperftests2();">run perf tests 2</button>
+<button onclick="onePrime();">one prime</button>
+<button onclick="rundsatests();">run dsa tests</button>
+-->
+</body>
+</html>

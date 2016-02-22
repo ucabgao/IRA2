@@ -1,0 +1,36 @@
+@import "../mixins";
+@import "../variables";
+
+.ordering-list {
+  margin-bottom: @line-height-base;
+  display: block;
+  outline : none;
+
+  .header {
+    font-family: @headings-font-family;
+    font-weight: @headings-font-weight;
+    line-height: @headings-line-height;
+    font-size: ceil(@font-size-base * 1.10);
+    margin-top: @line-height-computed;
+    margin-bottom: (@line-height-computed / 2);
+  }
+
+  .helper {
+
+    li:first-child {
+      margin-top: 0px;
+    }
+
+    li:last-child {
+      margin-bottom: 0px;
+    }
+  }
+
+  table.list tr * {
+    height: inherit;
+  }
+
+  table.list {
+    table-layout: fixed;
+  }
+}

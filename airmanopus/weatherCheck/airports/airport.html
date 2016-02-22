@@ -1,0 +1,290 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
+<title>Airports</title>
+
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+
+<script type="text/javascript">
+
+
+	var usStates = {
+		'AK': [' '],
+		'AL': ['FL', 'GA', 'MS', 'TN'],
+		'AR': ['LA', 'MO', 'MS', 'OK', 'TN', 'TX'],
+		'AZ': ['CA', 'CO', 'NM', 'NV', 'UT'],
+		'CA': ['NV', 'OR'], 
+		'CO': ['KS', 'NE', 'NM', 'OK', 'UT', 'WY'],
+		'CT': ['MA', 'NY', 'RI'],
+		'DC': ['MD', 'VA'],
+		'DE': ['MD', 'NJ', 'PA'],
+		'FL': ['AL', 'GA'],
+		'GA': ['NC', 'SC', 'TN', 'FL'],
+		'HI': [' '],
+		'IA': ['IL', 'MN', 'MO', 'NE', 'SD', 'WI'],
+		'ID': ['MT', 'NV', 'OR', 'UT', 'WA', 'WY'],
+		'IL': ['IN', 'KY', 'MO', 'WI'],
+		'IN': ['KY', 'MI', 'OH'],
+		'KS': ['CO', 'MO', 'NE', 'OK'],
+		'KY': ['MO', 'OH', 'TN', 'VA', 'WV'],
+		'LA': ['AR', 'MS', 'TX'],
+		'MA': ['CT', 'NH', 'NY', 'RI', 'VT'],
+		'MD': ['DC', 'PA', 'VA', 'WV'],
+		'ME': ['NH'],
+		'MI': ['IN', 'OH', 'WI'],
+		'MN': ['IA', 'ND', 'SD', 'WI'],
+		'MO': ['AR', 'IA', 'IL', 'KS', 'KY', 'NE', 'OK', 'TN'],
+		'MS': ['LA', 'AR', 'TN', 'AL'],
+		'MT': ['ID', 'ND', 'SD', 'NE', 'WY'],
+		'NC': ['SC', 'TN', 'VA'],
+		'ND': ['MN', 'SD', 'MT'],
+		'NE': ['CO', 'IA', 'KS', 'MO', 'SD', 'WY'],
+		'NH': ['VT', 'ME', 'MA'],
+		'NJ': ['DE', 'PA', 'NY'],
+		'NM': ['AZ', 'UT', 'CO', 'OK', 'TX'],
+		'NV': ['CA', 'AZ', 'UT', 'ID', 'OR'],
+		'NY': ['OH', 'MA', 'PA', 'CA'],
+		'OH': ['IN', 'MI', 'PA', 'KY', 'WV'],
+		'OK': ['AK', 'TX', 'NM', 'CO', 'KS', 'MO'],
+		'OR': ['WA', 'ID', 'NV', 'CA'],
+		'PA': ['OH', 'WV', 'MD', 'NJ', 'NY'],
+		'RI': ['CT', 'MA', 'NY'],
+		'SC': ['GA', 'NC'],
+		'SD': ['ND', 'IA', 'NE', 'MN', 'MT', 'WY'],
+		'TN': ['AK', 'MS', 'AL', 'GA', 'NC', 'VA', 'MO', 'AR'],
+		'TX': ['NM', 'OK', 'AR', 'LA'],
+		'UT': ['CO', 'NM', 'AZ', 'NV', 'ID', 'WY'],
+		'VA': ['NC', 'KY', 'WV', 'MD'],
+		'WA': ['ID', 'OR'],
+		'WV': ['OH', 'PA', 'MD', 'KY'],
+		'WI': ['IA', 'IL', 'MN', 'MI'],
+		'WY': ['MT', 'SD', 'NE', 'CO', 'UT', 'ID']
+	};
+	
+	var state;
+	var radarURL;
+	var lat;
+	var lon;
+	var stateRadarImageURL;
+
+	var north=[];
+	var south=[];
+	var west=[];
+	var east=[];
+	var radarLink=[];
+
+function initialize(){
+
+// find latitude and longitude of device's current position
+if (navigator.geolocation) {
+	navigator.geolocation.getCurrentPosition(function(position) {
+		
+	//console.log(position.coords.latitude,position.coords.longitude);
+	lat = position.coords.latitude;
+	lon = position.coords.longitude;
+
+	// leafletjs api © 2010–2013 Vladimir Agafonkin, 2010–2011 CloudMade
+	// map data © OpenStreetMap contributors under CC-BY-SA license, imagery © CloudMade.com
+	var map = L.map('map').setView([lat, lon], 11);
+
+	// this is the street map	
+	L.tileLayer('http://{s}.tile.cloudmade.com/95d4fce0e9b74a24a674b4e1c7bcca22/997/256/{z}/{x}/{y}.png', {
+	    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+	    maxZoom: 12
+	}).addTo(map);
+	//
+
+	// reverse geocoding data © 2013 MapQuest, Inc. 
+	var reverseGeocodeURL="http://www.mapquestapi.com/geocoding/v1/reverse?key=Fmjtd|luubnu0yng,7s=o5-9u1wh4&json={location:{latLng:{lat:"+lat+",lng:"+lon+"}}}";
+	var reverseGeocode = new XMLHttpRequest();
+        reverseGeocode.open('GET',reverseGeocodeURL,false);
+        reverseGeocode.send();
+	//
+	
+	// isolate the string containing the state
+	var regex_adminArea3 = new RegExp('"adminArea3":"[A-Z][A-Z]"'); 
+	var adminArea3 = regex_adminArea3.exec(reverseGeocode.responseText);
+
+	// now we can select the state abbrev itself
+	var regexState = new RegExp('[A-Z][A-Z]');
+	var state = regexState.exec(adminArea3);
+	
+	// find the states adjacent to ours
+	var adjacentStates=[];
+	adjacentStates = usStates[state];
+	// add the state we are in to the list of states we need to retreive radar for
+	adjacentStates.push(state[0]);
+
+	// display processed radar images from our server
+	for (var s = 0; s < adjacentStates.length; s++) {
+		var stateKMLURL = "http://www.airmanopus.net/weathercheck/kml/" + adjacentStates[s] + "_Radar_data.kml?preventcache="+(new Date()).getTime(); 
+		var stateKMLfile = new XMLHttpRequest();
+		stateKMLfile.open('GET',stateKMLURL,false);
+		stateKMLfile.send();
+		
+		var stateKMLStatus = (stateKMLfile.statusText);
+		var stateKMLDoc = stateKMLfile.responseXML;
+
+		// different states have a different number of radar sites, we always want to grab images for all of them
+		var radarSites = stateKMLDoc.getElementsByTagName('href'),
+			numRadarSites = radarSites.length;
+	       
+		var imageBounds=[];
+		var radarLayer=[];
+		// get the latlonboxes for each radar site
+		for (var i = 0; i < numRadarSites; i++) {	
+			// this is the radar image to display, one image per radar site
+			radarLink[i] = stateKMLDoc.getElementsByTagName('href')[i].textContent + "?preventcache="+(new Date()).getTime(); 
+
+			// viewport values from LatLonBox we go N, E, S, W
+			north[i] = stateKMLDoc.getElementsByTagName('north')[i].textContent;
+			
+			south[i] = stateKMLDoc.getElementsByTagName('south')[i].textContent;
+
+			east[i] = stateKMLDoc.getElementsByTagName('east')[i].textContent;
+
+			west[i] = stateKMLDoc.getElementsByTagName('west')[i].textContent;
+
+			imageBounds[i]= [[south[i],west[i]], [north[i],east[i]]];
+		
+			radarLayer[i] = L.imageOverlay(radarLink[i],imageBounds);
+
+			map.addLayer(radarLayer[i]);
+		// in state sites
+		}
+	// states	
+	}
+
+	// an experiment in displaying flight delay information along with weather
+
+	// we know where we are-- our coords are in lat and lon
+	// we need to calculate the distance from where we are to the current airport in the list
+	// get the list of airports	 
+	var airportListURL="http://www.airmanopus.net/cgi-bin/airportlist.csv";
+        var airportListGet = new XMLHttpRequest();
+        airportListGet.open('GET',airportListURL,false);
+        airportListGet.send();
+	
+	var airportListStatus = (airportListGet.statusText);
+        var airportList = airportListGet.responseText;
+
+	// first need to split the csv file into an array with each element containing info for one airport
+	var airportCSV = airportList.split("\n")		
+
+	const numAirports = 533; 			
+	var airports = new Array();
+	for (var j = 0; j < numAirports; j++) {
+		// we need to split the csv file into arrays, one airport per line 
+		airports[j] = airportCSV[j].split(",");
+		
+		var iataIdentifier = airports[j][0];			// 3 letter iata identifier
+		var myLat = lat;					// my latitude
+		var myLon = lon;					// my longitude
+		var airportLat = airports[j][6];			// airport latitude
+		var airportLon	= airports[j][7];			// airport longitude
+		var airportName = airports[j][5];
+
+		const pi = 3.14159265359;	// pi
+		const R = 3959; 		// approximate radius of earth in miles
+
+
+		// haversine formula js implementation from http://www.movable-type.co.uk/scripts/latlong.html
+		// © 2002-2012 Chris Veness http://creativecommons.org/licenses/by/3.0/
+ 
+		var dLat = ((airportLat-myLat) * (pi/180));
+		var dLon = ((airportLon-myLon) * (pi/180));
+		var myLat = (lat * (pi/180));
+		var airportLat = (airportLat * (pi/180));
+
+		var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+			Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(myLat) * Math.cos(airportLat); 
+		var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+		var distance = R * c;					// miles
+
+		// end cc-by-3.0
+		
+		const viewportDistance = 75;	// check to see if this airport is one we need to check status for
+				
+		if ( distance <= viewportDistance ) {
+			// go ask the FAA if there are any delays happening at this airport
+			var airportStatusURL="http://www.airmanopus.net/cgi-bin/airports.cgi?iata=" + iataIdentifier;
+			var airportStatusGet = new XMLHttpRequest();
+		 	airportStatusGet.open('GET',airportStatusURL,false);
+			airportStatusGet.send();
+			var airportStatus = airportStatusGet.responseXML;
+		
+			var delayStatus = airportStatus.getElementsByTagName('Delay')[0].textContent;
+			if ( delayStatus = "true" ) {
+				delayAirport = airportStatus.getElementsByTagName('IATA')[0].textContent;
+				delayReason = airportStatus.getElementsByTagName('Reason')[0].textContent; 
+				delayAvg = airportStatus.getElementsByTagName('AvgDelay')[0].textContent;
+				delayTrend = airportStatus.getElementsByTagName('Trend')[0].textContent;
+				delayType = airportStatus.getElementsByTagName('Type')[0].textContent;
+				airports.innerHTML += "<p>"+delayAirport+" "+delayReason+" "+delayType +"</p>";
+				airports.innerHTML += "<p>Average Delay: "+delayAvg+" Trend: "+delayTrend +"</p>";		
+			} else { 
+				// no delays at any airport within viewportDistance miles
+				airports.innerHTML="";
+
+			} 
+			// delayStatus
+		} 
+		// checking distance	
+	} 
+	// airports
+
+	
+
+
+//-------------
+	
+	});	
+     }
+}	
+</script>
+</head>
+
+
+
+<body onload="initialize()">
+
+<div id="header" class="toptitle" style="width:310px">Weathercheck Instant Weather</div>
+<div id="map" style="height:215px;width:310px"></div>
+<div id="airports" style="width:310px;font-family:'Droid Sans Mono',sans-serif"></div>
+<div id="alerts" style="width:310px;font-family:'Droid Sans Mono',sans-serif">
+	<script type="text/javascript">
+	function success(position) {
+		var alertText = document.getElementById("alerts");
+		hazardLinksURL="http://www.airmanopus.net/cgi-bin/hazardLinks.cgi?lat="+position.coords.latitude+"&lon="+position.coords.longitude;
+		alertText.innerHTML="<p class=producttext><iframe src=" + hazardLinksURL + " width=310px frameborder=0px scrolling=no><\/iframe>"
+	}
+
+
+	function error(msg) {
+		var h=document.getElementById("note");
+		h.innerHTML = typeof msg == 'string' ? msg : "Please turn on location services";
+	}
+
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(success, error);
+	} else {
+		error('Please enable location services.');
+	}
+	</script>
+</div>
+<div id="footer" class="footertext">
+<pre>
+Geocoding Courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png" alt="MapQuest Logo">
+See map for additional credits
+Remaining &copy;(left) airmanopus 2012,2013 see <a href="http://airmanopus.net/weathercheck/COPYING">COPYING</a>.
+Source available on <a href="https://www.github.com/airmanopus/weathercheck">github</a>.
+</pre>
+</div>
+</body>
+</html>

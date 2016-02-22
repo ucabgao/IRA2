@@ -1,0 +1,22 @@
+{
+  "name": "autoprefixer",
+  "version": "2.0.0",
+  "description": "Prefix CSS",
+  "license": "MIT",
+  "repository": "sindresorhus/atom-autoprefixer",
+  "private": true,
+  "activationEvents": [
+    "autoprefixer"
+  ],
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "http://sindresorhus.com"
+  },
+  "engines": {
+    "atom": ">=0.135.0"
+  },
+  "dependencies": {
+    "autoprefixer-core": "^4.0.0"
+  }
+}
