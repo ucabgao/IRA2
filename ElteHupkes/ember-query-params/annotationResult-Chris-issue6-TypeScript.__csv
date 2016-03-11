@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+ElteHupkes/ember-query-params,6,d40f7dcdea50fe3df2f534cfe23a7d42a56084b5,TypeScript,Undetectable,"EIS: this just makes a function return a value where it didn't before and now the return value of the function call is examined",129.0
