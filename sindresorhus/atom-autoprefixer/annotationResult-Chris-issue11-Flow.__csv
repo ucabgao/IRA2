@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+sindresorhus/atom-autoprefixer,11,7377ec5c2f17abdee00def34b8c62e5552df666a,Flow,Undetectable,"EIS",0.0
