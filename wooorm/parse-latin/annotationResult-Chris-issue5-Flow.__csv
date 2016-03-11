@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+wooorm/parse-latin,5,01a117ec977b83731bdd228f97a82436705316b7,Flow,Undetectable,"string errors",12.0
