@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+justojs/justo-result,3,ea07cfe376eafae6c46592a7f664cca045ba0558,TypeScript,Undetectable,"EIS: adding state to a bunch of functions and updating call sites",132.0
