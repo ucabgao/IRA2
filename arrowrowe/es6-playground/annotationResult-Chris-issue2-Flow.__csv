@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+arrowrowe/es6-playground,2,bbd97ca21e9ad0075a92b6d04ab3250a4f1535d4,Flow,Undetectable,"string error",21.0
