@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+sindresorhus/os-locale,1,34c02ef169549743a7813421b5681161eeb0aaad,Flow,Undetectable,"regex fix",44.0
