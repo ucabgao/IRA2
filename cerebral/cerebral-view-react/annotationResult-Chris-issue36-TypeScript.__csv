@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+cerebral/cerebral-view-react,36,15151fb9752842535daa67634e80496fe7d9ecc7,TypeScript,Undetectable,"refactoring: code cleanup",114.0
