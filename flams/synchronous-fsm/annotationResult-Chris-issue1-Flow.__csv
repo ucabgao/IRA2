@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+flams/synchronous-fsm,1,2d4c0e489d98711730c49d6b2b0b6d3196120c98,Flow,Undetectable,"EIS: there is a decent amount of dynamic type checking going on, but expect is a function which can take literally anything.",202.0
