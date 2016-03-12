@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+sindresorhus/os-locale,1,34c02ef169549743a7813421b5681161eeb0aaad,TypeScript,Undetectable,"Regex/Parsing:  This is one that we should deep dive.  It's one where a Regex aware type system could know that a regex could return null so that calling .exec on its result of a regex could dereference a null.  ",307.0
