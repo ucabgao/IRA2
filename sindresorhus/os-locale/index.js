@@ -1,6 +1,7 @@
+/* @flow */
 'use strict';
 var childProcess = require('child_process');
-var lcid = require('lcid');
+var lcid : any = null; //require('lcid');
 var cache;
 
 function getLocale(str) {
