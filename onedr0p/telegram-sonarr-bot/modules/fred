@@ -1,0 +1,28 @@
+SonarrMessage.ts(3,17): error TS2304: Cannot find name 'require'.
+SonarrMessage.ts(4,17): error TS2304: Cannot find name 'require'.
+SonarrMessage.ts(5,17): error TS2304: Cannot find name 'require'.
+SonarrMessage.ts(7,14): error TS2304: Cannot find name 'require'.
+SonarrMessage.ts(7,22): error TS2304: Cannot find name '__dirname'.
+SonarrMessage.ts(8,14): error TS2304: Cannot find name 'require'.
+SonarrMessage.ts(8,22): error TS2304: Cannot find name '__dirname'.
+SonarrMessage.ts(9,14): error TS2304: Cannot find name 'require'.
+SonarrMessage.ts(9,22): error TS2304: Cannot find name '__dirname'.
+SonarrMessage.ts(10,14): error TS2304: Cannot find name 'require'.
+SonarrMessage.ts(10,22): error TS2304: Cannot find name '__dirname'.
+SonarrMessage.ts(11,14): error TS2304: Cannot find name 'require'.
+SonarrMessage.ts(11,22): error TS2304: Cannot find name '__dirname'.
+SonarrMessage.ts(259,23): error TS2304: Cannot find name 'require'.
+SonarrMessage.ts(539,12): error TS2339: Property 'tvdbId' does not exist on type '{}'.
+SonarrMessage.ts(540,12): error TS2339: Property 'title' does not exist on type '{}'.
+SonarrMessage.ts(541,12): error TS2339: Property 'titleSlug' does not exist on type '{}'.
+SonarrMessage.ts(542,12): error TS2339: Property 'rootFolderPath' does not exist on type '{}'.
+SonarrMessage.ts(543,12): error TS2339: Property 'seasonFolder' does not exist on type '{}'.
+SonarrMessage.ts(544,12): error TS2339: Property 'monitored' does not exist on type '{}'.
+SonarrMessage.ts(545,12): error TS2339: Property 'seriesType' does not exist on type '{}'.
+SonarrMessage.ts(546,12): error TS2339: Property 'qualityProfileId' does not exist on type '{}'.
+SonarrMessage.ts(553,16): error TS2339: Property 'ignoreEpisodesWithFiles' does not exist on type '{}'.
+SonarrMessage.ts(554,16): error TS2339: Property 'ignoreEpisodesWithoutFiles' does not exist on type '{}'.
+SonarrMessage.ts(557,16): error TS2339: Property 'ignoreEpisodesWithFiles' does not exist on type '{}'.
+SonarrMessage.ts(558,16): error TS2339: Property 'ignoreEpisodesWithoutFiles' does not exist on type '{}'.
+SonarrMessage.ts(596,12): error TS2339: Property 'seasons' does not exist on type '{}'.
+SonarrMessage.ts(689,1): error TS2304: Cannot find name 'module'.
