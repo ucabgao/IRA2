@@ -1,11 +1,12 @@
-var thunky = require('thunky')
+/* @flow */
+var thunky : any; //require('thunky')
 var messages = require('./messages')
 
 var BLOCKS_PER_DIRECTORY = 8192
 
 module.exports = Feed
 
-function Feed (link, drive, opts) {
+function Feed (link : any, drive : any, opts : any) {
   if (!(this instanceof Feed)) return new Feed(link, drive, opts)
   if (!opts) opts = {}
 
@@ -55,10 +56,16 @@ Feed.prototype._block = function (index, cb) {
   })
 }
 
+declare class xxx {
+   decode ( n : number ) : number;
+}
+var yyy : xxx;
+
 function decoder (cb) {
-  return function (err, value) {
+  return function (err, value : ?number) {
     if (err) return cb(err)
-    var entry = messages.Entry.decode(value)
+    //var entry = messages.Entry.decode(value)
+    var entry = yyy.decode(value)
     // TODO: move to module
     if (entry.type === 'file') entry.value = messages.File.decode(entry.value)
     cb(null, entry)

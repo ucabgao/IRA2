@@ -1,0 +1,36 @@
+feed.js:68
+ 68:     var entry = yyy.decode(value)
+                     ^^^^^^^^^^^^^^^^^ call of method `decode`
+ 68:     var entry = yyy.decode(value)
+                                ^^^^^ null. This type is incompatible with
+ 60:    decode ( n : number ) : number;
+                     ^^^^^^ number
+
+feed.js:68
+ 68:     var entry = yyy.decode(value)
+                     ^^^^^^^^^^^^^^^^^ call of method `decode`
+ 68:     var entry = yyy.decode(value)
+                                ^^^^^ undefined. This type is incompatible with
+ 60:    decode ( n : number ) : number;
+                     ^^^^^^ number
+
+feed.js:70
+ 70:     if (entry.type === 'file') entry.value = messages.File.decode(entry.value)
+                   ^^^^ property `type`. Property not found in
+ 70:     if (entry.type === 'file') entry.value = messages.File.decode(entry.value)
+             ^^^^^ Number
+
+feed.js:70
+ 70:     if (entry.type === 'file') entry.value = messages.File.decode(entry.value)
+                                          ^^^^^ property `value`. Property cannot be assigned on
+ 70:     if (entry.type === 'file') entry.value = messages.File.decode(entry.value)
+                                    ^^^^^ number
+
+feed.js:70
+ 70:     if (entry.type === 'file') entry.value = messages.File.decode(entry.value)
+                                                                             ^^^^^ property `value`. Property not found in
+ 70:     if (entry.type === 'file') entry.value = messages.File.decode(entry.value)
+                                                                       ^^^^^ Number
+
+
+Found 5 errors
