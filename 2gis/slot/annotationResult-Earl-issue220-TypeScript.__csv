@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+2gis/slot,220,82cf940a8a3724d84f72b8988f6c6ba45634353f,TypeScript,Undetectable,"Regex/Parsing Error.",32.0
