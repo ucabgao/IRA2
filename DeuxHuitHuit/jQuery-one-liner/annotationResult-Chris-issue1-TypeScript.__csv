@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+DeuxHuitHuit/jQuery-one-liner,1,b95235af155e9727509a81e80f00561ff48310eb,TypeScript,Undetectable,"EIS: updates the width of a jquery object.",27.0
