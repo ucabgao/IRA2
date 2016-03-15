@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+protometa/convert-metric,1,dfb41bbfe11195ff6c249a7b4b939a1c8b30306a,TypeScript,Undetectable,"Missing Branches.  Burned some time seeing what errors TypeScript would detect.",125.0
