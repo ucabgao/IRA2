@@ -1,0 +1,86 @@
+mdl-button.js:2
+  2: import { bindable, inject } from 'aurelia-framework';
+                                      ^^^^^^^^^^^^^^^^^^^ aurelia-framework. Required module not found
+
+mdl-button.js:3
+  3: import 'material-design-lite';
+            ^^^^^^^^^^^^^^^^^^^^^^ material-design-lite. Required module not found
+
+mdl-button.js:7
+  7:     @bindable() accent = false;
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^ Experimental class instance field usage. Class instance fields are an active early stage feature proposal that may change. You may opt-in to using them anyway in Flow by putting `esproposal.class_instance_fields=enable` into the [options] section of your .flowconfig.
+
+mdl-button.js:7
+  7:     @bindable() accent = false;
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^ class property `accent`. Missing annotation
+
+mdl-button.js:8
+  8:     @bindable() colored = false;
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Experimental class instance field usage. Class instance fields are an active early stage feature proposal that may change. You may opt-in to using them anyway in Flow by putting `esproposal.class_instance_fields=enable` into the [options] section of your .flowconfig.
+
+mdl-button.js:8
+  8:     @bindable() colored = false;
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ class property `colored`. Missing annotation
+
+mdl-button.js:9
+  9:     @bindable() primary = false;
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Experimental class instance field usage. Class instance fields are an active early stage feature proposal that may change. You may opt-in to using them anyway in Flow by putting `esproposal.class_instance_fields=enable` into the [options] section of your .flowconfig.
+
+mdl-button.js:9
+  9:     @bindable() primary = false;
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ class property `primary`. Missing annotation
+
+mdl-button.js:10
+ 10:     @bindable() raised = true;
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^ Experimental class instance field usage. Class instance fields are an active early stage feature proposal that may change. You may opt-in to using them anyway in Flow by putting `esproposal.class_instance_fields=enable` into the [options] section of your .flowconfig.
+
+mdl-button.js:10
+ 10:     @bindable() raised = true;
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^ class property `raised`. Missing annotation
+
+mdl-button.js:11
+ 11:     @bindable() ripple = true;
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^ Experimental class instance field usage. Class instance fields are an active early stage feature proposal that may change. You may opt-in to using them anyway in Flow by putting `esproposal.class_instance_fields=enable` into the [options] section of your .flowconfig.
+
+mdl-button.js:11
+ 11:     @bindable() ripple = true;
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^ class property `ripple`. Missing annotation
+
+mdl-button.js:12
+ 12:     constructor(element) {
+                     ^^^^^^^ parameter `element`. Missing annotation
+
+mdl-button.js:13
+ 13:         this.element = element;
+             ^^^^^^^^^^^^ assignment of property `element`
+ 13:         this.element = element;
+                  ^^^^^^^ property `element`. Property not found in
+  6: export class MdlButton {
+                  ^^^^^^^^^ MdlButton
+
+mdl-button.js:16
+ 16:         let btn = this.element.querySelector('button');
+                            ^^^^^^^ property `element`. Property not found in
+  6: export class MdlButton {
+                  ^^^^^^^^^ MdlButton
+
+mdl-button.js:32
+ 32:         componentHandler.upgradeElement(btn);
+             ^^^^^^^^^^^^^^^^ identifier `componentHandler`. Could not resolve name
+
+mdl-button.js:34
+ 34:     raisedChanged(newValue, oldValue) {
+                       ^^^^^^^^ parameter `newValue`. Missing annotation
+
+mdl-button.js:34
+ 34:     raisedChanged(newValue, oldValue) {
+                                 ^^^^^^^^ parameter `oldValue`. Missing annotation
+
+mdl-button.js:35
+ 35:         let btn = this.element.querySelector('button');
+                            ^^^^^^^ property `element`. Property not found in
+  6: export class MdlButton {
+                  ^^^^^^^^^ MdlButton
+
+
+Found 19 errors

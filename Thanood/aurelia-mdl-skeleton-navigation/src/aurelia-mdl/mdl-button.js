@@ -1,7 +1,8 @@
+/* @flow */
 import { bindable, inject } from 'aurelia-framework';
 import 'material-design-lite';
 
-@inject(Element)
+//@inject(Element)
 export class MdlButton {
     @bindable() accent = false;
     @bindable() colored = false;

@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+Thanood/aurelia-mdl-skeleton-navigation,1,4d68db531556e335ad866b2d7d7ff3b5618213b6,Flow,Unknown,"The change is a workaround for suspected JavaScript type coercions.  It's not clear to me whether TypeScript or Flow could, with the proper annotations, detect these.  I had trouble getting flow to recognize the imports.  This should be a case study.",224.0
