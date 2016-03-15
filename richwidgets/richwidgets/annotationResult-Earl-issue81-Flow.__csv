@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+richwidgets/richwidgets,81,7208d477fed63bf133f969e2b2aa4c9d51e606c7,Flow,Undetectable,"Missing branch.  This is a case that might be solvable by rearchitecting the code under a type system to prevent even calling destroy on invalid operands, but that is out of the scope of this experiment because of the domain knowledge assessing it would require.  Perhaps this is a candidate for a case study.",91.0
