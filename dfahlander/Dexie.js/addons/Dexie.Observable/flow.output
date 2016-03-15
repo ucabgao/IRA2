@@ -1,0 +1,46 @@
+Dexie.Observable.js:85
+ 85:             Object.defineProperty(db, "_localSyncNode", {
+                 ^ Object.defineProperty. Property not found in
+ 85:             Object.defineProperty(db, "_localSyncNode", {
+                                                             ^ object literal
+
+Dexie.Observable.js:427
+427:                                 mySyncNode.isMaster = 1;
+                                                ^^^^^^^^ property `isMaster`. Property cannot be assigned on possibly null value
+427:                                 mySyncNode.isMaster = 1;
+                                     ^^^^^^^^^^ null
+
+Dexie.Observable.js:479
+479:                         ourSyncNode.myRevision = lastChange.rev;
+                                         ^^^^^^^^^^ property `myRevision`. Property cannot be assigned on possibly null value
+479:                         ourSyncNode.myRevision = lastChange.rev;
+                             ^^^^^^^^^^^ null
+
+Dexie.Observable.js:489
+489:                         myRevision: ourSyncNode.myRevision
+                                                     ^^^^^^^^^^ property `myRevision`. Property cannot be accessed on possibly null value
+489:                         myRevision: ourSyncNode.myRevision
+                                         ^^^^^^^^^^^ null
+
+Dexie.Observable.js:506
+506:                     if (partial || Observable.latestRevision[db.name] > ourSyncNode.myRevision) {
+                                                                                         ^^^^^^^^^^ property `myRevision`. Property cannot be accessed on possibly null value
+506:                     if (partial || Observable.latestRevision[db.name] > ourSyncNode.myRevision) {
+                                                                             ^^^^^^^^^^^ null
+
+Dexie.Observable.js:525
+525:                 var currentInstance = mySyncNode.id;
+                                                      ^^ property `id`. Property cannot be accessed on possibly null value
+525:                 var currentInstance = mySyncNode.id;
+                                           ^^^^^^^^^^ null
+
+Dexie.Observable.js:814
+814:     typeof define === 'function' && define.amd ? [self || window, define] : 
+                ^^^^^^ identifier `define`. Could not resolve name
+
+Dexie.Observable.js:825
+825:         Dexie.addons.push(addon);
+             ^^^^^ identifier `Dexie`. Could not resolve name
+
+
+Found 8 errors
