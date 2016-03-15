@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+mafintosh/hyperdrive,2,84f36ef71d73a7a3eb293f46aadd25cb9dee8480,TypeScript,Unknown,"This should be in the case study.  If TypeScript allowed specifying non-nullable, one could make messages.File.decode take a non-nullable parameter and that would cause type checking to fail on the problematic value.  Failing this, I don't see what to do within the assessment time bound.",232.0
