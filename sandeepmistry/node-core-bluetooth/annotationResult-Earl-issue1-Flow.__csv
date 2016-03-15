@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+sandeepmistry/node-core-bluetooth,1,71485dbe825b8027ebb278fa69249e146ed68746,Flow,Unknown,"This code define an anonymous function with the parameter $self, but incorrectly uses self in the body of the method, as the parameter to the call of mapDelegate.  Self is, as I understand it, a special identifier in JavaScript so it was probably defined.  It may be that the special self's type could be distinguished from $self's type and thus this bug is tc-detectable or maybe not. ",93.0
