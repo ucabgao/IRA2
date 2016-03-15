@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+robwhitaker/Compiler,3,2546af90a9b3d2c5592a2ada06841489498ce0fa,TypeScript,Undetectable,"UI Error.",19.0
