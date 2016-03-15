@@ -1,2 +1,3 @@
 Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
 dfahlander/Dexie.js,173,c44ec6af407ba26fdd795db10a922fd125c0d55a,Flow,Undetectable,"I do not understand this fix.  It seems like the fix is semantically equivalent to its parent.",148.0
+dfahlander/Dexie.js,173,c44ec6af407ba26fdd795db10a922fd125c0d55a,Flow,Undetectable,"I do not understand this fix.  It seems like the fix is semantically equivalent to its parent.  I can only speculate that then treats its immediate callee differently than those functions called by its callee.",148.0
