@@ -1,4 +1,3 @@
-// @flow
 var thunky = require('thunky')
 var messages = require('./messages')
 

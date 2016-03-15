@@ -1,4 +1,3 @@
-// @flow
 var events = require('events')
 var equals = require('buffer-equals')
 var flat = require('flat-tree')
