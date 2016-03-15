@@ -1,0 +1,289 @@
+pithy.js:11
+ 11:     else if (typeof define === 'function' && define.amd) {
+                         ^^^^^^ identifier `define`. Could not resolve name
+
+pithy.js:15
+ 15:         root.pithy = {};
+                  ^^^^^ property `pithy`. Property cannot be assigned on
+ 15:         root.pithy = {};
+             ^^^^ global object
+
+pithy.js:43
+ 43:     exports.escape = function (s) {
+                                    ^ parameter `s`. Missing annotation
+
+pithy.js:43
+ 43:     exports.escape = function (s) {
+                                      ^ return. Missing annotation
+
+pithy.js:76
+ 76:         return exports.escape(k) + '="' + exports.escape(v) + '"';
+                    ^^^^^^^^^^^^^^^^^ new object. This type is incompatible with
+ 76:         return exports.escape(k) + '="' + exports.escape(v) + '"';
+                    ^^^^^^^^^^^^^^^^^^^^^^^^ string
+
+pithy.js:76
+ 76:         return exports.escape(k) + '="' + exports.escape(v) + '"';
+                                               ^^^^^^^^^^^^^^^^^ new object. This type is incompatible with
+ 76:         return exports.escape(k) + '="' + exports.escape(v) + '"';
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string
+
+pithy.js:96
+ 96:             if (buffer.type === 'class') {
+                     ^^^^^^^^^^^ property `type`. Property not found in possibly null value
+ 96:             if (buffer.type === 'class') {
+                     ^^^^^^ null
+
+pithy.js:96
+ 96:             if (buffer.type === 'class') {
+                            ^^^^ property `type`. Property not found in possibly null value
+ 96:             if (buffer.type === 'class') {
+                     ^^^^^^ null
+
+pithy.js:97
+ 97:                 classes.push(buffer.chars);
+                                         ^^^^^ property `chars`. Property cannot be accessed on possibly null value
+ 97:                 classes.push(buffer.chars);
+                                  ^^^^^^ null
+
+pithy.js:99
+ 99:             else if (buffer.type === 'id') {
+                                 ^^^^ property `type`. Property not found in possibly null value
+ 99:             else if (buffer.type === 'id') {
+                          ^^^^^^ null
+
+pithy.js:100
+100:                 ids.push(buffer.chars);
+                                     ^^^^^ property `chars`. Property cannot be accessed on possibly null value
+100:                 ids.push(buffer.chars);
+                              ^^^^^^ null
+
+pithy.js:121
+121:                         'Malformed attribute string: "' + str + '"'
+                                                               ^^^ object literal. This type is incompatible with
+121:                         'Malformed attribute string: "' + str + '"'
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string
+
+pithy.js:140
+140:     var SafeString = exports.SafeString = function SafeString(str) {
+                                                                   ^^^ parameter `str`. Missing annotation
+
+pithy.js:146
+146:             var func = String.prototype[k];
+                            ^^^^^^^^^^^^^^^^^^^ access of computed property/element. Indexable signature not found in
+146:             var func = String.prototype[k];
+                            ^^^^^^ String
+
+pithy.js:163
+163:                 str += isArray(c) ? stringifyContents(c): exports.escape(c);
+                                                               ^^^^^^^^^^^^^^^^^ new object. This type is incompatible with
+163:                 str += isArray(c) ? stringifyContents(c): exports.escape(c);
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string
+
+pithy.js:170
+170:         return function (attrs, contents) {
+                              ^^^^^ parameter `attrs`. Missing annotation
+
+pithy.js:170
+170:         return function (attrs, contents) {
+                                     ^^^^^^^^ parameter `contents`. Missing annotation
+
+pithy.js:170
+170:         return function (attrs, contents) {
+                                              ^ return. Missing annotation
+
+pithy.js:198
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                         ^^^ property `a`. Property not found in
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                 ^^^^^^^ object literal
+
+pithy.js:198
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                         ^^^ property `abbr`. Property not found in
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                 ^^^^^^^ object literal
+
+pithy.js:198
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                         ^^^ property `address`. Property not found in
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                 ^^^^^^^ object literal
+
+pithy.js:198
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                         ^^^ property `article`. Property not found in
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                 ^^^^^^^ object literal
+
+pithy.js:198
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                         ^^^ property `aside`. Property not found in
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                 ^^^^^^^ object literal
+
+pithy.js:198
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                         ^^^ property `audio`. Property not found in
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                 ^^^^^^^ object literal
+
+pithy.js:198
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                         ^^^ property `b`. Property not found in
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                 ^^^^^^^ object literal
+
+pithy.js:198
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                         ^^^ property `bdi`. Property not found in
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                 ^^^^^^^ object literal
+
+pithy.js:198
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                         ^^^ property `bdo`. Property not found in
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                 ^^^^^^^ object literal
+
+pithy.js:198
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                         ^^^ property `blockquote`. Property not found in
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                 ^^^^^^^ object literal
+
+pithy.js:198
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                         ^^^ property `body`. Property not found in
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                 ^^^^^^^ object literal
+
+pithy.js:198
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                         ^^^ property `button`. Property not found in
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                 ^^^^^^^ object literal
+
+pithy.js:198
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                         ^^^ property `canvas`. Property not found in
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                 ^^^^^^^ object literal
+
+pithy.js:198
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                         ^^^ property `caption`. Property not found in
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                 ^^^^^^^ object literal
+
+pithy.js:198
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                         ^^^ property `cite`. Property not found in
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                 ^^^^^^^ object literal
+
+pithy.js:198
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                         ^^^ property `code`. Property not found in
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                 ^^^^^^^ object literal
+
+pithy.js:198
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                         ^^^ property `colgroup`. Property not found in
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                 ^^^^^^^ object literal
+
+pithy.js:198
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                         ^^^ property `command`. Property not found in
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                 ^^^^^^^ object literal
+
+pithy.js:198
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                         ^^^ property `data`. Property not found in
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                 ^^^^^^^ object literal
+
+pithy.js:198
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                         ^^^ property `datalist`. Property not found in
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                 ^^^^^^^ object literal
+
+pithy.js:198
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                         ^^^ property `dd`. Property not found in
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                 ^^^^^^^ object literal
+
+pithy.js:198
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                         ^^^ property `del`. Property not found in
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                 ^^^^^^^ object literal
+
+pithy.js:198
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                         ^^^ property `details`. Property not found in
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                 ^^^^^^^ object literal
+
+pithy.js:198
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                         ^^^ property `dfn`. Property not found in
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                 ^^^^^^^ object literal
+
+pithy.js:198
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                         ^^^ property `div`. Property not found in
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                 ^^^^^^^ object literal
+
+pithy.js:198
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                         ^^^ property `dl`. Property not found in
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                 ^^^^^^^ object literal
+
+pithy.js:198
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                         ^^^ property `dt`. Property not found in
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                 ^^^^^^^ object literal
+
+pithy.js:198
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                         ^^^ property `em`. Property not found in
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                 ^^^^^^^ object literal
+
+pithy.js:198
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                         ^^^ property `fieldset`. Property not found in
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                 ^^^^^^^ object literal
+
+pithy.js:198
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                         ^^^ property `figcaption`. Property not found in
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                 ^^^^^^^ object literal
+
+pithy.js:198
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                         ^^^ property `figure`. Property not found in
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                 ^^^^^^^ object literal
+
+pithy.js:198
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                         ^^^ property `footer`. Property not found in
+198:         exports[tag] = createElementFn(tag, isEmpty[tag]);
+                                                 ^^^^^^^ object literal
+
+
+... 69 more errors (only 50 out of 119 errors displayed)
+To see all errors, re-run Flow with --show-all-errors
