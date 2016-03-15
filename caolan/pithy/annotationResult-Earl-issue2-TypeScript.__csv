@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+caolan/pithy,2,8e8b63581f243bb6a7c4b8325eb59fe42afa9e47,TypeScript,Detectable,"pithy.ts(135,19): error TS2339: Property 'class' does not exist on type '{}'.",173.0
