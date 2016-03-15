@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+emberjs/data,3944,e1007db415041ef6a9831b731c9f458d11d2ae4f,TypeScript,Undetectable,"EIS: this adds an empty mapping file that is expected by bower.  not detectable.",270.0
