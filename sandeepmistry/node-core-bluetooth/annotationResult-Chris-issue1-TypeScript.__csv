@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+sandeepmistry/node-core-bluetooth,1,71485dbe825b8027ebb278fa69249e146ed68746,TypeScript,Detectable,"added type annotation of string to mapDelegate",95.0
