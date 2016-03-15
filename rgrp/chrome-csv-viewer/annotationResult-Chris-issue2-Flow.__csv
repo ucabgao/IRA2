@@ -1,2 +1,3 @@
 Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
 rgrp/chrome-csv-viewer,2,7e07054e7e742f97bafceb195816d477af293ba3,Flow,Undetectable,"EIS",10.0
+rgrp/chrome-csv-viewer,2,7e07054e7e742f97bafceb195816d477af293ba3,Flow,Undetectable,"EIS: just added updating the browser history.",29.0
