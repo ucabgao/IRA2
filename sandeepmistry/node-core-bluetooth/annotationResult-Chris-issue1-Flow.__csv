@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+sandeepmistry/node-core-bluetooth,1,71485dbe825b8027ebb278fa69249e146ed68746,Flow,Detectable,"I don't understand how both flow and TypeScript typecheck this.  ",488.0

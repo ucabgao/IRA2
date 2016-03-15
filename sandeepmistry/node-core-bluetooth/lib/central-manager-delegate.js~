@@ -14,8 +14,6 @@ util.inherits(CentralManagerDelegate, events.EventEmitter);
 module.exports = CentralManagerDelegate;
 var delegates = {};
 var peripherals = {};
-
-var self: Object = null;
 function mapDelegate(self: string) {
     return delegates[self];
 }
