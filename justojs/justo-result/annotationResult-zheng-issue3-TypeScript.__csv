@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+justojs/justo-result,3,ea07cfe376eafae6c46592a7f664cca045ba0558,TypeScript,Undetectable,"EIS. Missing a functionality of setting and checking the state variable.",76.0
