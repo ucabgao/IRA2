@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+sindresorhus/os-locale,1,34c02ef169549743a7813421b5681161eeb0aaad,TypeScript,Undetectable,"Null handling. TypeScript does not support a non-nullable type annotation.",66.0
