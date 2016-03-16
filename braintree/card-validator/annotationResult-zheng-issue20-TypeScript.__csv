@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+braintree/card-validator,20,b20ac92d7bf4234b4692d275f053a6622e8cdfe4,TypeScript,Undetectable,"EIS. Confusion between 'valid' and 'potentially valid'.",107.0
