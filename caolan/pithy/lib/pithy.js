@@ -1,3 +1,5 @@
+/* @flow */
+
 /**
  * Universal module definition
  */
