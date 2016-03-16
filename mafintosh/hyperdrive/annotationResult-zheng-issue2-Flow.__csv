@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+mafintosh/hyperdrive,2,84f36ef71d73a7a3eb293f46aadd25cb9dee8480,Flow,Detectable,"Could not afford to fully annotate the library for messages, Entry, decode. From the bug reort, construct my own annotation that detects it.",634.0

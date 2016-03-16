@@ -1,5 +1,17 @@
+/* @flow */
+
+interface t {
+    Entry:s;
+}
+
+interface s {
+    decode(x:string) : any;
+}
+
+
 var thunky = require('thunky')
-var messages = require('./messages')
+//var messages = require('./messages')
+var messages:t;
 
 var BLOCKS_PER_DIRECTORY = 8192
 
@@ -56,7 +68,7 @@ Feed.prototype._block = function (index, cb) {
 }
 
 function decoder (cb) {
-  return function (err, value) {
+  return function (err, value:?string) {
     if (err) return cb(err)
     var entry = messages.Entry.decode(value)
     // TODO: move to module
