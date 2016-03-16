@@ -1,3 +1,5 @@
+/* @flow */
+
 //-----------------------------Map stuff---------------------------------
 //Tile Provider
 var mapbox_streets = new L.tileLayer('https://{s}.tiles.mapbox.com/v4/duenni.847e1c91/{z}/{x}/{y}.png?access_token='+apikey.mapbox+'',{

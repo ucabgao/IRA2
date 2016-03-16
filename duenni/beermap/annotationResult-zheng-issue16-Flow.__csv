@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+duenni/beermap,16,88d5bc0f442db53f03b75e5ccd14bd7d15d4e571,Flow,Undetectable,"EIS. Confusion between i and j, two loop indexes.",101.0
