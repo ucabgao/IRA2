@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+richwidgets/richwidgets,81,7208d477fed63bf133f969e2b2aa4c9d51e606c7,Flow,Undetectable,"EIS: this fixes issues on lists being sortable.  not detectable",112.0
