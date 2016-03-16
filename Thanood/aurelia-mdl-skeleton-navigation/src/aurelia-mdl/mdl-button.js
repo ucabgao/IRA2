@@ -1,7 +1,9 @@
+/* @flow */
+
 import { bindable, inject } from 'aurelia-framework';
 import 'material-design-lite';
 
-@inject(Element)
+// @inject(Element)
 export class MdlButton {
     @bindable() accent = false;
     @bindable() colored = false;
@@ -31,7 +33,7 @@ export class MdlButton {
         componentHandler.upgradeElement(btn);
     }
     raisedChanged(newValue, oldValue) {
-        let btn = this.element.querySelector('button');
+        let btn:?Object = this.element.querySelector('button');
         if (newValue) {
             btn.classList.add('mdl-button--raised');
         } else {

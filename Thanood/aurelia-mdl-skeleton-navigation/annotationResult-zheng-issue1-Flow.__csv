@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+Thanood/aurelia-mdl-skeleton-navigation,1,4d68db531556e335ad866b2d7d7ff3b5618213b6,Flow,Detectable,"Add annotation to indicate that btn can be null/undefined.",233.0
