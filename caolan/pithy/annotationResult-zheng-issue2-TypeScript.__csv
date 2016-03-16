@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+caolan/pithy,2,8e8b63581f243bb6a7c4b8325eb59fe42afa9e47,TypeScript,Detectable,"TypeScript simply detects this bug using its type inference.",42.0
