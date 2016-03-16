@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+cerebral/cerebral-view-react,36,15151fb9752842535daa67634e80496fe7d9ecc7,Flow,Undetectable,"EIS. These programs are not updated with changes in other programs. Specifically, the arity of function decorator needs to be changed. Without a call of decorator, this bug is undetectable.  ",142.0
