@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+mozilla/browserid-crypto,16,c048ad8c0969ddb6649332567684c3ad1a8dcce2,Flow,Undetectable,"Flow is not aware of this bug that IE does not allow const to be used here.",34.0
