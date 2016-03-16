@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+jonatkins/ingress-intel-total-conversion,529,c68021609bb8bc3c65788477fd9698fff9d0355f,TypeScript,Detectable,"Need to comment two strange lines.",536.0
