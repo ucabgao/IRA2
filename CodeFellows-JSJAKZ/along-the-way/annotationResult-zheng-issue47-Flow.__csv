@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+CodeFellows-JSJAKZ/along-the-way,47,6a1ac99bc0d2883090e3fe19056e1b7d88cb208c,Flow,Undetectable,"Missing a predicate. Wrongly create multiple unnecessary infowindows due to a missing check on whether infowindow already exists. ",32.0
