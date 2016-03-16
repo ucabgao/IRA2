@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+CodeFellows-JSJAKZ/along-the-way,47,6a1ac99bc0d2883090e3fe19056e1b7d88cb208c,TypeScript,Undetectable,"EIS: this just checks to see if a window exists before creating a new one.",61.0
