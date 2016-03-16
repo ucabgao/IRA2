@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+vmi/dropbox-js-for-chrome-extension,1,6d057d922353e21ba5fc3c6b3bb534a65499dd52,Flow,Undetectable,"API change. In oauth-request.js, chrome.extension.onRequest is deprecated. If we have fully annotated libraries and environment, we might be able to detect this bug.",499.0
