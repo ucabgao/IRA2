@@ -1,11 +1,14 @@
+/* @flow */
+
 var events        = require('events');
 var util          = require('util');
 
-var $             = require('NodObjC');
-var debug         = require('debug')('central-manager-delegate');
+declare var $:any;//             = require('NodObjC');
+var debug:any;//         = require('debug')('central-manager-delegate');
 
 var Peripheral    = require('./peripheral');
 var $util         = require('./util');
+
 
 function CentralManagerDelegate() {
   this.$ = CBCentralManagerDelegate('alloc')('init');
@@ -22,7 +25,7 @@ module.exports = CentralManagerDelegate;
 var delegates = {};
 var peripherals = {};
 
-function mapDelegate(self) {
+function mapDelegate(self:string|number) {
   return delegates[self];
 }
 
@@ -131,6 +134,7 @@ CBCentralManagerDelegate.addMethod('centralManager:didDisconnectPeripheral:error
     peripheral.emit('disconnect', error);
   }.bind(mapDelegate($self), mapPeripheral(identifier), error));
 });
+
 
 CBCentralManagerDelegate.addMethod('centralManager:didFailToConnectPeripheral:error:',
                                     'v@:@@@', function ($self, $_cmd, $centralManager, $peripheral, $error) {

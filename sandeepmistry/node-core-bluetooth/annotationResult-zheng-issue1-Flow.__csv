@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+sandeepmistry/node-core-bluetooth,1,71485dbe825b8027ebb278fa69249e146ed68746,Flow,Undetectable,"EIS. Flow is able to infer that self has the type of window, but did not regard it as a type error.",338.0
