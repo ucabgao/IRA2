@@ -1,3 +1,7 @@
+/* @flow */
+
+RegExp.prototype.exec = function (x:string) :?Array<Object> {} ;
+
 'use strict';
 var childProcess = require('child_process');
 var lcid = require('lcid');

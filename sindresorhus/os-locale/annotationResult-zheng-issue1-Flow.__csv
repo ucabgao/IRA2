@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+sindresorhus/os-locale,1,34c02ef169549743a7813421b5681161eeb0aaad,Flow,Unknown,"Parsing error. TypeScript has builtin support for regular expressions: the type of regular expression literals is the global interface type 'RegExp'. But I could not find such a support for Flow. But I presume that Flow should have such support. ",375.0
