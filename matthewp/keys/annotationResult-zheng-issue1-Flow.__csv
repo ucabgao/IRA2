@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+matthewp/keys,1,1ec66bbed7f1dec78718e776c73e3e113023d127,Flow,Undetectable,"EIS. According to https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty , sometimes it is not safe to use obj.hasOwnProperty as this function may be overridden. Using Object.prototype.hasOwnProperty is the best practise.",229.0
