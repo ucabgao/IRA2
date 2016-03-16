@@ -1,3 +1,5 @@
+/* @flow */
+
 /**
 * @license synchronous-fsm https://github.com/flams/synchronous-fsm
 *
@@ -6,6 +8,8 @@
 * Copyright (c) 2014 Olivier Scherrer <pode.fr@gmail.com>
 */
 "use strict";
+
+function loop (x:Object, y:any):any {}
 
 var toArray = require("to-array");
 
@@ -31,7 +35,7 @@ var toArray = require("to-array");
  *
  * @return the stateMachine object
  */
-module.exports = function StateMachineConstructor($initState, $diagram) {
+module.exports = function StateMachineConstructor($initState, $diagram:?Object) {
 
     /**
      * The list of states
