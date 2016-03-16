@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+gomita/verticaltoolbar,31,3c608cdbda50bec73443b1e22b15572aae363fa4,TypeScript,Undetectable,"EIS. Forgot to properly start and finish the customisation of the bookmark toolbar.",27.0
