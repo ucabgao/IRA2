@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+digital-dreamer/twister-proxy,4,4965413ce5661aae8566769eec6ab7390bd99e1a,TypeScript,Undetectable,"EIS. Missing an authenticatioin header in messages in HTML.",18.0
