@@ -1,3 +1,5 @@
+/* @flow */
+
 // ==UserScript==
 // @id             iitc-plugin-ap-list@xelio
 // @name           IITC plugin: AP List
@@ -14,7 +16,7 @@
 // @grant          none
 // ==/UserScript==
 
-@@PLUGINSTART@@
+//@@PLUGINSTART@@
 
 // PLUGIN START ////////////////////////////////////////////////////////
 
@@ -945,4 +947,4 @@ var setup = function() {
 }
 // PLUGIN END //////////////////////////////////////////////////////////
 
-@@PLUGINEND@@
+//@@PLUGINEND@@

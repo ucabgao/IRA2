@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+jonatkins/ingress-intel-total-conversion,529,c68021609bb8bc3c65788477fd9698fff9d0355f,Flow,Detectable,"Able to detect that isSameResonator has not been declared yet.",78.0
