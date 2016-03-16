@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+protometa/convert-metric,1,dfb41bbfe11195ff6c249a7b4b939a1c8b30306a,TypeScript,Undetectable,"EIS. The method toPrecision() returns a string representing a number in fixed-point or exponential notation, whose format is not expected by the subsequent parsing. ",219.0
