@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+r8k/proxy,3,8fadd582810d6fa79b4070fcf3c67673d4a10519,Flow,Undetectable,"EIS. According to the bug report, the bug is a wrong computation.  But the fix also changes the check for the existence of some property. However, becaue the original code uses a try catch, it is safe.",80.0
