@@ -1,2 +1,3 @@
 Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
 flams/synchronous-fsm,1,2d4c0e489d98711730c49d6b2b0b6d3196120c98,TypeScript,Undetectable,"Null handling. TypeScript does not support non-nullable type annotation.",42.0
+flams/synchronous-fsm,1,2d4c0e489d98711730c49d6b2b0b6d3196120c98,TypeScript,Detectable,"Simply detects it",217.0

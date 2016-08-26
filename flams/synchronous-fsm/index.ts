@@ -6,7 +6,9 @@
 * Copyright (c) 2014 Olivier Scherrer <pode.fr@gmail.com>
 */
 "use strict";
+
 var toArray = require("to-array");
+
 /**
  * @class
  * Creates a stateMachine
@@ -30,30 +32,33 @@ var toArray = require("to-array");
  * @return the stateMachine object
  */
 module.exports = function StateMachineConstructor($initState, $diagram) {
+
     /**
      * The list of states
      * @private
      */
-    var _states = {}, 
+    var _states = {},
+
     /**
      * The current state
      * @private
      */
     _currentState = "";
+
     /**
      * Set the initialization state
      * @param {String} name the name of the init state
      * @returns {Boolean}
      */
     this.init = function init(name) {
-        if (_states[name]) {
-            _currentState = name;
-            return true;
-        }
-        else {
-            return false;
-        }
+            if (_states[name]) {
+                _currentState = name;
+                return true;
+            } else {
+                return false;
+            }
     };
+
     /**
      * Add a new state
      * @private
@@ -64,11 +69,11 @@ module.exports = function StateMachineConstructor($initState, $diagram) {
         if (!_states[name]) {
             var transition = _states[name] = new Transition();
             return transition;
-        }
-        else {
+        } else {
             return _states[name];
         }
     };
+
     /**
      * Get an existing state
      * @private
@@ -78,6 +83,7 @@ module.exports = function StateMachineConstructor($initState, $diagram) {
     this.get = function get(name) {
         return _states[name];
     };
+
     /**
      * Get the current state
      * @returns {String}
@@ -85,6 +91,7 @@ module.exports = function StateMachineConstructor($initState, $diagram) {
     this.getCurrent = function getCurrent() {
         return _currentState;
     };
+
     /**
      * Tell if the state machine has the given state
      * @param {String} state the name of the state
@@ -93,6 +100,7 @@ module.exports = function StateMachineConstructor($initState, $diagram) {
     this.has = function has(state) {
         return _states.hasOwnProperty(state);
     };
+
     /**
      * Advances the state machine to a given state
      * @param {String} state the name of the state to advance the state machine to
@@ -102,11 +110,11 @@ module.exports = function StateMachineConstructor($initState, $diagram) {
         if (this.has(state)) {
             _currentState = state;
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     };
+
     /**
      * Pass an event to the state machine
      * @param {String} name the name of the event
@@ -114,13 +122,13 @@ module.exports = function StateMachineConstructor($initState, $diagram) {
      */
     this.event = function event(name) {
         var nextState;
+
         nextState = _states[_currentState].event.apply(_states[_currentState].event, toArray(arguments));
         // False means that there's no such event
         // But undefined means that the state doesn't change
         if (nextState === false) {
             return false;
-        }
-        else {
+        } else {
             // There could be no next state, so the current one remains
             if (nextState) {
                 // Call the exit action if any
@@ -132,30 +140,35 @@ module.exports = function StateMachineConstructor($initState, $diagram) {
             return true;
         }
     };
+
     /**
      * Initializes the StateMachine with the given diagram
      */
     loop($diagram, function (transition, state) {
         var myState = this.add(state);
-        transition.forEach(function (params) {
+        transition.forEach(function (params){
             myState.add.apply(null, params);
         });
     }, this);
+
     /**
      * Sets its initial state
      */
     this.init($initState);
 };
+
 /**
  * Each state has associated transitions
  * @constructor
  */
 function Transition() {
+
     /**
      * The list of transitions associated to a state
      * @private
      */
     var _transitions = {};
+
     /**
      * Add a new transition
      * @private
@@ -166,27 +179,37 @@ function Transition() {
      * @returns {Boolean} true if success, false if the transition already exists
      */
     this.add = function add(event, action, scope, next) {
+
         var arr = [];
+
         if (_transitions[event]) {
             return false;
         }
+
         if (typeof event == "string" &&
             typeof action == "function") {
-            arr[0] = action;
-            if (typeof scope == "object") {
-                arr[1] = scope;
-            }
-            if (typeof scope == "string") {
-                arr[2] = scope;
-            }
-            if (typeof next == "string") {
-                arr[2] = next;
-            }
-            _transitions[event] = arr;
-            return true;
+
+                arr[0] = action;
+
+                if (typeof scope == "object") {
+                    arr[1] = scope;
+                }
+
+                if (typeof scope == "string") {
+                    arr[2] = scope;
+                }
+
+                if (typeof next == "string") {
+                    arr[2] = next;
+                }
+
+                _transitions[event] = arr;
+                return true;
         }
+
         return false;
     };
+
     /**
      * Check if a transition can be triggered with given event
      * @private
@@ -196,6 +219,7 @@ function Transition() {
     this.has = function has(event) {
         return !!_transitions[event];
     };
+
     /**
      * Get a transition from it's event
      * @private
@@ -205,6 +229,7 @@ function Transition() {
     this.get = function get(event) {
         return _transitions[event] || false;
     };
+
     /**
      * Execute the action associated to the given event
      * @param {String} event the name of the event
@@ -217,8 +242,7 @@ function Transition() {
         if (_transition) {
             _transition[0].apply(_transition[1], toArray(arguments).slice(1));
             return _transition[2];
-        }
-        else {
+        } else {
             return false;
         }
     };
