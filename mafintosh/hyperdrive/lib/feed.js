@@ -10,8 +10,7 @@ interface s {
 
 
 var thunky = require('thunky')
-//var messages = require('./messages')
-var messages:t;
+var messages:t = require('./messages')
 
 var BLOCKS_PER_DIRECTORY = 8192
 
