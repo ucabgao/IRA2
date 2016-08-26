@@ -9,8 +9,6 @@
 */
 "use strict";
 
-function loop (x:Object, y:any):any {}
-
 var toArray = require("to-array");
 
 /**
@@ -35,7 +33,7 @@ var toArray = require("to-array");
  *
  * @return the stateMachine object
  */
-module.exports = function StateMachineConstructor($initState, $diagram:?Object) {
+module.exports = function StateMachineConstructor($initState, $diagram) {
 
     /**
      * The list of states
