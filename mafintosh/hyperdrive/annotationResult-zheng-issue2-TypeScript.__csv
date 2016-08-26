@@ -1,2 +1,3 @@
 Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
 mafintosh/hyperdrive,2,84f36ef71d73a7a3eb293f46aadd25cb9dee8480,TypeScript,Undetectable,"Null/undefined handling. TypeScript does not support non-nullable type annotations.",34.0
+mafintosh/hyperdrive,2,84f36ef71d73a7a3eb293f46aadd25cb9dee8480,TypeScript,Detectable,"TSC detects it.",352.0
